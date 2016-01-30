@@ -33,13 +33,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem ‘pry-byebug’
-  gem ‘pry’
+  gem 'pry-byebug'
+  gem 'pry'
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'console'
+  gem 'web-console'
 end
 
 gem 'devise'
