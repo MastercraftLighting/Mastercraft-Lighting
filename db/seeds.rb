@@ -49,3 +49,26 @@ equipment_notes = [{note: "This is a note on LightingRig1", equipment_id: 1, fie
 equipment_notes.each do |note|
   EquipmentNote.create(note)
 end
+
+# Production Venue values
+batboy = Production.find_by(name: "BatBoy")
+phantom = Production.find_by(name: "Phantom of the Opera")
+wicked = Production.find_by(name: "Wicked")
+shotgun = Venue.find_by(name: "Shotgun Players")
+ballet = Venue.find_by(name: "SFBallet")
+orb = Venue.find_by(name: "Orb Theatre")
+
+batboy.venues << shotgun
+phantom.venues << ballet
+wicked.venues << orb
+
+# Equipment Venue values
+
+equip1 = Equipment.find_by(instrument_type: "LightingRig1")
+equip2 = Equipment.find_by(instrument_type: "LightingRig2")
+equip3 = Equipment.find_by(instrument_type: "LightingRig3")
+# venue values from above
+
+shotgun.equipment << equip1
+ballet.equipment << equip2
+orb.equipment << equip3
