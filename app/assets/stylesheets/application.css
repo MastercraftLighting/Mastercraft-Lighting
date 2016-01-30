@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+.navbar {
+	height: .5em;
+	border-top: 2px solid yellow;
+	border-bottom: 2px solid yellow;
+}
+.header-text
+ {	padding: 2em;
+	background: linear-gradient(to right, rgba(219,219,219,1) 0%, rgba(212,212,212,1) 4%, rgba(204,204,204,1) 16%, rgba(247,247,247,1) 100%);
+}
+
+body {
+	background-color: #f6f1ed;
+	height: 100%;
+	padding-bottom: 4em;
+}
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+.logo {
+	max-width: 5em;
+	max-height: 5em;
+}
