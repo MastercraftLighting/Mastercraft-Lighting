@@ -2,12 +2,12 @@
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 # Seed User table
-users = [{username: 'Sparky15',email: "Sparky15@email.com", password: 'lights', user_type: 'Designer'},
-         {username: 'FoxyFox',email: "FoxyFox@email.com", password: 'grayfox', user_type: 'ME'},
-         {username: 'Adam',email: "Adam@email.com", password: 'password', user_type: 'Administrator'},
-         {username: 'LarryLighter',email: "LarryLighter@email.com", password: '1234', user_type: 'Designer'},
-         {username: 'JerryCrew',email: "JerryCrew@email.com", password: 'monkey', user_type: 'Lead'},
-         {username: 'JohnCrew',email: "JohnCrew@email.com", password: 'banana', user_type: 'Lead'}]
+users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights', user_type: 'Designer'},
+         {username: 'FoxyFox', email: "FoxyFox@email.com", password: 'grayfox', user_type: 'ME'},
+         {username: 'Adam', email: "Adam@email.com", password: 'password', user_type: 'Administrator'},
+         {username: 'LarryLighter', email: "LarryLighter@email.com", password: '1234', user_type: 'Designer'},
+         {username: 'JerryCrew', email: "JerryCrew@email.com", password: 'monkey', user_type: 'Lead'},
+         {username: 'JohnCrew', email: "JohnCrew@email.com", password: 'banana', user_type: 'Lead'}]
 
 users.each do |user|
   User.create(user)
