@@ -24,7 +24,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
 end
-
+gem 'turbolinks'
 gem 'devise'
 gem 'rails_12factor', group: :production
 ruby "2.3.0"
