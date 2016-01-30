@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+  # root 'welcome#index'
   root 'welcome#index'
 
   # Example of regular route:
@@ -26,6 +27,9 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+
+  resources :channels
+  resources :shows
 
   # Example resource route with sub-resources:
   #   resources :products do

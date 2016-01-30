@@ -1,4 +1,4 @@
 class Venue < ActiveRecord::Base
-  has_many :equipment, through: :equipment_venues
-  has_many :productions, through: :productions_venues
+  has_and_belongs_to_many :equipment
+  has_and_belongs_to_many :productions
 end
