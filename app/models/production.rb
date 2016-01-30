@@ -1,6 +1,6 @@
 class Production < ActiveRecord::Base
 
-  has_many :venues, through: :productions_venues
+  has_and_belongs_to_many :venues
   has_many :equipment
   has_many :leads
   has_many :users, through: :leads
