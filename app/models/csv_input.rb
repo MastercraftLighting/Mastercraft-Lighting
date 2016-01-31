@@ -5,7 +5,8 @@ class CsvInput < ActiveRecord::Base
 
   private
     def infer_equipment
-      Equipment.create(instrument_type: self.instrument_type,
+      Equipment.create(
+         instrument_type: self.instrument_type,
          wattage: self.wattage,
          purpose: self.purpose,
          position: self.position,

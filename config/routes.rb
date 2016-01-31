@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   get "/users" => 'users#index'
 
-  resources :channels
-  resources :productions
+  resources :productions do
+    resources :channels
+  end
 
   resources :admins
 

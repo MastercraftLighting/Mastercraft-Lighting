@@ -6,7 +6,8 @@
         <h4 class="modal-title" id="myModalLabel">Edit Channel</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag("/productions/new", method: "post") do %>
+        <%= form_tag(production_channel_path, method: "post") do %>
+        <!-- name channel, choose: dimmer, color, instrument type -->
           <%= label_tag(:name, "Production Name:") %>
           <%= text_field_tag(:name)%>
           <%= label_tag(:date, "Production Date:") %>
