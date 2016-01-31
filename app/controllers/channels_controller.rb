@@ -1,9 +1,9 @@
 class ChannelsController < ApplicationController
   before_action :set_channel, only: [:show, :update, :destroy]
 
-  def index
+  # def index
 
-  end
+  # end
 
   def create
 
@@ -17,23 +17,23 @@ class ChannelsController < ApplicationController
 
   end
 
-  def show
+  # def show
 
-  end
-
+  # end
   def update
 
   end
 
-  def destroy
 
-  end
+  # def destroy
+
+  # end
 
   private
 
   def set_channel
-    equipment = Production.find(params[:prod_id])
-    @channel = equipment.find(params[:id])
+    equipment = Production.find(params[:production_id])
+    @channel = equipment.find_by(channel: params[:id])
   end
 
 end
