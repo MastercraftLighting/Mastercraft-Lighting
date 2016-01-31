@@ -3,14 +3,19 @@
 </div>
 <div class="row dashboard">
 <div class="dashboard-buttons">
-	<h3><a href="/shows/new">New Show</a></h3>
+	<button type="button" class="btn" data-toggle="modal" data-target="#newModal">
+  	New Show
+</button>
+
 </div>
 
 <div class="dashboard-buttons">
-	<h3>View Shows</h3>
+	<button type="button" class="btn">View Shows</button>
 </div>
 
 <div class="dashboard-buttons">
-	<h3>Libraries</h3>
+	<button type="button" class="btn">Libraries</h3></button>
 </div>
 </div>
+
+<%= render "productions/new_show_modal"%>

@@ -27,9 +27,10 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
+  get "/users" => 'users#index'
 
   resources :channels
-  resources :shows
+  resources :productions
 
   # Example resource route with sub-resources:
   #   resources :products do
