@@ -8,6 +8,6 @@ class ProductionsController < ApplicationController
 			redirect_to :new
 		else
 			redirect_to :index
-	   end
+	  end
   end
 end
