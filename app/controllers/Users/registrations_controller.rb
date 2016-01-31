@@ -4,6 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    @usertypes = Usertype.where("name != 'Administrator'")
     super
   end
 
@@ -15,6 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
+    @usertypes = Usertype.where("name != 'Administrator'")
     super
   end
 
