@@ -1,13 +1,14 @@
 <div class="jumbotron">
 <h1>Welcome to Mastercraft</h1>
 	<img id="background-image" src="people-festival-party-dancing.jpg">
+<% if !current_user %>
 <div class="row user-buttons">
-<button class="btn btn-left"><%= link_to "Existing user login", controller: "devise/sessions", action: "new" %></button>
+	<button class="btn btn-left"><%= link_to "Existing user login", controller: "devise/sessions", action: "new" %></button>
 <br>
-<button class="btn btn-right"><%= link_to "Register new user", controller: "devise/registrations", action: "new" %></button>
+<button class="btn btn-right"><%= link_to "Register New User", new_user_registration_path %></button>
+<% end %>
 </div>
 </div>
 
 	<h2>Why Mastercraft?</h2>
 		<p>William F. Brinkert had a vision.</p>
-
