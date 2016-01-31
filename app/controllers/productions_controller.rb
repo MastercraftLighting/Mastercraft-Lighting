@@ -36,15 +36,6 @@ class ProductionsController < ApplicationController
   def destroy
   end
 
-	def new
-		@production = Production.new(params)
-		if @production.save
-			redirect_to :new
-		else
-			redirect_to :index
-	  end
-  end
-
   private
 
     def set_production
