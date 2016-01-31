@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-
+  get 'users/:id' => 'users#show'
   get 'upload' => 'uploads#new'
   post 'uploads/create' => 'uploads#create'
 
