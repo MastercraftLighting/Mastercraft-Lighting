@@ -8,7 +8,13 @@ class AdminsController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    @productions = user.productions
+    puts user.inspect
+    @productions = user.designed_productions if user.user_type == "Designer"
+    @productions = user.lead_productions if user.user_type == "Lead"
+    # @productions = user.master_electrician_productions if user.user_type == "ME"
+    # above method not currently working.....
+    puts @productions
+    render "productions/index"
   end
 
   def update
