@@ -3,8 +3,17 @@ class ProductionsController < ApplicationController
 
   def index
     authenticate_user!
-    @productions = Production.all
-    @productions = current_user.productions unless admin?
+    case current_user.user_type
+      when "Administrator"
+        @productions = Production.all
+      when "Designer"
+        @productions = current_user.designed_productions
+      when "ME"
+        @productions = current_user.master_electrician_productions
+      when "Lead"
+        @productions = current_user.lead_productions
+    end
+
     render :index
   end
 
