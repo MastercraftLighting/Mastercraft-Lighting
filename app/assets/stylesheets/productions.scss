@@ -1,0 +1,30 @@
+// Place all the styles related to the shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.channel-maker {
+	background-color: black;
+	color: white;
+	max-width: 50%;
+}
+
+.btn {
+	background-color: black;
+	}
+
+.tab-content {
+	padding-top: 3em;
+}
+
+.navbar-bottom {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.tab-content{
+	max-height: 100%;
+}
+
+.toggle-tab {
+	display: none;
+}
