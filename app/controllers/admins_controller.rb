@@ -11,6 +11,13 @@ class AdminsController < ApplicationController
     @productions = user.productions
   end
 
+  def update
+    user = User.find(params[:id])
+    user.user_type = "Administrator"
+    user.save
+    redirect_to admins_path
+  end
+
   def destroy
     user = User.find(params[:id])
     user.destroy
