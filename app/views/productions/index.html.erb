@@ -1,0 +1,7 @@
+<div class="productions-list">
+  <% @productions.each do |production| %>
+    <div id="prod<%= production.id %>">
+      <a href="/productions/<%= production.id %>"> <%= production.name %> </a>
+    </div> <!-- Close prodxx div -->
+  <% end %>
+</div>
