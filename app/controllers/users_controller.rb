@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
+  include Devise::RegistrationsController
 
   before_action except: [:show] do
     redirect_to :root unless admin?
+  end
+
+  def create
+
   end
 
   def index
