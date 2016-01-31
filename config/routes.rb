@@ -33,7 +33,7 @@ Rails.application.routes.draw do
 
   resources :channels
   resources :productions
-
+  resources :admins
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
