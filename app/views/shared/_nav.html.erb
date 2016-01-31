@@ -18,6 +18,9 @@
                 <li><a href="#">Your libraries</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <% if admin? %>
+                <li><%= link_to("Admin:users view", users_path) %></li>
+                <% end %>
                 <li><a href="#" data-toggle="modal" data-target="#newModal">Create a new show</a></li>
                 <% if current_user %>
                 <li><%=link_to("Logout", "/users/sign_out", method: :delete)%></li>
