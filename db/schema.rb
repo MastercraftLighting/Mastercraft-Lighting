@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131022949) do
+ActiveRecord::Schema.define(version: 20160131193143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "CSV_input", force: :cascade do |t|
-    t.text     "name"
+  create_table "color_libraries", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "alias1"
+    t.string   "alias2"
+    t.string   "description"
+    t.float    "transmission"
+    t.string   "hex_code"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "csv_inputs", force: :cascade do |t|
     t.text     "device_type"
     t.text     "instrument_type"
     t.text     "wattage"
@@ -84,17 +94,6 @@ ActiveRecord::Schema.define(version: 20160131022949) do
     t.datetime "updated_at",                      null: false
   end
 
-  create_table "color_libraries", force: :cascade do |t|
-    t.string   "full_name"
-    t.string   "alias1"
-    t.string   "alias2"
-    t.string   "description"
-    t.float    "transmission"
-    t.string   "hex_code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"
     t.integer  "wattage"
@@ -113,7 +112,7 @@ ActiveRecord::Schema.define(version: 20160131022949) do
     t.text     "gobo_2"
     t.text     "focus"
     t.text     "accessories"
-    t.integer  "production_id",   null: false
+    t.integer  "production_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
@@ -182,6 +181,12 @@ ActiveRecord::Schema.define(version: 20160131022949) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "usertypes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "venues", force: :cascade do |t|
     t.string   "name",       null: false
