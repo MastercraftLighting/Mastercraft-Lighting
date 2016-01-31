@@ -1,21 +1,12 @@
 <div class="view-header">
-	<h2>Welcome back, <%=@user.username%></h2>
-</div>
-<div class="row dashboard">
-<div class="column dashboard-buttons">
-	<button type="button" class="btn" data-toggle="modal" data-target="#newModal">
-  	New Show
-</button>
-
+	<h2>Welcome back, <%=@user.username%>.  You are logged in as a <%=@user.user_type%></h2>
 </div>
 
-<div class="column dashboard-buttons">
-	<button type="button" class="btn">View Shows</button>
-</div>
-
-<div class="column dashboard-buttons">
-	<button type="button" class="btn">Libraries</h3></button>
-</div>
-</div>
-
-<%= render "productions/new_show_modal"%>
+<% @users.each do |user| %>
+  <span>Username: <%= user.username %></span>
+  <span>Email: <%= user.email %></span>
+  <span>User type: <%= user.user_type %></span>
+  <%= link_to("Delete", "/users(user.id)", method: :delete) %>
+  <%= link_to("Edit", "/users/edit(user.id)") %>
+  <%= link_to("View user's productions", "/productions/") %>
+<% end %>
