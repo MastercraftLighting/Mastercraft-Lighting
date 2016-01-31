@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    puts @users
+    puts @users.first.inspect
   end
 
   def show
