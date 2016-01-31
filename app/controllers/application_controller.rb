@@ -4,8 +4,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
 helper_method :admin?
+helper_method :check_admin
 
 private
+
+  def check_admin
+    redirect_to :root unless admin?
+  end
 
   def admin?
     if current_user && current_user.user_type == "Administrator"

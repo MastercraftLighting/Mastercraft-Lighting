@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   resources :channels
   resources :productions
 
+  resources :admins
+
 
 end
