@@ -34,7 +34,7 @@ class ProductionsController < ApplicationController
   end
 
   def destroy
-
+  end
 
 	def new
 		@production = Production.new(params)
