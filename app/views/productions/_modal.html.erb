@@ -6,14 +6,40 @@
         <h4 class="modal-title" id="myModalLabel">Edit Channel</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag(production_channel_path, method: "post") do %>
-        <!-- name channel, choose: dimmer, color, instrument type -->
-          <%= label_tag(:name, "Production Name:") %>
-          <%= text_field_tag(:name)%>
-          <%= label_tag(:date, "Production Date:") %>
-          <%= text_field_tag(:date)%>
-          <%= label_tag(:venue, "Venue:") %>
-          <%= text_field_tag(:venue)%>
+        <%= form_tag("productions/#{params[:id]}/channels") do %>
+          <%= label_tag(:instrument_type, "Instrument Type:") %>
+          <%= text_field_tag(:instrument_type)%>
+          <%= label_tag(:wattage, "Wattage:") %>
+          <%= text_field_tag(:wattage)%>
+          <%= label_tag(:purpose, "Purpose:") %>
+          <%= text_field_tag(:purpose)%>
+          <%= label_tag(:position, "Position:") %>
+          <%= text_field_tag(:position)%>
+          <%= label_tag(:unit_number, "Unit Number:") %>
+          <%= text_field_tag(:unit_number)%>
+          <%= label_tag(:color, "Color:") %>
+          <%= text_field_tag(:color)%>
+          <%= label_tag(:dimmer, "Dimmer:") %>
+          <%= text_field_tag(:dimmer)%>
+          <%= label_tag(:channel, "Channel:") %>
+          <%= text_field_tag(:channel)%>
+          <%= label_tag(:address, "DMX Address:") %>
+          <%= text_field_tag(:address)%>
+          <%= label_tag(:universe, "DMX Universe:") %>
+          <%= text_field_tag(:universe)%>
+          <%= label_tag(:circuit_number, "Circuit Number:") %>
+          <%= text_field_tag(:circuit_number)%>
+          <%= label_tag(:circuit_name, "Circuit Name:") %>
+          <%= text_field_tag(:circuit_name)%>
+          <%= label_tag(:gobo_1, "Gobo 1:") %>
+          <%= text_field_tag(:gobo_1)%>
+          <%= label_tag(:gobo_2, "Gobo 2:") %>
+          <%= text_field_tag(:gobo_2)%>
+          <%= label_tag(:focus, "Focus:") %>
+          <%= text_field_tag(:focus)%>
+          <%= label_tag(:accessories, "Accessories:") %>
+          <%= text_field_tag(:accessories)%>
+          <%= hidden_field_tag(:production_id, :value => @production.id) %>
         <%end%>
       </div>
       <div class="modal-footer">

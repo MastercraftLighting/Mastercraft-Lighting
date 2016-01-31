@@ -16,18 +16,8 @@ ActiveRecord::Schema.define(version: 20160131193143) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "color_libraries", force: :cascade do |t|
-    t.string   "full_name"
-    t.string   "alias1"
-    t.string   "alias2"
-    t.string   "description"
-    t.float    "transmission"
-    t.string   "hex_code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "csv_inputs", force: :cascade do |t|
+  create_table "CSV_input", force: :cascade do |t|
+    t.text     "name"
     t.text     "device_type"
     t.text     "instrument_type"
     t.text     "wattage"
@@ -94,6 +84,17 @@ ActiveRecord::Schema.define(version: 20160131193143) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "color_libraries", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "alias1"
+    t.string   "alias2"
+    t.string   "description"
+    t.float    "transmission"
+    t.string   "hex_code"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"
     t.integer  "wattage"
@@ -112,7 +113,7 @@ ActiveRecord::Schema.define(version: 20160131193143) do
     t.text     "gobo_2"
     t.text     "focus"
     t.text     "accessories"
-    t.integer  "production_id"
+    t.integer  "production_id",   null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
