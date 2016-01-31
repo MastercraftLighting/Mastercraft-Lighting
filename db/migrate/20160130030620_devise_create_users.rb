@@ -1,7 +1,7 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
-      t.integer :user_type, null: false
+      t.string :user_type, null: false
       t.string :username, null: false
 
       ## Database authenticatable

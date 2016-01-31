@@ -13,3 +13,46 @@
  *= require_tree .
  *= require_self
  */
+a {
+	text-decoration: none;
+	color: white;
+}
+
+ .header-text
+ {	padding: 1em;
+	background: linear-gradient(to right, rgba(219,219,219,1) 0%, rgba(212,212,212,1) 4%, rgba(204,204,204,1) 16%, rgba(247,247,247,1) 100%);
+}
+
+.navbar {
+	border-top: 2px solid yellow;
+	border-bottom: 2px solid yellow;
+	font-family: Quicksand;
+}
+
+.navbar-nav > li > a, .navbar-brand {padding-top:5px !important; padding-bottom:0 !important; height: 30px; } .navbar {min-height:30px !important;
+
+}
+
+h1{
+	font-family: Quicksand;
+}
+
+h2{
+	font-family: Quicksand;
+	
+}
+
+body {
+	background-color: #f6f1ed;
+	height: 100%;
+	padding-bottom: 4em;
+	font-family: Yanone-Kaffeesatz;
+
+}
+
+.logo {
+	max-width: 5em;
+	max-height: 5em;
+}
+
+
