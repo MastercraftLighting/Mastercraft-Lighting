@@ -1,5 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# Seed Usertype table
+usertypes= []
+users = ['Designer','ME','Administrator','Lead']
+users.each do |name|
+  Usertype.create!(name: name)
+end
 
 # Seed User table
 users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights1234', user_type: 'Designer'},

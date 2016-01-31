@@ -3,6 +3,7 @@ class AdminsController < ApplicationController
 
   def index
     @users = User.all
+    @usertypes = Usertype.all
   end
 
   def show
