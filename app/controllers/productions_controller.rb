@@ -2,6 +2,7 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
 
   def index
+    authenticate_user!
     @productions = Production.all
     @productions = current_user.productions unless admin?
     render :index
