@@ -19,7 +19,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="/shows/new">Create a new show</a></li>
-                <li><a href="#">Logout</a></li>
+                <li>
+                    <%=link_to("Logout", "/users/sign_out", method: :delete)%>
+                </li>
             </ul>
         </div>
     </nav>
