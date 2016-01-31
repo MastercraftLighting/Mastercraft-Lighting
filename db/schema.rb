@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130210217) do
+ActiveRecord::Schema.define(version: 20160131022949) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -84,6 +84,17 @@ ActiveRecord::Schema.define(version: 20160130210217) do
     t.datetime "updated_at",                      null: false
   end
 
+  create_table "color_libraries", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "alias1"
+    t.string   "alias2"
+    t.string   "description"
+    t.float    "transmission"
+    t.string   "hex_code"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"
     t.integer  "wattage"
@@ -139,6 +150,17 @@ ActiveRecord::Schema.define(version: 20160130210217) do
   create_table "productions_venues", force: :cascade do |t|
     t.integer "venue_id"
     t.integer "production_id"
+  end
+
+  create_table "unit_libraries", force: :cascade do |t|
+    t.string   "manufacturer"
+    t.string   "unit_type"
+    t.string   "unit_name"
+    t.string   "beam_angle"
+    t.float    "frame_size"
+    t.integer  "c_i"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
