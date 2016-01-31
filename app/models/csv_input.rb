@@ -21,9 +21,7 @@ class CsvInput < ActiveRecord::Base
          gobo_1: self.gobo_1,
          gobo_2: self.gobo_2,
          focus: self.focus,
-         accessories: self.accessories,
-       production_id: 20
-       #will need done elsewhere, possibly returning the data to a view
+         accessories: self.accessories
          )
     end
 
