@@ -25,7 +25,7 @@ class ProductionsController < ApplicationController
   end
 
   def show
-    @equipment = @production.equipment
+    @equipment = @production.equipment.sort_by &:channel
     render :new
   end
 
