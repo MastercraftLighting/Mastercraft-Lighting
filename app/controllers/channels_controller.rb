@@ -6,7 +6,8 @@ class ChannelsController < ApplicationController
   # end
 
   def create
-
+    p "*" * 40
+    p params.inspect
   end
 
   def new

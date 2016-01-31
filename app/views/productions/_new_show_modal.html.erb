@@ -5,20 +5,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">New Show</h4>
       </div> <!-- Close modal-header -->
-      <div class="modal-body">
-      	<%= form_tag("/productions/new", method: "post") do %>
-        	<%= label_tag(:name, "Production Name:") %>
-        	<%= text_field_tag(:name)%>
-        	<%= label_tag(:date, "Production Date:") %>
-        	<%= text_field_tag(:date)%>
-        	<%= label_tag(:venue, "Venue:") %>
-        	<%= text_field_tag(:venue)%>
-      	<%end%>
-      </div> <!-- Close modal-body -->
-    	<div class="modal-footer">
+        <div class="modal-body">
+          <%= form_for(@production) do |f| %>
+            <%= f.label(:name, "Production Name:") %>
+            <%= f.text_field(:name)%>
+            <br>
+            <%= f.label(:date, "Production Date:") %>
+            <%= f.text_field(:date)%>
+        </div> <!-- Close modal-body -->
+      <div class="modal-footer">
+        <button id="create_show" type="submit" class="btn btn-primary"><%= link_to "Create Show", controller: "/productions", action: :create %></button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close without saving</button>
-        <button type="button" class="btn btn-primary">Create Show</button>
       </div> <!-- Close modal footer -->
     </div> <!-- Close modal content -->
   </div> <!-- CLose modal-dialog -->
 </div> <!-- Close modal fade -->
+<% end %>

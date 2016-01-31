@@ -3,31 +3,29 @@ class ProductionsController < ApplicationController
 
   def index
     authenticate_user!
-    case current_user.user_type
-      when "Administrator"
-        @productions = Production.all
-      when "Designer"
-        @productions = current_user.designed_productions
-      when "ME"
-        @productions = current_user.master_electrician_productions
-      when "Lead"
-        @productions = current_user.lead_productions
-    end
-
+    set_productions
+    @production = Production.new(designer_id: current_user.id)
     render :index
   end
 
   def create
+    p "*" * 40
+    p params.inspect
+    set_productions
+    #if @user.user_type == ME
+
+    @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
+    if @production.save
+      render :index
+    else
+      redirect_to :root
+    end
 
   end
 
   def new
-    @production = Production.new(params)
-    if @production.save
-      redirect_to :new
-    else
-      redirect_to :index
-    end
+    p "#" * 40
+    p params.inspect
   end
 
   def edit
@@ -52,4 +50,16 @@ class ProductionsController < ApplicationController
       @production = Production.find(params[:id])
     end
 
+    def set_productions
+      case current_user.user_type
+      when "Administrator"
+        @productions = Production.all
+      when "Designer"
+        @productions = current_user.designed_productions
+      when "ME"
+        @productions = current_user.master_electrician_productions
+      when "Lead"
+        @productions = current_user.lead_productions
+    end
+    end
 end
