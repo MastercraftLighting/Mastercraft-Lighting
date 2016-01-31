@@ -1,7 +1,8 @@
   <div id="channel-hookup" class="tab-pane fade in active">
     <h3 class="sheet-name">Channel Hookup</h3>
-    <table class="channel-hook-up">
-      <tr class="channel-headers">
+    <table class="table channel-hook-up">
+      <thead>
+        <tr>
         <th class="Chan-H">Channel</th>
         <th class="Dim-H">Dim</th>
         <th class="Pos-H">Position</th>
@@ -12,7 +13,8 @@
         <th class="Gobo-H">Gobo</th>
         <th class="Acc-H">Accessories</th>
       </tr>
-
+    </thead>
+    <tbody>
       <% @equipment.each do |equip| %>
         <tr id="CH-Row<%= equip.id %>">
           <td class="e-ch"><%= equip.channel %></td>
@@ -26,6 +28,6 @@
           <td class="e-"><%= equip.accessories %></td>
         </tr>
       <% end %>
-
+    </tbody>
     </table>
   </div> <!-- Close channel-hookup -->

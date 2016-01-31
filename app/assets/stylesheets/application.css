@@ -13,6 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ .container {
+    border: 20px double pink;
+    border-image: -webkit-linear-gradient(45deg,#483D8B,yellow) 20 stretch;
+}
 a {
 	text-decoration: none;
 	color: white;
@@ -39,7 +44,7 @@ h1{
 
 h2{
 	font-family: Quicksand;
-	
+
 }
 
 body {
