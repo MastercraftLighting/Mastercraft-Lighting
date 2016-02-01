@@ -1,7 +1,9 @@
-<div class="productions-list">
+<table class="table">
   <% @productions.each do |production| %>
-    <div id="prod<%= production.id %>">
-      <a href="/productions/<%= production.id %>"> <%= production.name %> </a>
-    </div> <!-- Close prodxx div -->
+  <tr id="prod<%= production.id %>">
+    <td><%= production.name %></a> </td>
+    <td><%= button_to "View", production_path(production) %></td>
+    <td><%= button_to "Remove Production", production, :method => :delete %></td>
+  </tr>
   <% end %>
-</div>
+</table>
