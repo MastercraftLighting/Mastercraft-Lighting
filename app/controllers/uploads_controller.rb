@@ -12,7 +12,12 @@ class UploadsController < ApplicationController
     imported_data = CSV.parse(none_string, :col_sep => "\t")
     CsvInput.build(imported_data,@production.id)
     render "productions/show" #
+  end
 
+  def download
+    production_id = params[:id]
+    CsvInput.export(production_id)
+    send_file "public/tsv/download_#{production_id}.tsv", :type=>"application/tsv", :x_sendfile=>true
   end
 
   private

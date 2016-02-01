@@ -24,8 +24,8 @@ end
                 csv << line.attributes.values
             end
         end
-        tsv_string = csv_string.gsub(/,/,/\t/)
-        File.open("assets/file/download_#{production_id}.tsv", 'w') {|f| f.write(tsv_string) }
+        tsv_string = csv_string.gsub(/,/,"\t")
+        File.open("public/tsv/download_#{production_id}.tsv", 'w') {|f| f.write(tsv_string) }
     end
 
   private
