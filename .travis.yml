@@ -10,7 +10,7 @@ before_script:
   - cp config/database.yml.travis config/database.yml
 
 script:
-  - be rake db:create
-  - be rake db:migrate
-  - be rake db:seed
-  - be rake
+  - bundle exec rake db:create
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+  - bundle exec rake
