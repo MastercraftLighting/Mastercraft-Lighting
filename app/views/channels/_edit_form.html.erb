@@ -1,0 +1,16 @@
+<div class="ch-edit-row">
+  <% form_for(@channel,
+              url: "productions/#{:production_id}/channels/#{:id}",
+              html: {method: "patch"}) do |f| %>
+    <% f.text_field :channel %>
+    <% f.text_field :dimmer %>
+    <% f.text_field :position %>
+    <% f.text_field :unit_number %>
+    <% f.text_field :instrument_type %>
+    <% f.text_field :purpose %>
+    <% f.text_field :color %>
+    <% f.text_field :gobo_1 %>
+    <% f.text_field :gobo_2 %>
+    <% f.text_field :accessories %>
+  <% end %>
+</div> <!-- close ch-edit-row -->
