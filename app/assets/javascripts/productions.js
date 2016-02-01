@@ -71,7 +71,9 @@ var deleteRow = function(path){
     $('#CK-Row' + response.rowNumber).remove();
     $('#DM-Row' + response.rowNumber).remove();
     $('#IS-Row' + response.rowNumber).remove();
-  }).fail(console.log("ajax delete call failed "));
+  }).fail(function(response){
+    console.log("ajax delete call failed: " + response);
+  });
 };
 
 var editRow = function(path){
@@ -82,7 +84,9 @@ var editRow = function(path){
   }).done(function(response){
     console.log("Removing item:" );
     $('#CH-Row' + response.rowNumber).remove();
-  }).fail(console.log("ajax delete call failed "))
+  }).fail(function(response){
+    console.log("ajax delete call failed: " + response);
+  });
 };
 
 var getConfirmation = function(){
