@@ -6,7 +6,7 @@ RSpec.describe UsersController, type: :controller do
   describe UsersController do
     # let(:new_user) { FactoryGirl.create :user, :non_admin }
     # let(:admin) { FactoryGirl.create :user, :admin }
-    let(:attributes_user) { FactoryGirl.attributes_for :user, :non_admin}
+    let(:attributes_user) { FactoryGirl.attributes_for :user, :designer}
     let(:attributes_admin) { FactoryGirl.attributes_for :user, :admin}
 
     describe "GET #index for admin" do
