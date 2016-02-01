@@ -13,6 +13,8 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
 
@@ -20,6 +22,9 @@ group :development, :test do
 
   gem 'pry-byebug'
   gem 'pry'
+    #RSpec gems
+  gem 'rspec-rails', "~> 3.1.0"
+  gem "factory_girl_rails", "~> 4.4.1"
 end
 
 group :development do
@@ -29,6 +34,18 @@ end
 gem 'turbolinks'
 gem 'devise'
 gem 'smarter_csv'
-gem 'database_cleaner'
 gem 'rails_12factor', group: :production
+
+group :test do
+  #Rspec gems
+
+  gem 'capybara', "~> 2.4.3"
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'launchy', '~> 2.4.2'
+  gem 'selenium-webdriver', '~> 2.43.0'
+  gem 'simplecov', :require => false
+  gem 'shoulda'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+end
+
 ruby "2.3.0"

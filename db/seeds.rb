@@ -1,5 +1,11 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
+# Seed Usertype table
+usertypes= []
+users = ['Designer','ME','Administrator','Lead']
+users.each do |name|
+  Usertype.create!(name: name)
+end
 
 # Seed User table
 users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights1234', user_type: 'Designer'},
@@ -34,9 +40,36 @@ end
 # Production/Venue connection table??
 
 # Equipment Seed Table
-equipment = [{instrument_type: "LightingRig1", production_id: 1},
-             {instrument_type: "LightingRig2", production_id: 2},
-             {instrument_type: "LightingRig3", production_id: 3}]
+equipment = [{instrument_type: "Source 4 26deg", wattage: 575, purpose: "Fronts", position: "FOH 1",
+              unit_number: 1, color: "R60", dimmer: 10, channel: 1, address: 4, universe: 1,
+              circuit_number: 1, circuit_name: "A", production_id: 1},
+             {instrument_type: "Source 4 26deg", wattage: 575, purpose: "Fronts", position: "FOH 1",
+              unit_number: 2, color: "R60", dimmer: 8, channel: 2, address: 2, universe: 1,
+              circuit_number: 2, circuit_name: "A", production_id: 1},
+             {instrument_type: "Source 4 19deg", wattage: 575, purpose: "E's Special", position: "FOH 2",
+              unit_number: 1, color: "R33", dimmer: 6, channel: 3, address: 5, universe: 1,
+              circuit_number: 3, circuit_name: "A", production_id: 1},
+             {instrument_type: "Source 4 26deg", wattage: 575, purpose: "Fronts", position: "FOH 1",
+              unit_number: 3, color: "R60", dimmer: 4, channel: 4, address: 6, universe: 1,
+              circuit_number: 4, circuit_name: "A", production_id: 1},
+             {instrument_type: "Source 4 26deg", wattage: 575, purpose: "Fronts", position: "FOH 1",
+              unit_number: 4, color: "R60", dimmer: 2, channel: 5, address: 1, universe: 1,
+              circuit_number: 5, circuit_name: "A", production_id: 1},
+             {instrument_type: "Source 4 10deg", wattage: 575, purpose: "Center Spot", position: "E1",
+              unit_number: 3, color: "R08", dimmer: 23, channel: 13, address: 17, universe: 1,
+              circuit_number: 1, circuit_name: "C", production_id: 1},
+             {instrument_type: "Source 4 36deg", wattage: 575, purpose: "Backs", position: "E1",
+              unit_number: 4, color: "L079", dimmer: 24, channel: 14, address: 12, universe: 1,
+              circuit_number: 3, circuit_name: "C", production_id: 1},
+             {instrument_type: "Source 4 36deg", wattage: 575, purpose: "Backs", position: "E1",
+              unit_number: 5, color: "L079", dimmer: 25, channel: 15, address: 11, universe: 1,
+              circuit_number: 5, circuit_name: "C", production_id: 1},
+             {instrument_type: "Source 4 36deg", wattage: 575, purpose: "Backs", position: "E1",
+              unit_number: 1, color: "L079", dimmer: 21, channel: 11, address:15, universe: 1,
+              circuit_number: 1, circuit_name: "B", production_id: 1},
+             {instrument_type: "Source 4 36deg", wattage: 575, purpose: "Backs", position: "E1",
+              unit_number: 2, color: "L079", dimmer: 22, channel: 12, address: 14, universe: 1,
+              circuit_number: 2, circuit_name: "B", production_id: 1}]
 
 equipment.each do |piece|
   Equipment.create(piece)
@@ -64,9 +97,9 @@ wicked.venues << orb
 
 # Equipment Venue values
 
-equip1 = Equipment.find_by(instrument_type: "LightingRig1")
-equip2 = Equipment.find_by(instrument_type: "LightingRig2")
-equip3 = Equipment.find_by(instrument_type: "LightingRig3")
+equip1 = Equipment.find_by(instrument_type: "Source 4 36deg")
+equip2 = Equipment.find_by(instrument_type: "Source 4 26deg")
+equip3 = Equipment.find_by(instrument_type: "Source 4 10deg")
 # venue values from above
 
 shotgun.equipment << equip1

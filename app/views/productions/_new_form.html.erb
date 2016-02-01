@@ -1,0 +1,20 @@
+ <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Show</h4>
+      </div> <!-- Close modal-header -->
+        <div class="modal-body">
+            <% p "==============================================" %>
+        <% p @production %>
+        <% p "==============================================" %>
+        <%= form_for(@production, method: :post) do |f| %>
+            <%= f.label(:name, "Production Name:") %>
+            <%= f.text_field(:name)%>
+            <br>
+            <%= f.label(:date, "Production Date:") %>
+            <%= f.date_field(:date)%>
+            <button id="create_show" type="submit" class="btn btn-primary">Create Show</button>
+            <% end %>
+        </div> <!-- Close modal-body -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close without saving</button>
+      </div> <!-- Close modal footer -->

@@ -1,0 +1,9 @@
+<table class="table">
+  <% @productions.each do |production| %>
+  <tr id="prod<%= production.id %>">
+    <td><%= production.name %></a> </td>
+    <td><%= button_to "View", production_path(production), :method => :get %></td>
+    <td><%= button_to "Remove Production", production, :method => :delete %></td>
+  </tr>
+  <% end %>
+</table>
