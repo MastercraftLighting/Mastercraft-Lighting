@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # get 'users/:id' => 'users#show'
   get 'upload' => 'uploads#new'
   post 'uploads/create' => 'uploads#create'
+  get 'uploads/download' => 'uploads#download'
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
