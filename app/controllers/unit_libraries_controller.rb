@@ -4,4 +4,8 @@ class UnitLibrariesController < ApplicationController
     @units = UnitLibrary.all
   end
 
+  def library_index
+    render :library_index
+  end
+
 end

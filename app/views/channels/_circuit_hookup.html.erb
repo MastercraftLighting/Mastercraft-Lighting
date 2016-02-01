@@ -22,7 +22,7 @@
           <tr><td colspan="10"><h4><%= equipment_group.first.circuit_name %></h4></td></tr>
           <div class="dim-groups">
             <% equipment_group.each do |equip| %>
-              <tr id="DM-Row<%= equip.id %>">
+              <tr id="CK-Row<%= equip.id %>">
                 <td class="e-col"><%= equip.circuit_name %><%= equip.circuit_number %></td>
                 <td class="e-ch"><%= equip.channel %></td>
                 <td class="e-pos"><%= equip.position %></td>
@@ -32,6 +32,8 @@
                 <td class="e-"><%= equip.accessories %></td>
                 <td class="e-pur"><%= equip.purpose %></td>
                 <td class="e-col"><%= equip.color %></td>
+                <td><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></button></td>
+                <td><button type="button" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-remove" aria-hidden="true"></button></td>
               </tr>
             <% end %>
           </div> <!-- Close pos-groups -->
