@@ -37,9 +37,9 @@ class ChannelsController < ApplicationController
   end
 
   def update
-    p "*" * 40
+    p "-" * 40
     p params.inspect
-    p "*" * 40
+    p "-" * 40
   end
 
 
