@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
+  get "/print" => 'productions#print'
 
   # get 'users/:id' => 'users#show'
   get 'upload' => 'uploads#new'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :channels
   end
 
+  get "/productions/:production_id/print" => 'productions#print'
   resources :admins
 
   get "/libraries" => 'libraries#index'
