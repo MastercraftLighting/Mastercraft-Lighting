@@ -18,20 +18,22 @@
 
 
 <div class="tab-content">
-  <%=render "channel_hookup"%>
-  <%=render "circuit_hookup"%>
+  <%= render :partial => "channels/channel_hookup" %>
 
-  <%=render "dimmer_hookup"%>
+  <%= render :partial => "channels/circuit_hookup" %>
 
-  <%=render "instr_sched"%>
- </div>
-<%= render "modal" %>
+  <%= render :partial => "channels/dimmer_hookup" %>
+
+  <%= render :partial => "channels/instr_sched" %>
+</div>
+
+<%= render :partial =>"channels/modal" %>
 
 <%= render "inventory" %>
 
 <%= render "print" %>
 
-<%= render "library" %>
+
 
 
 
