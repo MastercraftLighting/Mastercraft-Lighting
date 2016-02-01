@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 //------------------------------------------------
-// Bootstrap Functions
+// Channel-view slider Functions
 //------------------------------------------------
 var toggleMenus = function(){
 	$(".inventory-toggle").click(function(e){
@@ -84,6 +84,7 @@ var editRow = function(path){
     console.log("editing item #:" + response.item_id +
                 " with " + response.attachmentPartial);
     $('#CH-Row' + response.item_id).html(response.attachmentPartial);
+    console.log("editing item:" );
   }).fail(function(response){
     console.log("ajax edit call failed: " + response);
   });
@@ -93,5 +94,7 @@ var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
 };
 
-
+//-------------------------------------------------
+// Printing
+//-------------------------------------------------
 
