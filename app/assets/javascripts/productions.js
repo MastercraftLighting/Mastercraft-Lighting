@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 //------------------------------------------------
-// Bootstrap Functions
+// Channel-view slider Functions
 //------------------------------------------------
 var toggleMenus = function(){
 	$(".inventory-toggle").click(function(e){
@@ -93,5 +93,7 @@ var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
 };
 
-
+//-------------------------------------------------
+// Printing
+//-------------------------------------------------
 
