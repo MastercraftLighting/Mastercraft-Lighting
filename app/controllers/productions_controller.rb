@@ -2,6 +2,7 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
 
   def index
+    p params
     authenticate_user!
     set_productions
     @production = Production.new(designer_id: current_user.id)
@@ -12,8 +13,6 @@ class ProductionsController < ApplicationController
     p "*" * 40
     p params.inspect
     set_productions
-    #if @user.user_type == ME
-
     @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
     if @production.save
       render :index
@@ -24,8 +23,8 @@ class ProductionsController < ApplicationController
   end
 
   def new
-    p "#" * 40
-    p params.inspect
+    @production = Production.new(designer_id: current_user.id)
+    render '_new_form', layout: false
   end
 
   def edit

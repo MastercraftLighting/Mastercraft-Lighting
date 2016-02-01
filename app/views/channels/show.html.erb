@@ -1,0 +1,47 @@
+<div class="col-md-3 channel-maker">
+	<span class="channel-box">
+	<!-- Button trigger modal -->
+<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
+  + New Channel
+</button>
+
+	</span>
+</div>
+<div class="col-md-9 tab-views">
+	<ul class="nav nav-tabs">
+		<li class="active"><a data-toggle="tab" href="#channel-hookup">Channel Hookup</a></li>
+  		<li><a data-toggle="tab" href="#circuit-hookup">Circuit Hookup</a></li>
+ 		<li><a data-toggle="tab" href="#dimmer-hookup">Dimmer Hookup</a></li>
+  		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
+	</ul>
+</div>
+
+
+<div class="tab-content">
+  <%=render "channel_hookup"%>
+  <%=render "circuit_hookup"%>
+
+  <%=render "dimmer_hookup"%>
+
+  <%=render "instr_sched"%>
+ </div>
+<%= render "modal" %>
+
+<%= render "inventory" %>
+
+<%= render "print" %>
+
+<%= render "library" %>
+
+
+
+<footer class="navbar navbar-default navbar-bottom navbar-fixed" role="navigation">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right">
+      <li class="bottom-button print-toggle"><a href="/">Print</a></li>
+      <li class="bottom-button inventory-toggle"><a href="/">Inventory</a></li>
+      <li class="bottom-button library-toggle"><a href="/">Library</a></li>
+    </ul>
+  </div>
+
+</footer>

@@ -1,0 +1,42 @@
+<% @equipment = @equipment.sort_by &:position %>
+<% equipment_groupings = @equipment.slice_when {|a, b| a.position != b.position}.to_a %>
+<div id="instr-sched" class="tab-pane fade">
+    <h3>Instrument Schedule</h3>
+    <table class="table instrument-schedule">
+    <thead>
+      <tr>
+        <th class="Pos-H">Position</th>
+        <th class="Unit-H">Unit#</th>
+        <th class="Chan-H">Channel</th>
+        <th class="Dim-H">Dim</th>
+        <th class="Inst-H">Instrument Type</th>
+        <th class="Watt-H">Watt</th>
+        <th class="Purp-H">Purpose</th>
+        <th class="Col-H">Color</th>
+        <th class="Gobo-H">Gobo</th>
+        <th class="Acc-H">Accessories</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% equipment_groupings.each do |equipment_group| %>
+        <tr><td colspan="10"><h4><%= equipment_group.first.position %></h4></td></tr>
+        <div class="pos-groups">
+          <% equipment_group.each do |equip| %>
+            <tr id="IS-Row<%= equip.id %>">
+              <td class="e-pos"></td>
+              <td class="e-num"><%= equip.unit_number %></td>
+              <td class="e-ch"><%= equip.channel %></td>
+              <td class="e-dim"><%= equip.dimmer %></td>
+              <td class="e-typ"><%= equip.instrument_type %></td>
+              <td class="e-wat"><%= equip.wattage %></td>
+              <td class="e-pur"><%= equip.purpose %></td>
+              <td class="e-col"><%= equip.color %></td>
+              <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
+              <td class="e-"><%= equip.accessories %></td>
+            </tr>
+          <% end %>
+        </div> <!-- Close pos-groups -->
+      <% end %>
+    </tbody>
+  </table>
+</div> <!-- Close instr-sched -->
