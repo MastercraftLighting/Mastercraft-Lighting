@@ -1,0 +1,30 @@
+<h2> Color Library </h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Full Name </th>
+      <th> Alias 1 </th>
+      <th> Alias 2 </th>
+      <th> Description </th>
+      <th> Transmission </th>
+      <th> Hex Code </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @colors.each do |color| %>
+        <tr>
+          <td><%= color.full_name %></td>
+          <td><%= color.alias1 %></td>
+          <td><%= color.alias2 %></td>
+          <td><%= color.description %></td>
+          <td><%= color.transmission %></td>
+          <td><%= color.hex_code %></td>
+        </tr>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+
+

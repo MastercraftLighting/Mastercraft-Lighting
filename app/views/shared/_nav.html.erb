@@ -14,13 +14,24 @@
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
                 <li><a href="/users/#">Dashboard</a></li>
-                <li><a href="#">Your Shows</a></li>
+                <li><a href="/productions">Your Shows</a></li>
                 <li><a href="#">Your libraries</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" data-toggle="modal" data-target="#newModal">Create a new show</a></li>
-                <li><a href="#">Logout</a></li>
+                <% if admin? %>
+                <li><%= link_to("Admin:users view", admins_path) %></li>
+                <% else %>
+                <li><%= link_to("Update registration", edit_user_registration_path) %></li>
+                <% end %>
+                <li><a href="/productions/new" data-toggle="modal" data-target="#newModal">Create a new show</a></li>
+                <% if current_user %>
+                <li><%=link_to("Logout", "/users/sign_out", method: :delete)%></li>
+                <% else %>
+                <li><%=link_to("Login", "/users/sign_in")%></li>
+                <% end %>
+
             </ul>
         </div>
     </nav>
 </div>
+<%= render "productions/new_show_modal" %>

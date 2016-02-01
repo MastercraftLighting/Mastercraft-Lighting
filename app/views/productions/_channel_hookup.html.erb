@@ -1,19 +1,22 @@
-  <% if @production %>
-  <div id="channel-hookup" class="tab-pane fade in active">
-    <h3 class="sheet-name">Channel Hookup</h3>
-    <table class="channel-hook-up">
-      <tr class="channel-headers">
-        <th class="Chan-H">Channel</th>
-        <th class="Dim-H">Dim</th>
-        <th class="Pos-H">Position</th>
-        <th class="Unit-H">Unit#</th>
-        <th class="Inst-H">Instrument Type</th>
-        <th class="Purp-H">Purpose</th>
-        <th class="Col-H">Color</th>
-        <th class="Gobo-H">Gobo</th>
-        <th class="Acc-H">Accessories</th>
-      </tr>
 
+  <% if @production %>
+<div id="channel-hookup" class="tab-pane fade in active">
+  <h3 class="sheet-name">Channel Hookup</h3>
+  <table class="table channel-hook-up">
+    <thead>
+      <tr>
+      <th class="Chan-H">Channel</th>
+      <th class="Dim-H">Dim</th>
+      <th class="Pos-H">Position</th>
+      <th class="Unit-H">Unit#</th>
+      <th class="Inst-H">Instrument Type</th>
+      <th class="Purp-H">Purpose</th>
+      <th class="Col-H">Color</th>
+      <th class="Gobo-H">Gobo</th>
+      <th class="Acc-H">Accessories</th>
+    </tr>
+    </thead>
+    <tbody>
       <% @equipment.each do |equip| %>
         <tr id="CH-Row<%= equip.id %>">
           <td class="e-ch"><%= equip.channel %></td>
@@ -27,7 +30,7 @@
           <td class="e-"><%= equip.accessories %></td>
         </tr>
       <% end %>
-
-    </table>
-  </div> <!-- Close channel-hookup -->
-<%end%>
+    </tbody>
+  </table>
+</div> <!-- Close channel-hookup -->
+>>>>>>> 6f18cb6a6b4fdfde72150931a8e009faff1bb5a6

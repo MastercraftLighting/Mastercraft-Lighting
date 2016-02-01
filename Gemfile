@@ -28,5 +28,7 @@ group :development do
 end
 gem 'turbolinks'
 gem 'devise'
+gem 'smarter_csv'
+gem 'database_cleaner'
 gem 'rails_12factor', group: :production
 ruby "2.3.0"

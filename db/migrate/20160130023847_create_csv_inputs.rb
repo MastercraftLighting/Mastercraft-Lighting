@@ -1,7 +1,6 @@
 class CreateCsvInputs < ActiveRecord::Migration
   def change
-    create_table :CSV_input do |t|
-      t.text :name
+    create_table :csv_inputs do |t|
       t.text :device_type
       t.text :instrument_type
       t.text :wattage

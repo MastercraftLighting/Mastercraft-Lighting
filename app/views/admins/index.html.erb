@@ -1,0 +1,13 @@
+<div class="view-header">
+	<h2>Welcome back, <%=current_user.username%>.  You are logged in as a <%=current_user.user_type%></h2>
+</div>
+
+<% @users.each do |user| %>
+  <span>Username: <%= user.username %></span><br>
+  <span>Email: <%= user.email %></span><br>
+  <span>User type: <%= user.user_type %></span><br>
+  <%= link_to "Delete", admin_path(id: user.id), method: :delete %>  <br>
+  <%= link_to "Make user an Admin", admin_path(id: user.id), method: :patch %>  <br>
+  <%= link_to "View user's productions", admin_path(id: user.id) %><br>
+  <br>
+<% end %>

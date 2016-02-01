@@ -18,7 +18,7 @@ class CreateEquipment < ActiveRecord::Migration
       t.text :gobo_2
       t.text :focus
       t.text :accessories
-      t.integer :production_id, null: false
+      t.integer :production_id
       t.timestamps null: false
     end
   end
