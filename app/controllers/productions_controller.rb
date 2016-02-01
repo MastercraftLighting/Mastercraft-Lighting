@@ -41,6 +41,9 @@ class ProductionsController < ApplicationController
   end
 
   def destroy
+    production = Production.find(params[:id])
+    production.destroy
+    redirect_to productions_path
   end
 
   private
