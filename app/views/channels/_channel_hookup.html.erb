@@ -26,7 +26,7 @@
           <td class="e-col"><%= equip.color %></td>
           <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
           <td class="e-"><%= equip.accessories %></td>
-          <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/channels/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+          <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/channels/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true" data-toggle="modal" data-target="#myModal"></a></td>
           <td><a class="deep-red delete-button" href="/productions/<%= equip.production_id %>/channels/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
         </tr>
       <% end %>
