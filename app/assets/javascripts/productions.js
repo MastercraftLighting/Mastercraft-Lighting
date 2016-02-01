@@ -5,7 +5,7 @@ $(document).ready(function(){
 });
 
 //------------------------------------------------
-// Bootstrap Functions
+// Channel-view slider Functions
 //------------------------------------------------
 var toggleMenus = function(){
 	$(".inventory-toggle").click(function(e){
@@ -78,5 +78,7 @@ var editRow = function(path){
   }).fail(console.log("ajax delete call failed "))
 };
 
-
+//-------------------------------------------------
+// Printing
+//-------------------------------------------------
 

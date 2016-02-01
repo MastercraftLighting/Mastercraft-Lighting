@@ -45,11 +45,28 @@ class ProductionsController < ApplicationController
     redirect_to productions_path
   end
 
+
+  def print
+  	@production = Production.find(1)
+  	@equipment = @production.equipment.sort_by &:channel
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "print_views", :template => "print.html.erb"
+      end
+    end
+  end
+
+
   private
 
-    def set_production
+   def set_production
+    if params[:id]
       @production = Production.find(params[:id])
-    end
+  	else
+  		@production = Production.find(params[:production_id])
+  	end
+   end
 
     def set_productions
       case current_user.user_type
