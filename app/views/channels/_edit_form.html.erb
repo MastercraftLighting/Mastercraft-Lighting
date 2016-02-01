@@ -1,4 +1,4 @@
-<div class="ch-edit-row">
+<!-- <div class="ch-edit-row"> -->
   <%= form_for(@channel,
               url: "productions/#{:production_id}/channels/#{:id}",
               html: {method: "patch"}) do |f| %>
@@ -12,4 +12,4 @@
     <td class="edit-cell"><%= f.text_field :gobo_1, :size=>"5" %></td>
     <td class="edit-cell"><%= f.text_field :accessories, :size=>"5" %></td>
   <% end %>
-</div> <!-- close ch-edit-row -->
+<!-- </div> close ch-edit-row -->
