@@ -1,4 +1,4 @@
-<%= form_tag({action: :create}, multipart: true) do %>
+<%= form_tag({action: :create}, {production_id: @production.id}, multipart: true) do %>
   <%= file_field_tag 'vectorworks_file' %>
   <%= submit_tag "Upload"  %>
 <% end %>

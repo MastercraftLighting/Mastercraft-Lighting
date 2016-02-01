@@ -1,7 +1,32 @@
 class CsvInput < ActiveRecord::Base
+  belongs_to :production
   after_create :infer_equipment
 
+  def self.build(imported_data,production_id)
+    headers = imported_data.shift
+    headers.map! do |header|
+        header.downcase.gsub(/ /,"_").gsub(/&&/,"and")
+    end
+    imported_data.each do |line|
+        new_record = self.create(production_id: production_id)
+        line_params = {production_id: production_id}
+        headers.each_with_index do |header, index|
+            line_params.update(header => line[index])
+        end
+        self.create(line_params)
+    end
+end
 
+    def self.export(production_id) #this may belong in production class I think
+        csv_string = CSV.generate do |csv|
+            csv << self.attribute_names
+            self.where(production_id: production_id).each do |line|
+                csv << line.attributes.values
+            end
+        end
+        tsv_string = csv_string.gsub(/,/,/\t/)
+        File.open("assets/file/download_#{production_id}.tsv", 'w') {|f| f.write(tsv_string) }
+    end
 
   private
     def infer_equipment
@@ -22,7 +47,8 @@ class CsvInput < ActiveRecord::Base
          gobo_1: self.gobo_1,
          gobo_2: self.gobo_2,
          focus: self.focus,
-         accessories: self.accessories
+         accessories: self.accessories,
+         production_id: self.production_id
          )
     end
 
