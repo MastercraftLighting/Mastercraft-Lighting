@@ -49,7 +49,11 @@ class ProductionsController < ApplicationController
   private
 
     def set_production
-      @production = Production.find(params[:id])
+      if params[:id]
+        @production = Production.find(params[:id])
+      else
+        @production = Production.find(params[:production_id])
+      end
     end
 
     def set_productions

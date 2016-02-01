@@ -101,23 +101,23 @@ ActiveRecord::Schema.define(version: 20160201174742) do
     t.text     "instrument_type"
     t.integer  "wattage"
     t.text     "purpose"
-    t.text     "position"
+    t.text     "position",        default: "0"
     t.text     "unit_number"
     t.text     "color"
-    t.integer  "dimmer"
-    t.integer  "channel"
+    t.integer  "dimmer",          default: 0
+    t.integer  "channel",         default: 0
     t.integer  "address"
     t.text     "universe"
-    t.integer  "circuit_number"
-    t.text     "circuit_name"
+    t.integer  "circuit_number",  default: 0
+    t.text     "circuit_name",    default: "!"
     t.float    "frame_size"
     t.text     "gobo_1"
     t.text     "gobo_2"
     t.text     "focus"
     t.text     "accessories"
     t.integer  "production_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "equipment_notes", force: :cascade do |t|
