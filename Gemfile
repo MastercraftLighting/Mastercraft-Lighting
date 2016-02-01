@@ -47,4 +47,4 @@ group :test do
   gem 'shoulda-callback-matchers', '~> 1.1.1'
 end
 
-ruby "2.3.0"
+ruby "2.2.2"
