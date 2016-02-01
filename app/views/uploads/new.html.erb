@@ -1,6 +1,0 @@
-<%= form_tag({action: :create, production_id: @production.id}, multipart: true) do %>
-  <%= file_field_tag 'vectorworks_file' %>
-  <%= submit_tag "Upload"  %>
-<% end %>
-
-<%= link_to "Download", uploads_download_path(id: @production.id) %>

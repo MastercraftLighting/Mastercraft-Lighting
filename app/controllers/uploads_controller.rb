@@ -1,10 +1,6 @@
 class UploadsController < ApplicationController
   require 'csv'
 
-  def new
-    @production = Production.find(1) # change to real production
-  end
-
   def create
     @production = Production.find(params[:id])
     input_string = params[:vectorworks_file].read.force_encoding('MacRoman').encode('UTF-8')
