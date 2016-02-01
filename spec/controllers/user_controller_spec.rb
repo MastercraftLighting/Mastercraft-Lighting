@@ -4,20 +4,34 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
   include Devise::TestHelpers
 
-  describe UsersController do
+  ### NOTE : This route is not being used, is /admins instead
+  # context "#index" do
+  #   login_admin
+  #   it "responds with a successful 200" do
+  #     get :index
+  #     expect(response).to be_success
+  #     expect(response.status).to eq(200)
+  #   end
+  #   xit "renders the index template" do
+  #     get :index
+  #     expect(response).to render_template("index")
+  #   end
+  # end
 
-      # describe 'GET #show' do
-      #   before(:each) do
-      #     get :show, id: user.idbe rspec
-      #   end
+  # context "#show" do
+  #   login_user
+  #   it "responds with a successful 200" do
+  #     # get :show
+  #     expect(response).to be_success
+  #     expect(response.status).to eq(200)
+  #   end
+  #   it "renders the index template" do
+  #     get :show
+  #     expect(response).to render_template("show")
+  #   end
+  # end
+  ### Also not a route anymore, do we need the controller???
 
-      #   it "assigns the user instance variable" do
-      #     expect(assigns[:user]).to be_a(User)
-      #   end
-      # end
-
-
-  end
 end
 
 
