@@ -82,10 +82,10 @@ var editRow = function(path){
     url: path,
     dataType: 'json'
   }).done(function(response){
-    console.log("Removing item:" );
+    console.log("editing item:" );
     $('#CH-Row' + response.rowNumber).remove();
   }).fail(function(response){
-    console.log("ajax delete call failed: " + response);
+    console.log("ajax edit call failed: " + response);
   });
 };
 
