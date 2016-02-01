@@ -16,5 +16,9 @@ Rails.application.routes.draw do
 
   resources :admins
 
+  #below realistically out to single out indexes if we
+  #don't use them for anything else
+  resources :unit_libraries
+  resources :color_libraries
 
 end
