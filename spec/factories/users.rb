@@ -10,7 +10,7 @@ FactoryGirl.define do
     user_type "Administrator"
   end
 
-  trait :non_admin do
+  trait :designer do
     user_type "Designer"
   end
 
