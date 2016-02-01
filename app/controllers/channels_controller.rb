@@ -21,7 +21,8 @@ class ChannelsController < ApplicationController
   end
 
   def edit
-
+    @channel
+    render :partial "modal"
   end
 
   # def show
@@ -32,9 +33,15 @@ class ChannelsController < ApplicationController
   end
 
 
-  # def destroy
-
-  # end
+  def destroy
+    item = @production.equipment.find(params[:id])
+    item.destroy
+    if request.xhr?
+      render json: {rowNumber: item.id}
+    else
+      redirect back
+    end
+  end
 
   private
 
