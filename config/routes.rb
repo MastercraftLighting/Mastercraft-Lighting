@@ -16,8 +16,7 @@ Rails.application.routes.draw do
 
   resources :admins
 
-  get "/libraries" => 'unit_libraries#library_index'
-  get "/unit_libraries" => 'unit_libraries#index'
-  get "/color_libraries" => 'color_libraries#index'
+  get "/libraries" => 'libraries#index'
+  get "/libraries/:id" => 'libraries#show'
 
 end
