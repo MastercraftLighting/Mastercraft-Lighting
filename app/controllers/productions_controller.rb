@@ -5,7 +5,6 @@ class ProductionsController < ApplicationController
     p params
     authenticate_user!
     set_productions
-    @production = Production.new(designer_id: current_user.id)
     render :index
   end
 
