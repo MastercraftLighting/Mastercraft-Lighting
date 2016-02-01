@@ -38,23 +38,44 @@ var bindListeners = function(){
 var deleteButtonListener = function(){
   $('#channel-hookup').on('click', '.delete-button', function(e){
     e.preventDefault();
-    console.log("delete row")
-    deleteRow();
+    console.log("delete row: " + this);
+    deleteRow(this);
   });
 };
 
 var editButtonListener = function(){
   $('#channel-hookup').on('click', '.edit-button', function(e){
     e.preventDefault();
-    console.log("edit row")
-    deleteRow();
+    console.log("edit row: " + this);
+    editRow(this);
   });
 };
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------
-var deleteRow = function(){
+var deleteRow = function(path){
+  $.ajax({
+    method: "DELETE",
+    url: path,
+    dataType: 'json'
+  }).done(function(response){
+    console.log("Removing item:" );
+    $('#CH-Row' + response.rowNumber).remove();
+    $('#CK-Row' + response.rowNumber).remove();
+    $('#DM-Row' + response.rowNumber).remove();
+    $('#IS-Row' + response.rowNumber).remove();
+  }).fail(console.log("ajax delete call failed "))
+};
 
+var editRow = function(path){
+  $.ajax({
+    method: "GET",
+    url: path,
+    dataType: 'json'
+  }).done(function(response){
+    console.log("Removing item:" );
+    $('#CH-Row' + response.rowNumber).remove();
+  }).fail(console.log("ajax delete call failed "))
 };
 
 
