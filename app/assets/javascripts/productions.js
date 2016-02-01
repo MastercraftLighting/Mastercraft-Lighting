@@ -80,10 +80,10 @@ var editRow = function(path){
   $.ajax({
     method: "GET",
     url: path,
-    dataType: 'json'
   }).done(function(response){
-    console.log("editing item:" );
-    $('#CH-Row' + response.rowNumber).remove();
+    console.log("editing item #:" + response.item_id +
+                " with " + response.attachmentPartial);
+    $('#CH-Row' + response.item_id).html(response.attachmentPartial);
   }).fail(function(response){
     console.log("ajax edit call failed: " + response);
   });

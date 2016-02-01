@@ -22,7 +22,17 @@ class ChannelsController < ApplicationController
 
   def edit
     @channel
-    render :_edit_form
+    if request.xhr?
+      p "*" * 40
+      p render_to_string('_edit_form', :layout => false, :locals => { :channel => @channel })
+      p "*" * 40
+      render :json => { :attachmentPartial =>
+                        render_to_string('_edit_form',
+                        :layout => false, :locals => { :channel => @channel }),
+                        :item_id => @channel.id }
+    else
+      #do something else...
+    end
   end
 
   # def show
