@@ -32,7 +32,7 @@ class ProductionsController < ApplicationController
 
   def show
     @equipment = @production.equipment.sort_by &:channel
-    render productions_path
+    render :show
   end
 
   def update
