@@ -2,5 +2,7 @@
 
 FactoryGirl.define do
   factory :production do
+    name "Production"
+    date "02/06/2016"
   end
 end

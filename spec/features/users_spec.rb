@@ -12,7 +12,7 @@ feature "Users", :type => :feature do
   end
 
   def login_as_designer
-    admin = User.create!(FactoryGirl.attributes_for :user, :designer)
+    @user = User.create!(FactoryGirl.attributes_for :user, :designer)
     visit '/'
     click_link("Login")
     fill_in "Email", :with => "user@user.com"

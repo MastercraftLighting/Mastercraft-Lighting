@@ -1,5 +1,7 @@
 # require 'rails_helper'
 
+# EXAMPLE TESTS FROM JON- NOT FOR THIS APP
+
 # describe User do
 #   let
 

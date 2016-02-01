@@ -3,7 +3,7 @@ require 'rails_helper'
 feature "Libraries", :type => :feature do
 
   def login_as_designer
-    admin = User.create!(FactoryGirl.attributes_for :user, :designer)
+    @user = User.create!(FactoryGirl.attributes_for :user, :designer)
     visit '/'
     click_link("Login")
     fill_in "Email", :with => "user@user.com"
