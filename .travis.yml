@@ -8,4 +8,9 @@ services:
 
 before_script:
   - cp config/database.yml.travis config/database.yml
-  - psql -c 'create database Mastercraft_Lighting_test;' -U postgres
+
+script:
+  - be rake db:create
+  - be rake db:migrate
+  - be rake db:seed
+  - be rake
