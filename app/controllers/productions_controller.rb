@@ -6,7 +6,9 @@ class ProductionsController < ApplicationController
 		@production = Production.new(params)
 		if @production.save
 			redirect_to :new
+			@equipment = @production.equipment
 		else
 			redirect_to :index
+		end
 	end
 end
