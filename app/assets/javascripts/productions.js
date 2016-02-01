@@ -83,7 +83,7 @@ var editRow = function(path){
     dataType: 'json'
   }).done(function(response){
     console.log("editing item:" );
-    $('#CH-Row' + response.rowNumber).remove();
+
   }).fail(function(response){
     console.log("ajax edit call failed: " + response);
   });
