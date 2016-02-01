@@ -8,7 +8,7 @@
       <div class="modal-body">
         <%= form_tag("/productions/#{params[:id]}/channels") do %>
           <%= label_tag(:channel, "Channel:") %>
-          <%= text_field_tag(:channel)%>
+          <%= text_field_tag(:channel, @equip.channel) %>
           <br>
           <%= label_tag(:instrument_type, "Instrument Type:") %>
           <%= text_field_tag(:instrument_type)%>

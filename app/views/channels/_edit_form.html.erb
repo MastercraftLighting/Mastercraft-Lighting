@@ -1,0 +1,53 @@
+<%= form_for @equipment, url: {action: "update"} do %>
+  <%= label_tag(:channel, "Channel:") %>
+  <%= text_field_tag(:channel) %>
+  <br>
+  <%= label_tag(:instrument_type, "Instrument Type:") %>
+  <%= text_field_tag(:instrument_type)%>
+  <br>
+  <%= label_tag(:position, "Position:") %>
+  <%= text_field_tag(:position)%>
+  <br>
+  <%= label_tag(:unit_number, "Unit Number:") %>
+  <%= text_field_tag(:unit_number)%>
+  <br>
+  <%= label_tag(:purpose, "Purpose:") %>
+  <%= text_field_tag(:purpose)%>
+  <br>
+  <%= label_tag(:wattage, "Wattage:") %>
+  <%= text_field_tag(:wattage)%>
+  <br>
+  <%= label_tag(:color, "Color:") %>
+  <%= text_field_tag(:color)%>
+  <br>
+  <%= label_tag(:dimmer, "Dimmer:") %>
+  <%= text_field_tag(:dimmer)%>
+  <br>
+  <%= label_tag(:address, "DMX Address:") %>
+  <%= text_field_tag(:address)%>
+  <br>
+  <%= label_tag(:universe, "DMX Universe:") %>
+  <%= text_field_tag(:universe)%>
+  <br>
+  <%= label_tag(:circuit_number, "Circuit Number:") %>
+  <%= text_field_tag(:circuit_number)%>
+  <br>
+  <%= label_tag(:circuit_name, "Circuit Name:") %>
+  <%= text_field_tag(:circuit_name)%>
+  <br>
+  <%= label_tag(:gobo_1, "Gobo 1:") %>
+  <%= text_field_tag(:gobo_1)%>
+  <br>
+  <%= label_tag(:gobo_2, "Gobo 2:") %>
+  <%= text_field_tag(:gobo_2)%>
+  <br>
+  <%= label_tag(:focus, "Focus:") %>
+  <%= text_field_tag(:focus)%>
+  <br>
+  <%= label_tag(:accessories, "Accessories:") %>
+  <%= text_field_tag(:accessories)%>
+  <br>
+  <%= hidden_field_tag(:production_id, :value => @production.id) %>
+
+
+
