@@ -39,7 +39,14 @@ var deleteButtonListener = function(){
   $('#channel-hookup').on('click', '.delete-button', function(e){
     e.preventDefault();
     console.log("delete row: " + this);
-    deleteRow(this);
+    var userConfirm = getConfirmation();
+    console.log(userConfirm);
+    if (userConfirm == true){
+      console.log("user confirmed deletion");
+      deleteRow(this);
+    } else {
+      console.log("user cancelled delete action");
+    };
   });
 };
 
@@ -64,7 +71,9 @@ var deleteRow = function(path){
     $('#CK-Row' + response.rowNumber).remove();
     $('#DM-Row' + response.rowNumber).remove();
     $('#IS-Row' + response.rowNumber).remove();
-  }).fail(console.log("ajax delete call failed "))
+  }).fail(function(response){
+    console.log("ajax delete call failed: " + response);
+  });
 };
 
 var editRow = function(path){
@@ -73,9 +82,15 @@ var editRow = function(path){
     url: path,
     dataType: 'json'
   }).done(function(response){
-    console.log("Removing item:" );
-    $('#CH-Row' + response.rowNumber).remove();
-  }).fail(console.log("ajax delete call failed "))
+    console.log("editing item:" );
+
+  }).fail(function(response){
+    console.log("ajax edit call failed: " + response);
+  });
+};
+
+var getConfirmation = function(){
+  return confirm("This will permanently delete this data from your show. Continue?");
 };
 
 //-------------------------------------------------

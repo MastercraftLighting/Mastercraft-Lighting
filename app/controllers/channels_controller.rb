@@ -1,6 +1,6 @@
 class ChannelsController < ApplicationController
-  before_action :set_channel, only: [:show, :update, :destroy, :create, :edit]
   before_action :set_production, only: [:show, :update, :destroy, :create, :edit]
+  before_action :set_channel, only: [:show, :update, :destroy, :edit]
 
 
   def create
@@ -14,13 +14,12 @@ class ChannelsController < ApplicationController
   end
 
   def new
-
+    @channel = Equipment.new
   end
 
   def edit
     @channel
-    @equipment = @production.equipment.sort_by &:channel
-    redirect_to production_channel_path
+    render :_edit_form
   end
 
   def show
@@ -28,7 +27,9 @@ class ChannelsController < ApplicationController
   end
 
   def update
-
+    p "*" * 40
+    p params.inspect
+    p "*" * 40
   end
 
 
@@ -46,8 +47,7 @@ class ChannelsController < ApplicationController
   private
 
   def set_channel
-    equipment = Production.find(params[:production_id])
-    @channel = Equipment.find_by(channel: params[:id])
+    @channel = @production.equipment.find(params[:id])
   end
 
   def set_production

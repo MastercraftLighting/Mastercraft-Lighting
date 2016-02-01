@@ -30,6 +30,7 @@ class ProductionsController < ApplicationController
 
   end
 
+  # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
     @equipment = @production.equipment.sort_by &:channel
     render :show
@@ -67,7 +68,6 @@ class ProductionsController < ApplicationController
   		@production = Production.find(params[:production_id])
   	end
    end
-
     def set_productions
       case current_user.user_type
       when "Administrator"
