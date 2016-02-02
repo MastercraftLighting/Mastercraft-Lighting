@@ -1,3 +1,5 @@
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.dimmer, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
 <% equipment_groupings = @equipment.slice_when {|a, b| a.channel != b.channel}.to_a %>
 <div id="channel-hookup" class="tab-pane fade in active">
   <h3 class="sheet-name">Channel Hookup</h3>
