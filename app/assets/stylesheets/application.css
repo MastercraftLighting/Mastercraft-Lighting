@@ -14,10 +14,21 @@
  *= require_self
  */
 
- .container {
-    border: 20px double pink;
-    border-image: -webkit-linear-gradient(45deg,#483D8B,yellow) 20 stretch;
+
+h1 {
+	font-family: Quicksand;
 }
+
+h2{
+	font-family: Quicksand;
+
+}
+
+ .container {
+    border-left: 5px double #483D8B;
+    border-right: 5px double #483D8B;
+}
+    
 a {
 	text-decoration: none;
 	color: white;
@@ -38,14 +49,7 @@ a {
 
 }
 
-h1{
-	font-family: Quicksand;
-}
 
-h2{
-	font-family: Quicksand;
-
-}
 
 body {
 	background-color: #f6f1ed;
@@ -59,5 +63,6 @@ body {
 	max-width: 5em;
 	max-height: 5em;
 }
+
 
 
