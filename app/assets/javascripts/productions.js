@@ -30,6 +30,7 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
+  editInputButtonListener();
 };
 
 //-------------------------------------------------
@@ -55,6 +56,16 @@ var editButtonListener = function(){
     e.preventDefault();
     console.log("edit row: " + this);
     editRow(this);
+  });
+};
+
+var editInputButtonListener = function(){
+  $('#channel-hookup').on("click", ".edit-input-btn", function(e){
+    e.preventDefault();
+    form = $(this).parent().parent();
+    test = $(form).child();
+    console.log("edit input button clicked: " + test);
+    updateRow(formData);
   });
 };
 //-------------------------------------------------
@@ -92,6 +103,13 @@ var editRow = function(path){
 
 var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
+};
+
+var updateRow = function(formData){
+  // $.ajax({
+  //   method: "PATCH",
+  //   url:
+  // })
 };
 
 //-------------------------------------------------

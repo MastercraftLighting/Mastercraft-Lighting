@@ -1,6 +1,6 @@
-  <%= form_for(@channel,
+  <%= form_for @channel,
               url: "productions/#{:production_id}/channels/#{:id}",
-              html: {method: "patch"}) do |f| %>
+              html: {method: "patch"}  do |f| %>
     <td class="edit-cell"><%= f.text_field :channel, :size=>"#{:channel.length/2}" %></td>
     <td class="edit-cell"><%= f.text_field :dimmer, :size=>"5" %></td>
     <td class="edit-cell"><%= f.text_field :position, :size=>"5" %></td>
@@ -10,6 +10,6 @@
     <td class="edit-cell"><%= f.text_field :color, :size=>"5" %></td>
     <td class="edit-cell"><%= f.text_field :gobo_1, :size=>"5" %></td>
     <td class="edit-cell"><%= f.text_field :accessories, :size=>"5" %></td>
-    <td class="edit-cell"><button type="submit" class="btn btn-primary btn-sm">Update</button></td>
+    <td class="edit-cell"><%= f.submit "Update", class: "btn btn-primary btn-sm edit-input-btn" %></td>
   <% end %>
 
