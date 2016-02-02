@@ -48,7 +48,8 @@ class ProductionsController < ApplicationController
 
 
   def print
-  	@production = Production.find(1)
+    p params
+  	@production = Production.find(params[:id])
   	@equipment = @production.equipments.sort_by &:channel
     respond_to do |format|
       format.html
