@@ -1,0 +1,28 @@
+<% equipment_groupings = @equipment.slice_when {|a, b| a.color != b.color}.to_a %>
+<div id="color-schedule" class="tab-pane fade in active">
+  <h3 class="sheet-name">Color Schedule</h3>
+  <table class="table color-schedule-view">
+    <thead>
+      <tr>
+      <th class="Color-H">Color</th>
+      <th class="Qty-H">Quantity</th>
+      <th class="Size-H">Size</th>
+    </tr>
+    </thead>
+   <tbody>
+
+   	  <% equipment_groupings.each do |equipment_group| %>
+          <tr><td colspan="10"><h4><%= equipment_group.first.color %></h4></td></tr>
+      <% @equipment.each do |equipment| %>
+            <tr id="CH-Row<%= equipment.id %>">
+              <td class="e-size"><%=equipment.frame_size%></td>
+              <%=@equipment.where(color: equipment.color).count%>
+              <td><a class="deep-blue edit-button" href="/productions/<%= equipment.production_id %>/channels/<%= equipment.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+              <td><a class="deep-red delete-button" href="/productions/<%= equipment.production_id %>/channels/<%= equipment.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
+            </tr>
+          
+          <%end%>  
+      <% end %>
+    </tbody>
+  </table>
+</div> <!-- Close channel-hookup -->
