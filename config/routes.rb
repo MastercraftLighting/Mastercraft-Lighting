@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   get "/users" => 'users#index'
+  get "/users/:user_id" => 'users#show'
 
   resources :productions do
     resources :channels
