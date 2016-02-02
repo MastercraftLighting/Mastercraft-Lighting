@@ -1,10 +1,9 @@
 <div class="col-md-3 channel-maker">
 	<span class="channel-box">
 	<!-- Button trigger modal -->
-  <button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
-    + New Channel
-  </button>
-
+<a href="/productions/<%=@production.id %>/equipments/new" type="button" class="btn btn-lg" data-toggle="modal" data-target="#newEquipmentModal">
+  + New Channel
+</a>
 	</span>
 </div><!-- close col-md-3 channel-maker -->
 
@@ -17,7 +16,8 @@
 		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
     <li><a data-toggle="tab" href="#color-schedule">Color Schedule</a></li>
 	</ul>
-</div><!-- close col-md-9 tab-views -->
+</div>
+
 
 <div class="tab-content">
 
@@ -33,11 +33,22 @@
 
 </div><!-- close tab-content -->
 
-<%= render :partial =>"equipments/modal" %>
 
-<%= render "inventory" %>
+<%= render :partial => "productions/inventory" %>
 
+<div class="modal fade" id="newEquipmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		</div>
+	</div>
+</div>
 
+<div class="modal fade" id="editEquipmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		</div>
+	</div>
+</div>
 
 
 

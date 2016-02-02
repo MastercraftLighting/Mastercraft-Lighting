@@ -6,5 +6,5 @@ class Production < ActiveRecord::Base
   has_many :users, through: :leads
   belongs_to :designer, class_name: "User"
   belongs_to :master_electrician, class_name: "User"
-
+  accepts_nested_attributes_for :equipments
 end

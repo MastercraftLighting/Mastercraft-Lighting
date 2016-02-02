@@ -1,30 +1,25 @@
 class EquipmentsController < ApplicationController
-  before_action :set_production, only: [:show, :update, :destroy, :create, :edit]
+  before_action :set_production, only: [:new, :show, :update, :destroy, :create, :edit]
   before_action :set_equipment, only: [:show, :update, :destroy, :edit]
 
 
   def create
-    @new_thing = Equipment.new(channel: params[:channel], instrument_type: params[:instrument_type],position: params[:position], unit_number: params[:unit_number], purpose: params[:purpose], wattage: params[:wattage], color: params[:color], dimmer: params[:dimmer], address: params[:address], universe:params[:universe], circuit_number: params[:circuit_number],circuit_name: params[:circuit_name], gobo_1: params[:gobo_1], gobo_2: params[:gobo_2], focus: params[:focus], accessories: params[:accessories], production_id: params[:production_id])
-    if @new_thing.save
-       @equipment = @production.equipments.sort_by &:channel
-      redirect_to production_path(id: params[:production_id])
+    @equipment = @production.equipments.build(equipment_params)
+    if @equipment.save
+      @equipment = @production.equipments.sort_by &:channel
+      render "productions/show", layout: false
     else
       render :index
     end
   end
 
   def new
-    @equipment = Equipment.new
+    @equipment = @production.equipments.build
+    render partial: "new", layout: false
   end
 
   def edit
-    p @equipment
-    if request.xhr?
-      render :json => { :attachmentPartial =>
-                        render_to_string('_edit_form', :layout => false, :item_id => @equipment.id )}
-    else
-      #do something else...
-    end
+      render partial: "edit", layout: false
   end
 
   def show
@@ -32,9 +27,11 @@ class EquipmentsController < ApplicationController
   end
 
   def update
-    p "-" * 40
-    p params.inspect
-    p "-" * 40
+    if @equipment.update_attributes(equipment_params)
+      @equipment = @production.equipments.sort_by &:channel
+      render "productions/show", layout: false
+    else
+    end
   end
 
 
@@ -50,6 +47,10 @@ class EquipmentsController < ApplicationController
 
 
   private
+
+  def equipment_params
+    params.require(:equipment).permit(:channel, :instrument_type, :position, :unit_number, :purpose, :wattage, :color, :dimmer, :address, :universe, :circuit_number, :circuit_name, :gobo_1, :gobo_2, :focus)
+  end
 
   def set_equipment
     @equipment = Equipment.find(params[:id])
