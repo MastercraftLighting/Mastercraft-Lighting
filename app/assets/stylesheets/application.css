@@ -62,6 +62,10 @@ body {
 	max-height: 5em;
 }
 
+tr:hover {
+	background-color: lightgray;
+}
+
 
 
 
