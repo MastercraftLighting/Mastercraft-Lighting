@@ -1,4 +1,3 @@
-
 <% @equipment = @equipment.sort_by.with_index { |item, idx| [item.color, idx]} %>
 <% equipment_groupings = @equipment.slice_when {|a, b| a.color != b.color}.to_a %>
 <div id="color-schedule" class="tab-pane fade in active">
@@ -29,4 +28,4 @@
       <% end %>
     </tbody>
   </table>
-</div> <!-- Close channel-hookup -->
+</div> <!-- Close color-schedule -->
