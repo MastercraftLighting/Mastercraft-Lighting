@@ -1,4 +1,6 @@
-<% @equipment = @equipment.sort_by &:dimmer %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.circuit_name, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.dimmer, idx]} %>
 <% equipment_groupings = @equipment.slice_when {|a, b| a.dimmer != b.dimmer}.to_a %>
   <div id="dimmer-hookup" class="tab-pane fade">
     <h3>Dimmer Hookup</h3>
