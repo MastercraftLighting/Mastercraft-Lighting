@@ -158,7 +158,10 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "accessories"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "production_id"
   end
+
+  add_index "csv_inputs", ["production_id"], name: "index_csv_inputs_on_production_id", using: :btree
 
   create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"

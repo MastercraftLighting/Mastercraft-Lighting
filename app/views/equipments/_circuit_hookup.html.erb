@@ -1,5 +1,6 @@
 <% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
 <% @equipment = @equipment.sort_by.with_index { |item, idx| [item.dimmer, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.circuit_number, idx]} %>
 <% @equipment = @equipment.sort_by.with_index { |item, idx| [item.circuit_name, idx]} %>
 <% equipment_groupings = @equipment.slice_when {|a, b| a.circuit_name != b.circuit_name}.to_a %>
 <div id="circuit-hookup" class="tab-pane fade">

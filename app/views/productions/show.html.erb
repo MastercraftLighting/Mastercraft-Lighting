@@ -4,9 +4,9 @@
 <a href="/productions/<%= @production.id %>/equipments/new" type="button" class="btn btn-lg" data-toggle="modal" data-target="#newEquipmentModal">
   + New Channel
 </a>
-
 	</span>
-</div>
+</div><!-- close col-md-3 channel-maker -->
+
 <div class="col-md-9 tab-views">
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#channel-hookup">Channel Hookup</a></li>
@@ -15,9 +15,9 @@
 
 		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
     <li><a data-toggle="tab" href="#color-schedule">Color Schedule</a></li>
-
 	</ul>
 </div>
+
 
 <div class="tab-content">
 
@@ -29,7 +29,9 @@
 
   <%= render :partial => "equipments/instr_sched" %>
 
-</div>
+  <%=render :partial => "channels/color_schedule"%>
+
+</div><!-- close tab-content -->
 
 
 <%= render "inventory" %>
@@ -59,5 +61,4 @@
       <li class="bottom-button library-toggle"><a href="/">Library</a></li>
     </ul>
   </div>
-
 </footer>
