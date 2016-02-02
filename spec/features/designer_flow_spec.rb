@@ -42,14 +42,14 @@ feature "Designer Use Flow", :type => :feature do
         click_link("Register")
       end
       fill_in "Username", with: "username"
-      fill_in "Email", with: "email418@gmail.com"
+      fill_in "Email", with: "user2@user.com"
       fill_in "Password", with: "password"
       fill_in "Password confirmation", with: "password"
       page.select 'Designer', :from => 'User type'
       click_on("Sign up")
       click_on("Logout")
       click_link("Login")
-      fill_in "Email", :with => "email418@gmail.com"
+      fill_in "Email", :with => "user2@user.com"
       fill_in "Password", :with => "password"
       click_button('Log in')
       visit "/"
@@ -92,30 +92,35 @@ feature "Designer Use Flow", :type => :feature do
     #   # same as view one production, target in the table
     # end
     it 'can update their information' do
-      Usertype.create!(name: 'Designer')
+      users = ['Designer','ME','Administrator','Lead']
+      users.each do |name|
+        Usertype.create!(name: name)
+      end
       login_as_designer
       click_on("Update registration")
       fill_in "Email", :with => "email@email.com"
+      fill_in "Current password", :with => "password"
       click_on("Update")
       click_on("Logout")
       click_on("Login")
       fill_in "Email", :with => "email@email.com"
       fill_in "Password", :with => "password"
-      click_on("Log In")
+      click_on("Log in")
       expect(page).to have_content("Logout")
     end
-    # xit 'can delete their account' do
-    #   # doesn't want to click Cancel button
-    #   login_as_designer
-    #   click_on("Update registration")
-    #   click_on("Cancel My Account")
-    #   click_on("OK")
-    #   click_link("Login")
-    #   fill_in "Email", :with => "user@user.com"
-    #   fill_in "Password", :with => "password"
-    #   click_button('Log in')
-    #   expect(page).to have_no_content("Logout")
-    # end
+    it 'can delete their account', js: true do
+      # doesn't want to click Cancel button
+      login_as_designer
+      click_on("Update registration")
+      click_on("Cancel my account")
+      # below clicks "OK" on
+      page.driver.browser.switch_to.alert.accept
+      click_link("Login")
+      fill_in "Email", :with => "user@user.com"
+      fill_in "Password", :with => "password"
+      click_button('Log in')
+      expect(page).to have_no_content("Logout")
+    end
     # # user logout tested in logins and users specs
   end
 
