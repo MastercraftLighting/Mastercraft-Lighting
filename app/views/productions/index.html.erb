@@ -4,6 +4,11 @@
     <td><%= production.name %></a> </td>
     <td><%= button_to "View", production_path(production), :method => :get %></td>
     <td><%= button_to "Remove Production", production, :method => :delete %></td>
-  </tr>
+    <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id) %></td>
+    <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
+      <%= file_field_tag 'vectorworks_file' %>
+      <%= submit_tag "Upload file from Vectorworks"  %>
+    <% end %></td>
+    </tr>
   <% end %>
 </table>

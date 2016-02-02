@@ -3,9 +3,11 @@ class UsersController < ApplicationController
     redirect_to "/users/#{:user_id}" unless admin?
   end
 
+
   def index
     @users = User.all
   end
+
 
   def show
     @user = current_user
