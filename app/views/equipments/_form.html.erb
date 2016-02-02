@@ -1,22 +1,6 @@
-<div id="equipmentEditForm" class="form-inline">
-
-  <%= f.text_field :channel, :class => 'col-md-1' %>
-  <%= f.text_field :dimmer, :class => 'col-md-1'  %>
-  <%= f.text_field :position, :class => 'col-md-1'  %>
-  <%= f.text_field :unit_number, :class => 'col-md-1'  %>
-  <%= f.text_field :instrument_type, :class => 'col-md-2'  %>
-  <%= f.text_field :purpose, :class => 'col-md-1'  %>
-  <%= f.text_field :color, :class => 'col-md-1'  %>
-  <%= f.text_field :gobo_1, :class => 'col-md-1'  %>
-  <%= f.text_field :accessories, :class => 'col-md-1'  %>
-  <%= f.submit %>
-<% end  %>
-</div>
-
-
 
 <div class="modal-body">
-  <%= form_for [@equipment.production, @equipment] do |f| %>
+  <%= form_for @equipment, url: production_equipments_path(@production, @equipment), method: :post do |f| %>
     <%= f.label :channel %>
     <%= f.text_field :channel %>
     <br>
@@ -30,7 +14,7 @@
     <%= f.text_field :unit_number %>
     <br>
     <%= f.label :purpose %>
-    <%= f.text_field :purpose)%>
+    <%= f.text_field :purpose%>
     <br>
     <%= f.label :wattage %>
     <%= f.text_field :wattage %>
@@ -57,13 +41,14 @@
     <%= f.text_field :gobo_1 %>
     <br>
     <%= f.label :gobo_2 %>
-    <%= f.text_field :gobo_2)%>
+    <%= f.text_field :gobo_2%>
     <br>
     <%= f.label :focus %>
-    <%= f.text_field :focus)%>
+    <%= f.text_field :focus%>
     <br>
     <%= f.label :accessories %>
     <%= f.text_field :accessories %>
     <br>
     <%= hidden_field_tag(:production_id, :value => @production.id) %>
+    <% end %>
 </div>

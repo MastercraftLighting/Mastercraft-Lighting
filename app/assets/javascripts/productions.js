@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	console.log("document ready")
 	toggleMenus();
     bindListeners();
 });
@@ -12,12 +11,10 @@ var toggleMenus = function(){
     	e.preventDefault();
       $(".inventory-tab").slideToggle();
     });
-
  //    $(".print-toggle").click(function(e){
 	//   e.preventDefault();
  //    $(".print-tab").slideToggle();
  //    });
-
     $(".library-toggle").click(function(e){
     	e.preventDefault();
       $(".library-tab").slideToggle();
@@ -30,7 +27,9 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
-  editInputButtonListener();
+  // editInputButtonListener();
+	newEquipmentSubmitListener();
+	// editEquipmentSubmitListener();
 };
 
 //-------------------------------------------------
@@ -50,22 +49,40 @@ var deleteButtonListener = function(){
 var editButtonListener = function(){
   $('#channel-hookup').on('click', '.edit-button', function(e){
     e.preventDefault();
-		var editingRow = $(e.target).parents().eq(2);
-    editRow(editingRow, this);
+    editEquipment(this);
   });
 };
 
-var editInputButtonListener = function(){
-  $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
-    e.preventDefault();
-    var form = $(this).serialize();
-    updateRow(formData);
-  });
-};
+// var editInputButtonListener = function(){
+//   $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
+//     e.preventDefault();
+//     var form = $(this).serialize();
+//     updateRow(formData);
+//   });
+// };
+
+var newEquipmentSubmitListener = function(){
+	$('.modal').on('click','button.newChannel', function(e){
+		e.preventDefault();
+		var form = $('form#new_equipment');
+		submitNewEquipment(form);
+	})
+}
 
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------
+var submitNewEquipment = function(form){
+	$.ajax({
+		method: 'POST',
+		url: form.attr('action'),
+		data: form.serialize()
+	}).done(function(response){
+		console.log(response);
+	})
+}
+
+
 var deleteRow = function(path){
   $.ajax({
     method: "DELETE",
@@ -82,41 +99,21 @@ var deleteRow = function(path){
   });
 };
 
-var editRow = function(node, path){
+var editEquipment = function(path){
   $.ajax({
     method: "GET",
-    url: path,
-		context: node
+    url: path
   }).done(function(response){
-		insertEditForm(response, this);
-	  // $(this).after(response.attachmentPartial);
+		// update the edit modal-content with response body
+		$('#editEquipmentModal .modal-content').html(response);
+		$('#editEquipmentModal').modal('show');
+		// insertEditForm(response, this);
   }).fail(function(response){
     console.log("ajax edit call failed: " + response);
   });
 };
 
-var insertEditForm = function(content, node){
-	// fetch the information about row being modified and content to insert
-	var details = rowDetails(content, node);
-	// expand the height of the row to be edited
-	$(node).height(details.newRowHeight);
-	$('body').after(content.attachmentPartial);
-	//set the position details of the edit form
-	$("#equipmentEditForm").css({"display":"block", "left":details.positionLeft, "top":details.positionTop, "position":"absolute","width":details.contentWidth});
-	// when submitting the edit form we need to reset all tr height to "auto"
-}
 
-
-var rowDetails = function(content, row){
-	var rowHeight =  $(row).height();
-	details = {
-		newRowHeight: 2* rowHeight,
-		contentWidth: $(row).width(),
-		positionLeft: $(row).position().left + 1 + "px",
-		positionTop: $(row).position().top + rowHeight
-	}
-	return details
-}
 
 var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
