@@ -9,21 +9,27 @@
 <div class="col-md-9 tab-views">
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#channel-hookup">Channel Hookup</a></li>
-  		<li><a data-toggle="tab" href="#circuit-hookup">Circuit Hookup</a></li>
+		<li><a data-toggle="tab" href="#circuit-hookup">Circuit Hookup</a></li>
  		<li><a data-toggle="tab" href="#dimmer-hookup">Dimmer Hookup</a></li>
-  		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
+		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
+    <li><a data-toggle="tab" href="#color-schedule">Color Schedule</a></li>
+
 	</ul>
 </div>
 
 
 <div class="tab-content">
   <%=render "channel_hookup"%>
+
   <%=render "circuit_hookup"%>
 
   <%=render "dimmer_hookup"%>
 
   <%=render "instr_sched"%>
- </div>
+
+  <%= render "color_schedule" %>
+</div>
+
 <%= render "modal" %>
 
 <%= render :partial => "productions/inventory" %>

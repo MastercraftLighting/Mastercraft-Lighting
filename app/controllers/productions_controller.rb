@@ -32,7 +32,7 @@ class ProductionsController < ApplicationController
 
   # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
-    @equipment = @production.equipment.sort_by &:channel
+    @equipment = @production.equipments.sort_by &:channel
     render :show
   end
 
@@ -48,8 +48,9 @@ class ProductionsController < ApplicationController
 
 
   def print
-  	@production = Production.find(1)
-  	@equipment = @production.equipment.sort_by &:channel
+    p params
+  	@production = Production.find(params[:id])
+  	@equipment = @production.equipments.sort_by &:channel
     respond_to do |format|
       format.html
       format.pdf do

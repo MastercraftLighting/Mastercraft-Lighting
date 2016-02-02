@@ -68,6 +68,7 @@ var editInputButtonListener = function(){
     updateRow(formData);
   });
 };
+
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------

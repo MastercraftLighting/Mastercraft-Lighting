@@ -10,21 +10,27 @@
 <div class="col-md-9 tab-views">
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#channel-hookup">Channel Hookup</a></li>
-  		<li><a data-toggle="tab" href="#circuit-hookup">Circuit Hookup</a></li>
+		<li><a data-toggle="tab" href="#circuit-hookup">Circuit Hookup</a></li>
  		<li><a data-toggle="tab" href="#dimmer-hookup">Dimmer Hookup</a></li>
-  		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
+
+		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
+    <li><a data-toggle="tab" href="#color-schedule">Color Schedule</a></li>
+
 	</ul>
 </div>
 
 
-<div class="tab-content">
+
   <%= render :partial => "equipments/channel_hookup" %>
+
 
   <%= render :partial => "equipments/circuit_hookup" %>
 
   <%= render :partial => "equipments/dimmer_hookup" %>
 
+
   <%= render :partial => "equipments/instr_sched" %>
+
 </div>
 
 <%= render :partial =>"equipments/modal" %>
@@ -39,7 +45,7 @@
 <footer class="navbar navbar-default navbar-bottom navbar-fixed" role="navigation">
   <div class="container-fluid">
     <ul class="nav navbar-nav navbar-right">
-      <li><%= link_to "Print as pdf", print_path(format: "pdf"), :method => :get, target: '_blank'  %></li>
+      <li><%= link_to "Print as pdf", print_path(id: "#{@production.id}", format: "pdf"), :method => :get, target: '_blank'  %></li>
       <li class="bottom-button inventory-toggle"><a href="/">Inventory</a></li>
       <li class="bottom-button library-toggle"><a href="/">Library</a></li>
     </ul>
