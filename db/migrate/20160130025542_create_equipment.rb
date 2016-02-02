@@ -3,18 +3,18 @@ class CreateEquipment < ActiveRecord::Migration
   def change
     create_table :equipment do |t|
       t.text :instrument_type
-      t.text :wattage
+      t.integer :wattage
       t.text :purpose
-      t.text :position
+      t.text :position, default: 0
       t.text :unit_number
       t.text :color
-      t.text :dimmer
-      t.text :channel
-      t.text :address
+      t.integer :dimmer, default: 0
+      t.integer :channel, default: 0
+      t.integer :address
       t.text :universe
       t.text :u_address
-      t.text :circuit_number
-      t.text :circuit_name
+      t.integer :circuit_number, default: 0
+      t.text :circuit_name, default: '!'
       t.text :system
       t.text :user_field_1
       t.text :user_field_2
@@ -23,7 +23,7 @@ class CreateEquipment < ActiveRecord::Migration
       t.text :user_field_5
       t.text :user_field_6
       t.text :num_channels
-      t.text :frame_size
+      t.float :frame_size
       t.text :field_angle
       t.text :field_angle_2
       t.text :beam_angle
