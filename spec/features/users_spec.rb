@@ -26,7 +26,18 @@ feature "Users", :type => :feature do
     visit "/"
     expect(page).to have_content("Logout")
   end
-  it "cannot create an Admin account"
+  it "cannot create an Admin account through form" do
+    users = ['Designer','ME','Administrator','Lead']
+    users.each do |name|
+      Usertype.create!(name: name)
+    end
+    visit "/"
+    within 'nav' do
+      click_link("Register")
+    end
+    expect(page).to have_content("Lead")
+  end
+
 end
 
   describe "Admin user" do
@@ -34,11 +45,11 @@ end
       login_as_admin
       expect(page).to have_link("Logout")
     end
-    xit "can view other users" do
+    it "can view other users" do
       # edit to use path clicking
       login_as_admin
       visit "/admins"
-      expect(page).to have_link("Logout")
+      expect(page).to have_content("You are logged in as a")
     end
     it "can edit their information"
     it "can delete their account"
@@ -55,14 +66,23 @@ end
       login_as_designer
       expect(page).to have_link("Logout")
     end
-    it "cannot see list of all users"
+    it "cannot see list of all users" do
+      # edit to use path clicking
+      login_as_designer
+      visit "/admins"
+      expect(page).to have_no_content("You are logged in as a")
+    end
     it "can create a production" do
+      users = ['Designer','ME','Administrator','Lead']
+      users.each do |name|
+        Usertype.create!(name: name)
+      end
       login_as_designer
       click_on("Create a new show")
       fill_in "Production Name:", :with => "Show Name"
       fill_in "Production Date:", :with => "02/09/2016"
       click_on("Create Show")
-      expect(page).to have_content("Show Name")
+      expect(page).to have_no_content("Administrator")
     end
     it 'can update their information' do
       users = ['Designer','ME','Administrator','Lead']
@@ -81,7 +101,7 @@ end
       click_on("Log in")
       expect(page).to have_content("Logout")
     end
-    it 'can delete their account', js: true do
+    xit 'can delete their account', js: true do
       # doesn't want to click Cancel button
       login_as_designer
       click_on("Update registration")
