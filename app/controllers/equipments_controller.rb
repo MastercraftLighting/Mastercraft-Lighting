@@ -6,6 +6,7 @@ class EquipmentsController < ApplicationController
   def create
     pry-byebug
     @equipment = @production.equipments.build(equipment_params)
+
     if @equipment.save
        @equipment = @production.equipments.sort_by &:channel
       redirect_to production_path(id: params[:production_id])
@@ -48,7 +49,7 @@ class EquipmentsController < ApplicationController
   private
 
   def equipment_params
-    params.require(:equipment).permit(:channel, :instrument_type, :position, :unit_number, :purpose, :wattage, :color, :dimmer, :address, :universe, :circuit_number, :circuit_name, :gobo_1, :gobo_2, :focus, :accessories)
+    params.require(:equipment).permit(:channel, :instrument_type, :position, :unit_number, :purpose, :wattage, :color, :dimmer, :address, :universe, :circuit_number, :circuit_name, :gobo_1, :gobo_2, :focus)
   end
 
   def set_equipment
