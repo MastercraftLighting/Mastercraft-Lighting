@@ -30,6 +30,7 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
+  editInputButtonListener();
 };
 
 //-------------------------------------------------
@@ -53,8 +54,18 @@ var deleteButtonListener = function(){
 var editButtonListener = function(){
   $('#channel-hookup').on('click', '.edit-button', function(e){
     e.preventDefault();
-    console.log("edit row: " + this);
-    editRow(this);
+		var editingRow = $(e.target).parents().eq(2);
+    editRow(editingRow, this);
+  });
+};
+
+var editInputButtonListener = function(){
+  $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
+    e.preventDefault();
+    var form = $(this).serialize();
+    console.log("edit input button clicked: " + form);
+    debugger;
+    updateRow(formData);
   });
 };
 
@@ -77,24 +88,53 @@ var deleteRow = function(path){
   });
 };
 
-var editRow = function(path){
+var editRow = function(node, path){
   $.ajax({
     method: "GET",
     url: path,
-    dataType: 'json'
+		context: node
   }).done(function(response){
-    console.log("editing item:" );
-
+		insertEditForm(response, this);
+	  // $(this).after(response.attachmentPartial);
   }).fail(function(response){
     console.log("ajax edit call failed: " + response);
   });
 };
 
+var insertEditForm = function(content, node){
+	// fetch the information about row being modified and content to insert
+	var details = rowDetails(content, node);
+	// expand the height of the row to be edited
+	$(node).height(details.newRowHeight);
+	$('body').after(content.attachmentPartial);
+	//set the position details of the edit form
+	$("#equipmentEditForm").css({"display":"block", "left":details.positionLeft, "top":details.positionTop, "position":"absolute","width":details.contentWidth});
+	// when submitting the edit form we need to reset all tr height to "auto"
+}
+
+
+var rowDetails = function(content, row){
+	var rowHeight =  $(row).height();
+	details = {
+		newRowHeight: 2* rowHeight,
+		contentWidth: $(row).width(),
+		positionLeft: $(row).position().left + 1 + "px",
+		positionTop: $(row).position().top + rowHeight
+	}
+	return details
+}
+
 var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
+};
+
+var updateRow = function(formData){
+  // $.ajax({
+  //   method: "PATCH",
+  //   url:
+  // })
 };
 
 //-------------------------------------------------
 // Printing
 //-------------------------------------------------
-

@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Edit Channel</h4>
       </div>
       <div class="modal-body">
-        <%= form_tag("/productions/#{params[:id]}/channels") do %>
+        <%= form_tag("/productions/#{params[:id]}/equipments") do %>
           <%= label_tag(:channel, "Channel:") %>
           <%= text_field_tag(:channel) %>
           <br>

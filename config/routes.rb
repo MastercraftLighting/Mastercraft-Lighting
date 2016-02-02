@@ -13,8 +13,9 @@
   get "/users/:user_id" => 'users#show'
 
   resources :productions do
-    resources :channels
+    resources :equipments
   end
+
   get "/productions/:production_id/print" => 'productions#print'
 
   resources :admins

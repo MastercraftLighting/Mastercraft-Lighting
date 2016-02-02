@@ -1,6 +1,6 @@
-class ChannelsController < ApplicationController
+class EquipmentsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy, :create, :edit]
-  before_action :set_channel, only: [:show, :update, :destroy, :edit]
+  before_action :set_equipment, only: [:show, :update, :destroy, :edit]
 
 
   def create
@@ -14,12 +14,17 @@ class ChannelsController < ApplicationController
   end
 
   def new
-    @channel = Equipment.new
+    @equipment = Equipment.new
   end
 
   def edit
-    @channel
-    render :_edit_form
+    p @equipment
+    if request.xhr?
+      render :json => { :attachmentPartial =>
+                        render_to_string('_edit_form', :layout => false, :item_id => @equipment.id )}
+    else
+      #do something else...
+    end
   end
 
   def show
@@ -27,9 +32,9 @@ class ChannelsController < ApplicationController
   end
 
   def update
-    p "*" * 40
+    p "-" * 40
     p params.inspect
-    p "*" * 40
+    p "-" * 40
   end
 
 
@@ -46,16 +51,12 @@ class ChannelsController < ApplicationController
 
   private
 
-  def set_channel
-    @channel = @production.equipments.find(params[:id])
+  def set_equipment
+    @equipment = Equipment.find(params[:id])
+
   end
 
   def set_production
       @production = Production.find(params[:production_id])
   end
-  # def channel_params
-  #   channel: params[:channel], instrument_type: params[:instrument_type],position: params[:position], unit_number: params[:unit_number], purpose: params[:purpose], wattage: params[:wattage], color: params[:color], dimmer: params[:dimmer], address: params[:address], universe:params[:universe], circuit_number: params[:circuit_number],circuit_name: params[:circuit_name], gobo_1: params[:gobo_1], gobo_2: params[:gobo_2], focus: params[:focus], accessories: params[:accessories], production_id: params[:production_id]
-  # end
 end
-
-
