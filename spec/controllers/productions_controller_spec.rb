@@ -31,10 +31,21 @@ RSpec.describe ProductionsController, :type => :controller do
     end
 
     context '#show' do
+      login_user
+      it "responds with a successful 200" do
+        production = FactoryGirl.create(:production)
+        get :show, id: production.id
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+      it "renders the proper view" do
+        production = FactoryGirl.create(:production)
+        get :show, id: production.id
+        expect(response).to render_template('show')
+      end
+      context 'page' do
 
-      # context 'page' do
-
-      # end
+      end
       # context 'partials' do
 
       # end
