@@ -26,8 +26,14 @@
 	margin-right: 1%;
 }
 
-.tab-content{
+.tab-content {
 	max-height: 100%;
+}
+
+.tab-pane {
+	height: 70vh;
+	overflow-y: scroll;
+	width: 100%;
 }
 
 .toggle-tab {
