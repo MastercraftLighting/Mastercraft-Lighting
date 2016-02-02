@@ -3,7 +3,8 @@ class UploadsController < ApplicationController
   include IoHelper
 
   def create
-    redirect_to production_path unless params[:vectorworks_file]
+    pry
+    redirect_to productions_path if params[:vectorworks_file].nil?
     production_id = params[:id]
     csv_importer(params[:vectorworks_file],production_id)
     redirect_to production_path(production_id)
