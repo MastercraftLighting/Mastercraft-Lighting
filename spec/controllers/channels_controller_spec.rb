@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ChannelsController, :type => :controller do
+RSpec.describe EquipmentsController, :type => :controller do
 
 end

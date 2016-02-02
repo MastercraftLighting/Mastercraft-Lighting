@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201174742) do
+ActiveRecord::Schema.define(version: 20160131193143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -92,10 +92,7 @@ ActiveRecord::Schema.define(version: 20160201174742) do
     t.text     "accessories"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.integer  "production_id"
   end
-
-  add_index "csv_inputs", ["production_id"], name: "index_csv_inputs_on_production_id", using: :btree
 
   create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"
