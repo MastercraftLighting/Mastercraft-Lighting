@@ -10,7 +10,11 @@ class Equipment < ActiveRecord::Base
 
   def accessories_list
     result = String.new
-    self.accessories.reduce {|result, item| result + item.instrument_type }
+    self.accessories.each do |accessory|
+      result += accessory.instrument_type + ","
+    end
+    result.slice!(-1)
+    result
   end
 
 end
