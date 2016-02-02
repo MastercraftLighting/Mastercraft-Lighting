@@ -27,16 +27,15 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
-  // editInputButtonListener();
 	newEquipmentSubmitListener();
-	// editEquipmentSubmitListener();
+	editEquipmentSubmitListener();
 };
 
 //-------------------------------------------------
 // Listeners
 //-------------------------------------------------
 var deleteButtonListener = function(){
-  $('#channel-hookup').on('click', '.delete-button', function(e){
+  $('.container').on('click', '.delete-button', function(e){
     e.preventDefault();
     var userConfirm = getConfirmation();
     if (userConfirm == true){
@@ -47,27 +46,29 @@ var deleteButtonListener = function(){
 };
 
 var editButtonListener = function(){
-  $('#channel-hookup').on('click', '.edit-button', function(e){
+  $('.container').on('click', '.edit-button', function(e){
     e.preventDefault();
     editEquipment(this);
   });
 };
 
-// var editInputButtonListener = function(){
-//   $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
-//     e.preventDefault();
-//     var form = $(this).serialize();
-//     updateRow(formData);
-//   });
-// };
 
 var newEquipmentSubmitListener = function(){
-	$('.modal').on('click','button.newChannel', function(e){
+	$('.container').on('click','button.newChannel', function(e){
 		e.preventDefault();
 		var form = $('form#new_equipment');
 		submitNewEquipment(form);
 	})
 }
+
+var editEquipmentSubmitListener = function(){
+	$('.container').on('click','button.editChannel', function(e){
+		e.preventDefault();
+		var form = $('form').not('#new_equipment');
+		submitEditEquipment(form);
+	})
+}
+
 
 //-------------------------------------------------
 // Functions
@@ -78,7 +79,19 @@ var submitNewEquipment = function(form){
 		url: form.attr('action'),
 		data: form.serialize()
 	}).done(function(response){
-		console.log(response);
+		$('.container').html(response);
+		$('.modal-backdrop').remove();
+	})
+}
+
+var submitEditEquipment = function(form){
+	$.ajax({
+		method: 'PATCH',
+		url: form.attr('action'),
+		data: form.serialize()
+	}).done(function(response){
+		$('.container').html(response);
+		$('.modal-backdrop').remove();
 	})
 }
 

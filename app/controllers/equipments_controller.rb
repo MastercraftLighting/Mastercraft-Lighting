@@ -4,12 +4,10 @@ class EquipmentsController < ApplicationController
 
 
   def create
-    pry-byebug
     @equipment = @production.equipments.build(equipment_params)
-
     if @equipment.save
-       @equipment = @production.equipments.sort_by &:channel
-      redirect_to production_path(id: params[:production_id])
+      @equipment = @production.equipments.sort_by &:channel
+      render "productions/show", layout: false
     else
       render :index
     end
@@ -29,9 +27,11 @@ class EquipmentsController < ApplicationController
   end
 
   def update
-    p "-" * 40
-    p params.inspect
-    p "-" * 40
+    if @equipment.update_attributes(equipment_params)
+      @equipment = @production.equipments.sort_by &:channel
+      render "productions/show", layout: false
+    else
+    end
   end
 
 

@@ -1,6 +1,6 @@
 
 <div class="modal-body">
-  <%= form_for @equipment, url: production_equipments_path(@production, @equipment), method: :post do |f| %>
+  <%= form_for @equipment, url: production_equipment_path(@production, @equipment), method: :post do |f| %>
     <%= f.label :channel %>
     <%= f.text_field :channel %>
     <br>
@@ -46,8 +46,8 @@
     <%= f.label :focus %>
     <%= f.text_field :focus%>
     <br>
-    <%= f.label :accessories %>
-    <%= f.text_field :accessories %>
+    <%= f.label :accessories_list %>
+    <%= f.text_field :accessories_list %>
     <br>
     <%= hidden_field_tag(:production_id, :value => @production.id) %>
     <% end %>
