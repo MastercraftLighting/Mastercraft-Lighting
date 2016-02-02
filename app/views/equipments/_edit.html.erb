@@ -1,0 +1,64 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <h4 class="modal-title" id="myModalLabel">Edit Channel</h4>
+</div>
+
+
+<div class="modal-body">
+  <%= form_for @equipment, url: production_equipment_path(@production, @equipment), method: :post do |f| %>
+    <%= f.label :channel %>
+    <%= f.text_field :channel %>
+    <br>
+    <%= f.label :instrument_type %>
+    <%= f.text_field :instrument_type %>
+    <br>
+    <%= f.label :position %>
+    <%= f.text_field :position %>
+    <br>
+    <%= f.label :unit_number %>
+    <%= f.text_field :unit_number %>
+    <br>
+    <%= f.label :purpose %>
+    <%= f.text_field :purpose%>
+    <br>
+    <%= f.label :wattage %>
+    <%= f.text_field :wattage %>
+    <br>
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+    <br>
+    <%= f.label :dimmer %>
+    <%= f.text_field :dimmer %>
+    <br>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
+    <br>
+    <%= f.label :universe %>
+    <%= f.text_field :universe %>
+    <br>
+    <%= f.label :circuit_number %>
+    <%= f.text_field :circuit_number %>
+    <br>
+    <%= f.label :circuit_name %>
+    <%= f.text_field :circuit_name %>
+    <br>
+    <%= f.label :gobo_1 %>
+    <%= f.text_field :gobo_1 %>
+    <br>
+    <%= f.label :gobo_2 %>
+    <%= f.text_field :gobo_2%>
+    <br>
+    <%= f.label :focus %>
+    <%= f.text_field :focus%>
+    <br>
+    <%= f.label :accessories_list %>
+    <%= f.text_field :accessories_list %>
+    <br>
+    <%= hidden_field_tag(:production_id, :value => @production.id) %>
+    <% end %>
+</div>
+
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Changes</button>
+    <button type="submit" class="editChannel btn btn-primary">Save Changes</button>
+  </div>
