@@ -13,6 +13,7 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'client_side_validations'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-installer'
 gem 'wkhtmltopdf-heroku', '~> 2.12.2.1'
