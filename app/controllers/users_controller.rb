@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action except: [:show] do
-    redirect_to :root unless admin?
+    redirect_to "/users/#{:user_id}" unless admin?
   end
 
   def index
@@ -9,6 +9,7 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
+    render :show
   end
 
 end
