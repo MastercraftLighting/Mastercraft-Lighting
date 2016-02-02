@@ -3,8 +3,13 @@ require 'rails_helper'
 feature "Productions", :type => :feature do
 
   context "User is logged out" do
-    it "is not given a choice to create a production"
-    it "cannot visit the new production page"
+    it "is not given a choice to create a production" do
+      visit "/"
+      expect(page).to have_no_content("Create a new show")
+    end
+    xit "cannot visit the new production page" do
+      visit "/"
+    end
   end
 
   context "User is logged in as an Admin" do

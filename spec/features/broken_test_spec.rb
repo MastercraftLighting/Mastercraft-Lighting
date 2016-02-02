@@ -25,4 +25,4 @@ feature "Testing Broken Code", :type => :feature do
       expect(page).to have_no_content("Logout")
     end
   end
-end
+# end
