@@ -60,10 +60,9 @@ var editButtonListener = function(){
 };
 
 var editInputButtonListener = function(){
-  $('#channel-hookup').on("click", ".edit-input-btn", function(e){
+  $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
     e.preventDefault();
-    var form = $(this).parent().parent();
-    // test = $(form).child();
+    var form = $(this).serialize();
     console.log("edit input button clicked: " + form);
     debugger;
     updateRow(formData);

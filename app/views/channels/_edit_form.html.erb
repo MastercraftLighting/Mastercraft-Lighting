@@ -1,15 +1,13 @@
-  <%= form_for @channel,
-              url: "productions/#{:production_id}/channels/#{:id}",
-              html: {method: "patch"}  do |f| %>
-    <td class="edit-cell"><%= f.text_field :channel, :size=>"#{:channel.length/2}" %></td>
-    <td class="edit-cell"><%= f.text_field :dimmer, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :position, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :unit_number, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :instrument_type, :size=>"#{:instrument_type.length}" %></td>
-    <td class="edit-cell"><%= f.text_field :purpose, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :color, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :gobo_1, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.text_field :accessories, :size=>"5" %></td>
-    <td class="edit-cell"><%= f.submit "Update", class: "btn btn-primary btn-sm edit-input-btn" %></td>
+  <%= form_tag("/productions/#{:production_id}/channel/#{:id}") do %>
+    <%= text_field_tag :channel size: 3 %>
+    <%= text_field_tag :dimmer, size: 5 %>
+    <%= text_field_tag :position, :size=>"5" %>
+    <%= text_field_tag :unit_number, :size=>"5" %>
+    <%= text_field_tag :instrument_type, :size=>"#{:instrument_type.length}" %>
+    <%= text_field_tag :purpose, :size=>"5" %>
+    <%= text_field_tag :color, :size=>"5" %>
+    <%= text_field_tag :gobo_1, :size=>"5" %>
+    <%= text_field_tag :accessories, :size=>"5" %>
+    <%= submit_tag "Update", class: "btn btn-primary btn-sm edit-input-btn" %>
   <% end %>
 
