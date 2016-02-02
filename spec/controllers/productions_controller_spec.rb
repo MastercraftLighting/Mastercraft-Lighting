@@ -43,25 +43,7 @@ RSpec.describe ProductionsController, :type => :controller do
         get :show, id: production.id
         expect(response).to render_template('show')
       end
-      context 'page' do
-
-      end
-      # context 'partials' do
-
-      # end
     end
   end
-
-  # describe 'post umbrella routes' do
-  #   context '#post' do
-
-  #   end
-  #   context '#patch' do
-
-  #   end
-  #   context '#delete' do
-
-  #   end
-  # end
 
 end
