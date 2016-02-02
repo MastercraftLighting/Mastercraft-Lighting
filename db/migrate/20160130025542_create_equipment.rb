@@ -1,4 +1,5 @@
 class CreateEquipment < ActiveRecord::Migration
+
   def change
     create_table :equipment do |t|
       t.text :instrument_type
@@ -65,4 +66,5 @@ class CreateEquipment < ActiveRecord::Migration
       t.timestamps null: false
     end
   end
+
 end
