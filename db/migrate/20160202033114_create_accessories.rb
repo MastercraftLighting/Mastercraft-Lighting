@@ -1,7 +1,6 @@
-class CreateEquipment < ActiveRecord::Migration
-
+class CreateAccessories < ActiveRecord::Migration
   def change
-    create_table :equipment do |t|
+    create_table :accessories do |t|
       t.text :instrument_type
       t.text :wattage
       t.text :purpose
@@ -62,9 +61,9 @@ class CreateEquipment < ActiveRecord::Migration
       t.text :z_location
       t.text :fixtureid
       t.text :__uid
-      t.references :production
+      t.references :equipment
+
       t.timestamps null: false
     end
   end
-
 end
