@@ -1,4 +1,6 @@
-<% @equipment = @equipment.sort_by &:position %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.unit_number, idx]} %>
+<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.position, idx]} %>
 <% equipment_groupings = @equipment.slice_when {|a, b| a.position != b.position}.to_a %>
 <div id="instr-sched" class="tab-pane fade">
     <h3>Instrument Schedule</h3>
