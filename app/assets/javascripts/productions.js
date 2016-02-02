@@ -39,14 +39,10 @@ var bindListeners = function(){
 var deleteButtonListener = function(){
   $('#channel-hookup').on('click', '.delete-button', function(e){
     e.preventDefault();
-    console.log("delete row: " + this);
     var userConfirm = getConfirmation();
-    console.log(userConfirm);
     if (userConfirm == true){
-      console.log("user confirmed deletion");
       deleteRow(this);
     } else {
-      console.log("user cancelled delete action");
     };
   });
 };
@@ -63,8 +59,6 @@ var editInputButtonListener = function(){
   $('#channel-hookup').on("submit", ".edit-input-btn", function(e){
     e.preventDefault();
     var form = $(this).serialize();
-    console.log("edit input button clicked: " + form);
-    debugger;
     updateRow(formData);
   });
 };
