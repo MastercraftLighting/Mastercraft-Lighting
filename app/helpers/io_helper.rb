@@ -44,7 +44,7 @@ STORED_HEADER_LINE = ["Device Type","Instrument Type","Wattage","Purpose","Posit
   def csv_exporter(production_id)
     csv_string = CSV.generate do |csv|
       csv << STORED_HEADER_LINE
-      Production.find(production_id).equipment each do |line|
+      Production.find(production_id).equipments.each do |line|
         csv << (["Light"] + line.attributes.values + [""])
         if line.accessories
           line.accessories.each do |line|
