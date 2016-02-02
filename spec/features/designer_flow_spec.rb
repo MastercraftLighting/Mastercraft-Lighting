@@ -32,23 +32,29 @@ feature "Designer Use Flow", :type => :feature do
   end
 
   context "User does not have account" do
-  #   xit "can create a new account" do
-  #     #leaving User type on default results in a null value and/or is not being passed in at all
-  #     visit "/"
-  #     click_on("Register")
-  #     fill_in "Username", with: "username"
-  #     fill_in "Email", with: "email418@gmail.com"
-  #     fill_in "Password", with: "password"
-  #     fill_in "Password confirmation", with: "password"
-  #     click_on("Sign up")
-  #     click_on("Logout")
-  #     click_link("Login")
-  #     fill_in "Email", :with => "email418@gmail.com"
-  #     fill_in "Password", :with => "password"
-  #     click_button('Log in')
-  #     visit "/"
-  #     expect(page).to have_content("Logout")
-  #   end
+    it "can create a new account" do
+      users = ['Designer','ME','Administrator','Lead']
+      users.each do |name|
+        Usertype.create!(name: name)
+      end
+      visit "/"
+      within 'nav' do
+        click_link("Register")
+      end
+      fill_in "Username", with: "username"
+      fill_in "Email", with: "email418@gmail.com"
+      fill_in "Password", with: "password"
+      fill_in "Password confirmation", with: "password"
+      page.select 'Designer', :from => 'User type'
+      click_on("Sign up")
+      click_on("Logout")
+      click_link("Login")
+      fill_in "Email", :with => "email418@gmail.com"
+      fill_in "Password", :with => "password"
+      click_button('Log in')
+      visit "/"
+      expect(page).to have_content("Logout")
+    end
   end
 
   #login function is tested in logins and users specs
@@ -72,32 +78,32 @@ feature "Designer Use Flow", :type => :feature do
       visit "/productions"
       expect(page).to have_content(@production.name)
     end
-    # xit 'can view one of their productions' do
-    #   # login_as_designer
-    #   # create_show_for_designer
-    #   # visit "/productions"
-    #   # click_on @productions.name. FIGURE OUT HOW TO TARGET LINK IN ROW
-    #   # expect(page).to have_content(@production.name)
-    # end
+    it 'can view one of their productions' do
+      login_as_designer
+      create_show_for_designer
+      visit "/productions"
+      click_on('View')
+      expect(page).to have_content("+ New Channel")
+    end
     # xit 'can edit a production' do
     #   #i'm  not sure we have this functionality yet
     # end
     # xit 'can delete a production' do
     #   # same as view one production, target in the table
     # end
-    # xit 'can update their information' do
-    #   #undefined method 'order' for NilClass
-    #   login_as_designer
-    #   click_on("Update registration")
-    #   fill_in "Email", :with => "email@email.com"
-    #   click_on("Update")
-    #   click_on("Logout")
-    #   click_on("Login")
-    #   fill_in "Email", :with => "email@email.com"
-    #   fill_in "Password", :with => "password"
-    #   click_on("Log In")
-    #   expect(page).to have_content("Logout")
-    # end
+    it 'can update their information' do
+      Usertype.create!(name: 'Designer')
+      login_as_designer
+      click_on("Update registration")
+      fill_in "Email", :with => "email@email.com"
+      click_on("Update")
+      click_on("Logout")
+      click_on("Login")
+      fill_in "Email", :with => "email@email.com"
+      fill_in "Password", :with => "password"
+      click_on("Log In")
+      expect(page).to have_content("Logout")
+    end
     # xit 'can delete their account' do
     #   # doesn't want to click Cancel button
     #   login_as_designer
