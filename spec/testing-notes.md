@@ -33,9 +33,6 @@ dashboard is at users/user_id < LITERALLY
 
 DASHBOARD button text is asymetrical
 
-Implement Edit for Admin/Productions
-side note: maybe take 'fuck you' out of edit production
-
 clean up puts out of controllers
 (controller labels and nil being printed in tests)
 
