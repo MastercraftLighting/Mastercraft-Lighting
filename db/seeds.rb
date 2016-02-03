@@ -4,7 +4,7 @@
 usertypes= []
 users = ['Designer','ME','Administrator','Lead']
 users.each do |name|
-  User_type.create!(name: name)
+  UserType.create!(name: name)
 end
 
 # Seed User table
