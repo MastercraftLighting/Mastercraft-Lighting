@@ -1,0 +1,12 @@
+<!--For people without JS-->
+<div id="edit-production-form<%=@production.id%>" class="production-form">
+        <%=form_for(@production, method: :put) do |f|%>
+      <div class="form">
+        <%=f.label :name, "Production Name:"%>
+        <%=f.text_field :name%><br />
+        <%=f.label :date, "Production Date:"%>
+        <%=f.date_field :date%><br />
+        <button id="edit_show<%=@production.id%>" type="submit" class="btn btn-s">Save Edits</button>
+        <%end%>
+      </div>
+    </div>
