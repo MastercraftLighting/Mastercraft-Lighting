@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Productions", :type => :feature do
+feature "Productions", :type => :feature, js: true do
 
   context "User is logged out" do
     it "is not given a choice to create a production" do

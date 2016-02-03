@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Libraries", :type => :feature do
+feature "Libraries", :type => :feature, js: true do
 
   def login_as_designer
     @user = User.create!(FactoryGirl.attributes_for :user, :designer)
