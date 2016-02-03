@@ -27,7 +27,7 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
-  editInputButtonListener();
+  //editInputButtonListener();
   //deleteProductionButtonListener();
   editProductionButtonListener();
 	newEquipmentSubmitListener();

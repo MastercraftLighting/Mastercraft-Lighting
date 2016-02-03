@@ -6,9 +6,8 @@
     <td class="delete-button"><%= button_to "Remove Production", production, :method => :delete, data: {confirm: "Delete production?"}, class: "btn btn-s"%></td>
     <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id), class: "btn btn-s" %></td>
     <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
-      
-      <%= submit_tag "Upload file from Vectorworks", class: "btn btn-s"  %>
-      <%= file_field_tag 'vectorworks_file' %>
+      <%= submit_tag "Upload file from Vectorworks", class: "btn btn-s", data: { disable_with: "Please wait, this may take a few seconds" } %>
+      <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
     <% end %></td>
     <% if production.equipments.count>0 %>
     <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id) %></td>
@@ -32,4 +31,8 @@
   </tr>
   <% end %>
 </table>
+
+<% if flash.alert %>
+<script>alert("<%= flash.alert %>")</script>
+<% end %>
 
