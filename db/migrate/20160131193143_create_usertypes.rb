@@ -1,6 +1,6 @@
 class CreateUsertypes < ActiveRecord::Migration
   def change
-    create_table :usertypes do |t|
+    create_table :user_types do |t|
       t.string :name
 
       t.timestamps null: false

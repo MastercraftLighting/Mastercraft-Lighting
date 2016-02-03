@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @usertypes = Usertype.where("name != 'Administrator'")
+    @usertypes = UserType.where("name != 'Administrator'")
     super
   end
 
@@ -16,7 +16,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    @usertypes = Usertype.where("name != 'Administrator'")
+    @usertypes = UserType.where("name != 'Administrator'")
     super
   end
 
@@ -43,12 +43,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up).push(:user_type, :username)
+    devise_parameter_sanitizer.for(:sign_up).push(:user_type_id, :username)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.for(:account_update).push(:user_type, :username)
+    devise_parameter_sanitizer.for(:account_update).push(:user_type_id, :username)
   end
 
   # The path used after sign up.
