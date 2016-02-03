@@ -18,18 +18,18 @@ ActiveRecord::Schema.define(version: 20160202033114) do
 
   create_table "accessories", force: :cascade do |t|
     t.text     "instrument_type"
-    t.integer  "wattage"
+    t.text     "wattage"
     t.text     "purpose"
-    t.text     "position",                        default: "0"
+    t.text     "position"
     t.text     "unit_number"
     t.text     "color"
-    t.integer  "dimmer",                          default: 0
-    t.integer  "channel",                         default: 0
-    t.integer  "address"
+    t.text     "dimmer"
+    t.text     "channel"
+    t.text     "address"
     t.text     "universe"
     t.text     "u_address"
-    t.integer  "circuit_number",                  default: 0
-    t.text     "circuit_name",                    default: "!"
+    t.text     "circuit_number"
+    t.text     "circuit_name"
     t.text     "system"
     t.text     "user_field_1"
     t.text     "user_field_2"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "user_field_5"
     t.text     "user_field_6"
     t.text     "num_channels"
-    t.float    "frame_size"
+    t.text     "frame_size"
     t.text     "field_angle"
     t.text     "field_angle_2"
     t.text     "beam_angle"
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "fixtureid"
     t.text     "__uid"
     t.integer  "equipment_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "color_libraries", force: :cascade do |t|
@@ -93,20 +93,21 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "equipment", force: :cascade do |t|
+  create_table "csv_inputs", force: :cascade do |t|
+    t.text     "device_type"
     t.text     "instrument_type"
-    t.integer  "wattage"
+    t.text     "wattage"
     t.text     "purpose"
-    t.text     "position",                        default: "0"
+    t.text     "position"
     t.text     "unit_number"
     t.text     "color"
-    t.integer  "dimmer",                          default: 0
-    t.integer  "channel",                         default: 0
-    t.integer  "address"
+    t.text     "dimmer"
+    t.text     "channel"
+    t.text     "address"
     t.text     "universe"
     t.text     "u_address"
-    t.integer  "circuit_number",                  default: 0
-    t.text     "circuit_name",                    default: "!"
+    t.text     "circuit_number"
+    t.text     "circuit_name"
     t.text     "system"
     t.text     "user_field_1"
     t.text     "user_field_2"
@@ -115,7 +116,76 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "user_field_5"
     t.text     "user_field_6"
     t.text     "num_channels"
-    t.float    "frame_size"
+    t.text     "frame_size"
+    t.text     "field_angle"
+    t.text     "field_angle_2"
+    t.text     "beam_angle"
+    t.text     "beam_angle_2"
+    t.text     "weight"
+    t.text     "gobo_1"
+    t.text     "gobo_1_rotation"
+    t.text     "gobo_2"
+    t.text     "gobo_2_rotation"
+    t.text     "gobo_shift"
+    t.text     "mark"
+    t.text     "draw_beam"
+    t.text     "draw_beam_as_3d_solid"
+    t.text     "use_vertical_beam"
+    t.text     "show_beam_at"
+    t.text     "falloff_distance"
+    t.text     "lamp_rotation_angle"
+    t.text     "top_shutter_depth"
+    t.text     "top_shutter_angle"
+    t.text     "left_shutter_depth"
+    t.text     "left_shutter_angle"
+    t.text     "right_shutter_depth"
+    t.text     "right_shutter_angle"
+    t.text     "bottom_shutter_depth"
+    t.text     "bottom_shutter_angle"
+    t.text     "symbol_name"
+    t.text     "use_legend"
+    t.text     "flip_front_and_back_legend_text"
+    t.text     "flip_left_and_right_legend_text"
+    t.text     "focus"
+    t.text     "set_3d_orientation"
+    t.text     "x_rotation"
+    t.text     "y_rotation"
+    t.text     "x_location"
+    t.text     "y_location"
+    t.text     "z_location"
+    t.text     "fixtureid"
+    t.text     "__uid"
+    t.text     "accessories"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.integer  "production_id"
+  end
+
+  add_index "csv_inputs", ["production_id"], name: "index_csv_inputs_on_production_id", using: :btree
+
+  create_table "equipment", force: :cascade do |t|
+    t.text     "instrument_type"
+    t.text     "wattage"
+    t.text     "purpose"
+    t.text     "position"
+    t.text     "unit_number"
+    t.text     "color"
+    t.text     "dimmer"
+    t.text     "channel"
+    t.text     "address"
+    t.text     "universe"
+    t.text     "u_address"
+    t.text     "circuit_number"
+    t.text     "circuit_name"
+    t.text     "system"
+    t.text     "user_field_1"
+    t.text     "user_field_2"
+    t.text     "user_field_3"
+    t.text     "user_field_4"
+    t.text     "user_field_5"
+    t.text     "user_field_6"
+    t.text     "num_channels"
+    t.text     "frame_size"
     t.text     "field_angle"
     t.text     "field_angle_2"
     t.text     "beam_angle"
@@ -155,8 +225,8 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "fixtureid"
     t.text     "__uid"
     t.integer  "production_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   create_table "equipment_notes", force: :cascade do |t|
@@ -204,14 +274,8 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "user_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
-    t.integer  "user_type_id",                        null: false
+    t.string   "user_type",                           null: false
     t.string   "username",                            null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -229,6 +293,12 @@ ActiveRecord::Schema.define(version: 20160202033114) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "usertypes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "venues", force: :cascade do |t|
     t.string   "name",       null: false

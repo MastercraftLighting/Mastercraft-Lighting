@@ -9,21 +9,22 @@ gem 'pg', '~> 0.15'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
+# jquery
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'client_side_validations'
+# Create PDFs
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-installer'
 gem 'wkhtmltopdf-heroku', '~> 2.12.2.1'
 gem 'rails4-autocomplete'
+
+
 group :development, :test do
-
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-
-  gem 'pry-byebug'
-    #RSpec gems
+  #RSpec gems
   gem 'rspec-rails', "~> 3.1.0"
   gem "factory_girl_rails", "~> 4.4.1"
 end
@@ -32,6 +33,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
   gem 'pry'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry-byebug'
 end
 

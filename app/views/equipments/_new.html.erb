@@ -10,7 +10,7 @@
     <%= f.text_field :channel %>
     <br>
     <%= f.label :instrument_type %>
-    <%= f.text_field :instrument_type %>
+    <%= f.autocomplete_field :instrument_type, autocomplete_equipment_instrument_type_production_equipments %>
     <br>
     <%= f.label :position %>
     <%= f.text_field :position %>

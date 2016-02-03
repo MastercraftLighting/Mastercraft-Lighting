@@ -18,7 +18,7 @@
 
   resources :productions do
     resources :equipments do
-      get :autocomplete_equipment_instrument_type, :on => collection
+      get :autocomplete_equipment_instrument_type, :on => :collection
     end
   end
 
