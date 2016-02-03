@@ -34,8 +34,10 @@
               <td class="e-typ"><%= equip.instrument_type %></td>
               <td class="e-pur"><%= equip.purpose %></td>
               <td class="e-col"><%= equip.color %></td>
+              <%if @colors%>
                <td><%if @colors.find_by_alias1(equip.color)%>
                 <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+                <%end%>
                 <%else%>
                 <div class="color-box" display="inline"></div>
                 <%end%></td>

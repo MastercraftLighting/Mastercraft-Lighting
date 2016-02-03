@@ -4,6 +4,7 @@ class EquipmentsController < ApplicationController
 
 
   def create
+    @colors = ColorLibrary.all
     @equipment = @production.equipments.build(equipment_params)
     if @equipment.save
       @equipment = @production.equipments.sort_by &:channel
@@ -14,6 +15,7 @@ class EquipmentsController < ApplicationController
   end
 
   def new
+    @colors = ColorLibrary.all
     @equipment = @production.equipments.build
     render partial: "new", layout: false
   end

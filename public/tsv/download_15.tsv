@@ -1,0 +1,6 @@
+Device Type	Instrument Type	Wattage	Purpose	Position	Unit Number	Color	Dimmer	Channel	Address	Universe	U Address	Circuit Number	Circuit Name	System	User Field 1	User Field 2	User Field 3	User Field 4	User Field 5	User Field 6	Num Channels	Frame Size	Field Angle	Field Angle 2	Beam Angle	Beam Angle 2	Weight	Gobo 1	Gobo 1 Rotation	Gobo 2	Gobo 2 Rotation	Gobo Shift	Mark	Draw Beam	Draw Beam as 3D Solid	Use Vertical Beam	Show Beam at	Falloff Distance	Lamp Rotation Angle	Top Shutter Depth	Top Shutter Angle	Left Shutter Depth	Left Shutter Angle	Right Shutter Depth	Right Shutter Angle	Bottom Shutter Depth	Bottom Shutter Angle	Symbol Name	Use Legend	Flip Front && Back Legend Text	Flip Left && Right Legend Text	Focus	Set 3D Orientation	X Rotation	Y Rotation	X Location	Y Location	Z Location	FixtureID	__UID	Accessories
+Light	36	""		""	0	""	""	0	0		""	0	!		""	""	""		15	2016-02-03 00:39:40 UTC	2016-02-03 00:39:40 UTC	""
+Light	38	""		""	0	""	""	0	0		""	0	!		""	""	""		15	2016-02-03 00:45:01 UTC	2016-02-03 00:45:01 UTC	""
+Light	39	""		""	0	""	R60	0	0		""	0	!		""	""	""		15	2016-02-03 01:16:44 UTC	2016-02-03 01:16:44 UTC	""
+Light	50	""		""	0	""	R42	0	0		""	0	!		""	""	""		15	2016-02-03 02:27:11 UTC	2016-02-03 02:27:11 UTC	""
+Light	51	""		""	0	""	R99	0	0		""	0	!		""	""	""		15	2016-02-03 02:28:15 UTC	2016-02-03 02:28:15 UTC	""

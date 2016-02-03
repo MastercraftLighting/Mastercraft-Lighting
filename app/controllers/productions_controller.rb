@@ -42,8 +42,6 @@ class ProductionsController < ApplicationController
     puts "update is running"
     if @production.update_attributes(production_params)
       render "index", layout: false
-    else
-      "fuck you"
     end
   end
 
@@ -58,6 +56,7 @@ class ProductionsController < ApplicationController
     p params
   	@production = Production.find(params[:id])
   	@equipment = @production.equipments.sort_by &:channel
+    @colors = ColorLibrary.all
     respond_to do |format|
       format.html
       format.pdf do
