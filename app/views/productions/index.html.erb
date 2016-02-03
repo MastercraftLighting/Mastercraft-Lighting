@@ -3,7 +3,7 @@
   <tr id="prod<%= production.id %>">
     <td><%= production.name %></a> </td>
     <td><%= button_to "View", production_path(production), :method => :get %></td>
-    <td><%= button_to "Remove Production", production, :method => :delete %></td>
+    <td><%= button_to "Remove Production", production, :method => :delete, data: {:confirm => "Permanently DELETE show?"} %></td>
     <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
       <%= submit_tag "Upload file from Vectorworks", data: { disable_with: "Please wait, this may take a few seconds" } %>
       <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
