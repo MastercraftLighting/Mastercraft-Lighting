@@ -272,8 +272,8 @@ Devise.setup do |config|
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_up) << [:username, :email, :user_type]
-      devise_parameter_sanitizer.for(:account_update) << [:username, :email, :user_type]
+      devise_parameter_sanitizer.for(:sign_up) << [:username, :email, :user_type_id]
+      devise_parameter_sanitizer.for(:account_update) << [:username, :email, :user_type_id]
     end
 
   end

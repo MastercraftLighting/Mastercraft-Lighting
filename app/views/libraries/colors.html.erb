@@ -3,6 +3,7 @@
   <thead>
     <tr>
       <th> Full Name </th>
+      <th> Swatch </th>
       <th> Alias 1 </th>
       <th> Alias 2 </th>
       <th> Description </th>
@@ -15,11 +16,13 @@
       <% @colors.each do |color| %>
         <tr>
           <td><%= color.full_name %></td>
+          <td><div class="color-box" style="background-color: #<%=color.hex_code%>"></div></td>
           <td><%= color.alias1 %></td>
           <td><%= color.alias2 %></td>
           <td><%= color.description %></td>
           <td><%= color.transmission %></td>
           <td><%= color.hex_code %></td>
+
         </tr>
       <% end %>
     </tr>

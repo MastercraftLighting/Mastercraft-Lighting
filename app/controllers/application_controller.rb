@@ -13,7 +13,7 @@ private
   end
 
   def admin?
-    if current_user && current_user.user_type == "Administrator"
+    if current_user && current_user.user_type_id == 3
         return true
     else
       return false
