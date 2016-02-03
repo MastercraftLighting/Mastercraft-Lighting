@@ -17,7 +17,7 @@ gem 'client_side_validations'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-installer'
 gem 'wkhtmltopdf-heroku', '~> 2.12.2.1'
-
+gem 'rails4-autocomplete'
 group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
