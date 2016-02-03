@@ -17,7 +17,9 @@
   get "/users/:user_id" => 'users#show'
 
   resources :productions do
-    resources :equipments
+    resources :equipments do
+      get :autocomplete_equipment_instrument_type, :on => collection
+    end
   end
 
   get "/productions/:production_id/print" => 'productions#print'

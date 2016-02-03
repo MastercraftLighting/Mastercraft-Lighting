@@ -1,7 +1,7 @@
 class EquipmentsController < ApplicationController
   before_action :set_production, only: [:new, :show, :update, :destroy, :create, :edit]
   before_action :set_equipment, only: [:show, :update, :destroy, :edit]
-
+  autcomplete :equipment, :instrument_type, :full => true
 
   def create
     @equipment = @production.equipments.build(equipment_params)
