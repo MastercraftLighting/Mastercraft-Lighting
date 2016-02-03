@@ -1,21 +1,21 @@
 <div class="view-header">
   <h2>Welcome back, <%=@user.username%></h2>
 </div>
-<div class="row dashboard">
-<div class="column dashboard-buttons">
-  <button type="button" class="btn" data-toggle="modal" data-target="#newModal">
-    New Show
-</button>
 
-</div>
+<div class="nav nav-collapse">
+	<div class="row">
+	<div class="column dashboard-buttons">
+  		<a href="/productions/new" class="btn" data-toggle="modal" data-target="#newModal">New Show</a>
+	</div>
 
-<div class="column dashboard-buttons">
-  <a href="/productions/" class="btn" >View Shows</a>
-</div>
+	<div class="column dashboard-buttons">
+	  <a href="/productions/" class="btn" >View Shows</a>
+	</div>
 
-<div class="column dashboard-buttons">
-  <a href="/libraries" class="btn">Libraries</h3></a>
-</div>
+	<div class="column dashboard-buttons">
+	  <a href="/libraries" class="btn">Libraries</h3></a>
+	</div>
+	</div>
 </div>
 
 <%= render "productions/new_show_modal"%>

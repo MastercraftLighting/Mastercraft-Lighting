@@ -5,6 +5,7 @@ class EquipmentsController < ApplicationController
 include ProductionsHelper
 
   def create
+    @colors = ColorLibrary.all
     @equipment = @production.equipments.build(equipment_params)
     if @equipment.save
       @accessory = @equipment.accessories.create(instrument_type: params[:equipment][:accessories_list]) unless params[:equipment][:accessories_list] == ""
@@ -16,6 +17,7 @@ include ProductionsHelper
   end
 
   def new
+    @colors = ColorLibrary.all
     @equipment = @production.equipments.build
     render partial: "new", layout: false
   end

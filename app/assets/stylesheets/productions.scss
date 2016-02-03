@@ -2,6 +2,60 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.box-bar {
+.channel-box {
+}
+.nav-tabs {
+	a {
+	color: black;
+	}
+}
+}
+.table-headers {
+	position: fixed;
+	float: top;
+	max-width: 80%;
+	.Chan-H {
+	padding-right: 2em;
+	}
+
+	.Dim-H {
+	padding-right: 2em;
+	}
+
+	.Pos-H {
+	padding-right: 2em;
+	}
+
+	.Unit-H {
+	padding-right: 2em;
+	}
+
+	.Inst-H {
+	padding-right: 2em;
+	}
+
+	.Purp-H {
+	padding-right: 2em;
+	}
+
+	.Col-H {
+	padding-right: 2em;
+	}
+
+	.Swa-H {
+	padding-right: 2em;
+	}
+
+	.Gobo-H {
+	padding-right: 2em;
+	}
+
+	.Acc-H {
+	padding-right: 2em;
+	}
+}
+
 .productions-list {
 	a {
 	color: black;
