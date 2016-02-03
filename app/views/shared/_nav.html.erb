@@ -26,7 +26,7 @@
                 <li><%= link_to("Admin:users view", admins_path) %></li>
                     <% else %>
                 <li><%= link_to("Update registration", edit_user_registration_path) %></li>
-                    
+
                     <% end %>
                 <li><%=link_to("Logout", "/users/sign_out", method: :delete)%></li>
                 <% else %>
@@ -39,3 +39,4 @@
     </nav>
 </div>
 <%= render "productions/new_show_modal" %>
+

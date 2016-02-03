@@ -33,3 +33,6 @@
 
   </body>
 </html>
+<% unless flash[:error].nil? %>
+  <script>alert(flash[:error])</script>
+<% end %>
