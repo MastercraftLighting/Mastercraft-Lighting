@@ -2,6 +2,7 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
 
   def index
+    p flash.alert
     p params
     authenticate_user!
     set_productions
