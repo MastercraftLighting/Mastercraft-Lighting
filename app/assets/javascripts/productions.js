@@ -97,16 +97,13 @@ var submitEditEquipment = function(form){
 
 
 var deleteRow = function(path){
+	var token = $('meta[name=csrf-token]').attr('content');
   $.ajax({
     method: "DELETE",
     url: path,
-    dataType: 'json'
+		data: {"authenticity_token": ""+token+""}
   }).done(function(response){
-    console.log("Removing item:" );
-    $('#CH-Row' + response.rowNumber).remove();
-    $('#CK-Row' + response.rowNumber).remove();
-    $('#DM-Row' + response.rowNumber).remove();
-    $('#IS-Row' + response.rowNumber).remove();
+    $('.container').html(response);
   }).fail(function(response){
     console.log("ajax delete call failed: " + response);
   });
