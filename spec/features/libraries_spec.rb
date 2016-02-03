@@ -2,16 +2,6 @@ require 'rails_helper'
 
 feature "Libraries", :type => :feature, js: true do
 
-  def login_as_designer
-    @user = User.create!(FactoryGirl.attributes_for :user, :designer)
-    visit '/'
-    click_link("Login")
-    fill_in "Email", :with => "user@user.com"
-    fill_in "Password", :with => "password"
-    click_button('Log in')
-    visit "/"
-  end
-
   describe "Root Page" do
     it "has a link to Libraries" do
       login_as_designer

@@ -24,7 +24,7 @@ feature "Productions", :type => :feature, js: true do
       login_as_admin
       expect(page).to have_no_content("Your Shows")
     end
-    # BELOW TWO TESTS SHOULDN'T TECHNICALLY PASS, DO WHAT YOU WILL WITH IT
+    # BELOW TWO TESTS ARE A TECHNICALITY, DO WHAT YOU WILL WITH IT
     # it "cannot visit the new production page" do
     #   login_as_admin
     #   visit "/productions/new"

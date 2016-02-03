@@ -21,6 +21,10 @@
 
 # NOTE OF GENERAL REQUESTS/PROJECTS
 
+dashboard is at users/user_id <  LITERALLY
+
+DASHBOARD button text is asymetrical
+
 Implement Edit for Admin/Productions
 side note: maybe take 'fuck you' out of edit production
 
@@ -30,3 +34,5 @@ clean up puts out of controllers
 # NOTES OF TESTS TO COME BACK TO
 
  Model - production
+
+
