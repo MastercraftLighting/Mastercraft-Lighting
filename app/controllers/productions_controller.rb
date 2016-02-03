@@ -32,6 +32,7 @@ class ProductionsController < ApplicationController
 
   # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
+    @colors = ColorLibrary.all
     @equipment = @production.equipments.sort_by &:channel
     render :show
   end
