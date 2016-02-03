@@ -12,7 +12,7 @@ RSpec.describe UsersController, type: :controller do
   #     expect(response).to be_success
   #     expect(response.status).to eq(200)
   #   end
-  #   xit "renders the index template" do
+  #   it "renders the index template" do
   #     get :index
   #     expect(response).to render_template("index")
   #   end

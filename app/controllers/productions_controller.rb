@@ -2,6 +2,8 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
   before_action :set_productions
 
+include ProductionsHelper
+
   def index
     p flash.alert
     p params
@@ -33,7 +35,11 @@ class ProductionsController < ApplicationController
   # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
     @colors = ColorLibrary.all
-    @equipment = @production.equipments.sort_by &:channel
+    @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
+    @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
+    @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
+    @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
+    @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
     render :show
   end
 
@@ -76,7 +82,7 @@ class ProductionsController < ApplicationController
   	end
    end
     def set_productions
-      case current_user.user_type
+      case current_user.user_type.name
       when "Administrator"
         @productions = Production.all
       when "Designer"

@@ -7,11 +7,11 @@ FactoryGirl.define do
   end
 
   trait :admin do
-    user_type "Administrator"
+    user_type_id 3
   end
 
   trait :designer do
-    user_type "Designer"
+    user_type_id 1
   end
 
 end

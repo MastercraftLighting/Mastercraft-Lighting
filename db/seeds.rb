@@ -1,19 +1,19 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-# Seed Usertype table
+# Seed UserType table
 usertypes= []
 users = ['Designer','ME','Administrator','Lead']
 users.each do |name|
-  Usertype.create!(name: name)
+  User_type.create!(name: name)
 end
 
 # Seed User table
-users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights1234', user_type: 'Designer'},
-         {username: 'FoxyFox', email: "FoxyFox@email.com", password: 'grayfox1234', user_type: 'ME'},
-         {username: 'Adam', email: "Adam@email.com", password: 'password1234', user_type: 'Administrator'},
-         {username: 'LarryLighter', email: "LarryLighter@email.com", password: '12341234', user_type: 'Designer'},
-         {username: 'JerryCrew', email: "JerryCrew@email.com", password: 'monkey1234', user_type: 'Lead'},
-         {username: 'JohnCrew', email: "JohnCrew@email.com", password: 'banana1234', user_type: 'Lead'}]
+users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights1234', user_type_id: 1},
+         {username: 'FoxyFox', email: "FoxyFox@email.com", password: 'grayfox1234', user_type_id: 2},
+         {username: 'Adam', email: "Adam@email.com", password: 'password1234', user_type_id: 3},
+         {username: 'LarryLighter', email: "LarryLighter@email.com", password: '12341234', user_type_id: 1},
+         {username: 'JerryCrew', email: "JerryCrew@email.com", password: 'monkey1234', user_type_id: 4},
+         {username: 'JohnCrew', email: "JohnCrew@email.com", password: 'banana1234', user_type_id: 4}]
 
 users.each do |user|
   User.create(user)

@@ -1,7 +1,3 @@
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.unit_number, idx]} %>
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.position, idx]} %>
-<% equipment_groupings = @equipment.slice_when {|a, b| a.position != b.position}.to_a %>
 <div id="instr-sched" class="tab-pane fade">
     <h3>Instrument Schedule</h3>
     <table class="table instrument-schedule">
@@ -21,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <% equipment_groupings.each do |equipment_group| %>
+      <% @equipment_sorted_sliced_for_instrument_view.each do |equipment_group| %>
         <tr><td colspan="10"><h4><%= equipment_group.first.position %></h4></td></tr>
         <div class="pos-groups">
           <% equipment_group.each do |equip| %>

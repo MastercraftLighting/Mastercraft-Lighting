@@ -1,7 +1,3 @@
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.circuit_name, idx]} %>
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.channel, idx]} %>
-<% @equipment = @equipment.sort_by.with_index { |item, idx| [item.dimmer, idx]} %>
-<% equipment_groupings = @equipment.slice_when {|a, b| a.dimmer != b.dimmer}.to_a %>
   <div id="dimmer-hookup" class="tab-pane fade">
     <h3>Dimmer Hookup</h3>
     <table class="table instrument-schedule">
@@ -23,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <% equipment_groupings.each do |equipment_group| %>
+        <% @equipment_sorted_sliced_for_dimmer_view.each do |equipment_group| %>
           <tr><td colspan="11"><h4><%= equipment_group.first.dimmer %></h4></td></tr>
           <div class="dim-groups">
             <% equipment_group.each do |equip| %>

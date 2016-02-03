@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Logins", :type => :feature do
+feature "Logins", :type => :feature, js: true do
   describe "The user is logged out" do
     it "can see a login button" do
       visit '/'
@@ -13,7 +13,7 @@ feature "Logins", :type => :feature do
       expect(page).to have_content("Log in")
     end
     it "can fill out form and submit to log in" do
-      user = User.create(user_type: "Designer", username: "username", email: "email@email.com", password: "password")
+      user = User.create(user_type_id: 1, username: "username", email: "email@email.com", password: "password")
       visit '/'
       click_link("Login")
       fill_in "Email", :with => user.email
