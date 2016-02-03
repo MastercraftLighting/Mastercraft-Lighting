@@ -36,10 +36,9 @@ class EquipmentsController < ApplicationController
 
 
   def destroy
-    item = @production.equipments.find(params[:id])
-    item.destroy
-    if request.xhr?
-      render json: {rowNumber: item.id}
+    if @equipment.destroy
+      @equipment = @production.equipments.sort_by &:channel
+      render "productions/show", layout: false
     else
       redirect back
     end
