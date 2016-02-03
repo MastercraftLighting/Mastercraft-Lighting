@@ -27,6 +27,9 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
+  //editInputButtonListener();
+  //deleteProductionButtonListener();
+  editProductionButtonListener();
 	newEquipmentSubmitListener();
 	editEquipmentSubmitListener();
 };
@@ -70,6 +73,19 @@ var editEquipmentSubmitListener = function(){
 }
 
 
+// var deleteProductionButtonListener = function(){
+//   $('#production-table').on('click', '.delete-button', function(e){
+//     e.preventDefault();
+//     alert("You clicked " + this);
+//   });
+// };
+
+var editProductionButtonListener = function(){
+  $('.container').on('click', '.edit-button', function(e){
+    e.preventDefault();
+    insertEditProductionForm(this);
+  });
+};
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------
@@ -129,12 +145,37 @@ var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
 };
 
+
 var updateRow = function(formData){
   // $.ajax({
   //   method: "PATCH",
   //   url:
   // })
 };
+
+var insertEditProductionForm = function(prod){
+  $("#edit-production-" + prod.id).toggle();
+  updateProductions(prod);
+  };
+
+var updateProductions = function(prod) {
+  var prodNumber = prod.id.slice(-1);
+  var newUrl = prod.href.replace("/edit", "")
+    $("#edit_show" + prodNumber).on('click', function(e){
+      e.preventDefault();
+    $.ajax({
+      url: newUrl,
+      type: "PUT",
+      data: $(this).closest("form").serialize(),
+    }).done(function(response){
+      console.log(response)
+      $(".container").html(response);
+
+    })
+  });
+  
+
+}
 
 //-------------------------------------------------
 // Printing

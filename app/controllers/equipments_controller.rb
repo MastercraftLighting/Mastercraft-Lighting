@@ -24,6 +24,7 @@ class EquipmentsController < ApplicationController
 
   def show
     @equipment = @production.equipments.sort_by &:channel
+    @colors = ColorLibrary.all
   end
 
   def update
