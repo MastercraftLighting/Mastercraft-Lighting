@@ -9,6 +9,10 @@
 
   devise_for :users, controllers: { registrations: "users/registrations" }
 
+  devise_scope :user do
+    get "/user/sign_out" => "devise/sessions#destroy"
+  end
+
   get "/users" => 'users#index'
   get "/users/:user_id" => 'users#show'
 
