@@ -18,7 +18,7 @@ RSpec.describe AdminsController, :type => :controller do
     end
     it "the @users instance variable has users in it" do
       get :index
-      expect(assigns(:users).class).to eq("User")
+      expect(assigns(:users).first.class).to be User
     end
 
     # NOTE: above would need to be stubbed to run, and would therefore be a useless test
