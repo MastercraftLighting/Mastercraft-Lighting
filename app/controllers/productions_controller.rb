@@ -35,7 +35,6 @@ include ProductionsHelper
   # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
     @colors = ColorLibrary.all
-    @equipment = @production.equipments.sort_by &:channel
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
     @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
     @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
