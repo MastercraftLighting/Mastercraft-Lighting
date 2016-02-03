@@ -7,9 +7,12 @@ feature "Productions", :type => :feature, js: true do
       visit "/"
       expect(page).to have_no_content("Create a new show")
     end
-    xit "cannot visit the new production page" do
-      visit "/"
-    end
+    # BELOW you can visit the page, but it errors due to no id
+    # MAYBE make it redirect if visited directly, but error might be enough
+    # it "cannot visit the new production page" do
+    #   visit "/productions/new"
+    #   expect(page).to have_no_content("New Show")
+    # end
   end
 
   context "User is logged in as an Admin" do

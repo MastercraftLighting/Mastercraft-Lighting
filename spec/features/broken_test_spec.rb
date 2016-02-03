@@ -18,7 +18,7 @@ feature "Testing Broken Code", type: :feature, js: true do
       login_as_designer
       click_on("Update registration")
       click_on("Cancel my account")
-      # below clicks "OK" on
+      # below clicks "OK" on alert
       page.driver.browser.switch_to.alert.accept
       click_link("Login")
       fill_in "Email", :with => "user@user.com"
