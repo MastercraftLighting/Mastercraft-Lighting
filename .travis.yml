@@ -14,3 +14,8 @@ script:
   - bundle exec rake db:migrate
   - bundle exec rake db:seed
   - bundle exec rake
+
+addons:
+  sauce_connect:
+    username: "deannawarren"
+    access_key: "9db15b18-d6d1-4d91-9f7b-15806fed6437"
