@@ -10,8 +10,8 @@
 
  <div class="field">
     <%= f.label :user_type %><br />
-    <%= f.collection_select :user_type, @usertypes.order(:name),:name,:name, include_blank: false %>
-  </div> 
+    <%= f.collection_select :user_type_id, @usertypes.order(:name),:id,:name, include_blank: false %>
+  </div>
 
     <div class="field">
     <%= f.label :email %><br />
