@@ -61,7 +61,12 @@ include ProductionsHelper
   def print
     p params
   	@production = Production.find(params[:id])
-  	@equipment = @production.equipments.sort_by &:channel
+  	# @equipment = @production.equipments.sort_by &:channel
+    @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
+    @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
+    @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
+    @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
+    @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
     @colors = ColorLibrary.all
     respond_to do |format|
       format.html
