@@ -19,6 +19,14 @@
  feature - users - 55
  similarly, admin cannot delete their account
 
+ controller - production - 6
+ routes may not be meant to pass, double check and fix tests
+
+ feature - user - 19
+ test can't find drop box ... again
+
+
+
 # NOTE OF GENERAL REQUESTS/PROJECTS
 
 dashboard is at users/user_id < LITERALLY
