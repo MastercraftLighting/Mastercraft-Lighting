@@ -3,13 +3,17 @@ class UploadsController < ApplicationController
   include IoHelper
 
   def create
-    redirect_to productions_path and return if params[:vectorworks_file].nil?
+    if params[:vectorworks_file].nil?
+      flash[:alert] = "You need to attach a file"
+      redirect_to productions_path
+      return
+    end
     production_id = params[:id]
     begin
       csv_importer(params[:vectorworks_file],production_id)
       redirect_to production_path(production_id) and return
     rescue Exception
-      #how do we want to report that upload failed?
+      flash[:alert] = "Sorry, your upload failed.  Please check that your file is a TSV format filed from Vectorworks.  If it is the correct file type and does not load, please contact customer support"
       redirect_to productions_path
     end
   end
