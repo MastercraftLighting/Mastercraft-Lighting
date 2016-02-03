@@ -1,5 +1,6 @@
 class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
+  before_action :set_productions
 
   def index
     p params
@@ -27,7 +28,7 @@ class ProductionsController < ApplicationController
   end
 
   def edit
-
+    @production = Production.find(params[:id])
   end
 
   # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
@@ -38,6 +39,12 @@ class ProductionsController < ApplicationController
 
   def update
 
+    puts "update is running"
+    if @production.update_attributes(production_params)
+      render "index", layout: false
+    else
+      "fuck you"
+    end
   end
 
   def destroy
@@ -80,5 +87,9 @@ class ProductionsController < ApplicationController
       when "Lead"
         @productions = current_user.lead_productions
     end
+    end
+
+    def production_params
+      params.require(:production).permit(:name, :date)
     end
 end
