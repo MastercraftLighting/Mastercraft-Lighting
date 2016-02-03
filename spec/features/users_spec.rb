@@ -6,7 +6,7 @@ feature "Users", :type => :feature do
   it "can create a new account" do
     users = ['Designer','ME','Administrator','Lead']
     users.each do |name|
-      Usertype.create!(name: name)
+      UserType.create!(name: name)
     end
     visit "/"
     within 'nav' do
@@ -29,7 +29,7 @@ feature "Users", :type => :feature do
   it "cannot create an Admin account through form" do
     users = ['Designer','ME','Administrator','Lead']
     users.each do |name|
-      Usertype.create!(name: name)
+      UserType.create!(name: name)
     end
     visit "/"
     within 'nav' do
@@ -75,7 +75,7 @@ end
     it "can create a production" do
       users = ['Designer','ME','Administrator','Lead']
       users.each do |name|
-        Usertype.create!(name: name)
+        UserType.create!(name: name)
       end
       login_as_designer
       click_on("Create a new show")
@@ -87,7 +87,7 @@ end
     it 'can update their information' do
       users = ['Designer','ME','Administrator','Lead']
       users.each do |name|
-        Usertype.create!(name: name)
+        UserType.create!(name: name)
       end
       login_as_designer
       click_on("Update registration")

@@ -69,7 +69,7 @@ class ProductionsController < ApplicationController
   	end
    end
     def set_productions
-      case current_user.user_type
+      case current_user.user_type.name
       when "Administrator"
         @productions = Production.all
       when "Designer"
