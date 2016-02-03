@@ -10,9 +10,9 @@ RSpec.describe Production, :type => :model do
       end
     end
     context "when not valid" do
-      xit 'cannot be created' do
-        expect(Production.create).to raise_error
-      end
+      # it 'cannot be created' do
+      #   expect(Production.create).to raise_error
+      # end
     end
   end
 

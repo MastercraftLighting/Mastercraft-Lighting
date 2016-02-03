@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Users", :type => :feature do
+feature "Users", :type => :feature, js: true do
 
   context "User does not have account" do
   it "can create a new account" do
@@ -51,8 +51,8 @@ end
       visit "/admins"
       expect(page).to have_content("You are logged in as a")
     end
-    it "can edit their information"
-    it "can delete their account"
+    # it "can edit their information"
+    # it "can delete their account"
     it "can log out" do
       login_as_admin
       expect(page).to have_link("Logout")
@@ -101,7 +101,7 @@ end
       click_on("Log in")
       expect(page).to have_content("Logout")
     end
-    xit 'can delete their account', js: true do
+    it 'can delete their account' do
       # doesn't want to click Cancel button
       login_as_designer
       click_on("Update registration")
@@ -116,9 +116,8 @@ end
     end
     it "can log out" do
       login_as_designer
-      expect(page).to have_link("Logout")
       click_link("Logout")
-      expect(page).to have_link("Login")
+      expect(page.html).to have_link("Login")
     end
   end
 

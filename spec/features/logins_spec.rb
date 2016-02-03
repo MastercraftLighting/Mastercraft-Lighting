@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature "Logins", :type => :feature do
+feature "Logins", :type => :feature, js: true do
   describe "The user is logged out" do
     it "can see a login button" do
       visit '/'
