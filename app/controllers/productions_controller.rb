@@ -2,6 +2,8 @@ class ProductionsController < ApplicationController
   before_action :set_production, only: [:show, :update, :destroy]
   before_action :set_productions
 
+include ProductionsHelper
+
   def index
     p flash.alert
     p params
@@ -34,6 +36,11 @@ class ProductionsController < ApplicationController
   def show
     @colors = ColorLibrary.all
     @equipment = @production.equipments.sort_by &:channel
+    @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
+    @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
+    @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
+    @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
+    @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
     render :show
   end
 
