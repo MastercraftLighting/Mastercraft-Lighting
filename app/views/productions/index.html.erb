@@ -5,8 +5,8 @@
     <td><%= button_to "View", production_path(production), :method => :get %></td>
     <td><%= button_to "Remove Production", production, :method => :delete %></td>
     <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
-      <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
       <%= submit_tag "Upload file from Vectorworks", data: { disable_with: "Please wait, this may take a few seconds" } %>
+      <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
     <% end %></td>
     <% if production.equipments.count>0 %>
     <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id) %></td>
@@ -16,8 +16,6 @@
 </table>
 
 <% if flash.alert %>
-<div class="error">
-<%= flash.alert %>
-</div>
+<script>alert("<%= flash.alert %>")</script>
 <% end %>
 
