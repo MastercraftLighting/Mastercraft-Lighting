@@ -10,6 +10,9 @@
       <%= submit_tag "Upload file from Vectorworks", class: "btn btn-s"  %>
       <%= file_field_tag 'vectorworks_file' %>
     <% end %></td>
+    <% if production.equipments.count>0 %>
+    <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id) %></td>
+    <% end %>
     </tr>
     <td><a id="form<%=production.id%>" class="deep-blue edit-button" href="/productions/<%= production.id%>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit</span></a></td>
    <tr>

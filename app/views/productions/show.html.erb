@@ -1,12 +1,12 @@
-<div class="col-md-3 channel-maker">
-	<span class="channel-box">
-	<!-- Button trigger modal -->
-<button type="button" class="btn btn-lg" data-toggle="modal" data-target="#myModal">
-  + New Channel
-</button>
+  <div class="col-md-3 channel-maker">
+  	<span class="channel-box">
+  	<!-- Button trigger modal -->
+      <a href="/productions/<%=@production.id %>/equipments/new" type="button" class="btn btn-lg" data-toggle="modal" data-target="#newEquipmentModal">
+        + New Channel
+      </a>
+  	</span>
+  </div><!-- Close col-md-3 channel-maker -->
 
-	</span>
-</div>
 <div class="col-md-9 tab-views">
 	<ul class="nav nav-tabs">
 		<li class="active"><a data-toggle="tab" href="#channel-hookup">Channel Hookup</a></li>
@@ -15,29 +15,39 @@
 
 		<li><a data-toggle="tab" href="#instr-sched">Instrument Schedule</a></li>
     <li><a data-toggle="tab" href="#color-schedule">Color Schedule</a></li>
-
 	</ul>
-</div>
-<div class="tab-content">
- <%= render :partial => "equipments/channel_hookup" %>
+</div><!-- Close col-md-9 tab-views -->
 
+<div class="tab-content">
+
+  <%= render :partial => "equipments/channel_hookup" %>
 
   <%= render :partial => "equipments/circuit_hookup" %>
 
   <%= render :partial => "equipments/dimmer_hookup" %>
 
-
   <%= render :partial => "equipments/instr_sched" %>
 
-  <%=render :partial => "channels/color_schedule"%>
+  <%= render :partial => "equipments/color_schedule" %>
 
+</div><!-- Close tab-content -->
+
+
+<%= render :partial => "productions/inventory" %>
+
+<div class="modal fade" id="newEquipmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+		</div>
+	</div>
 </div>
 
-<%= render :partial =>"equipments/modal" %>
-
-<%= render "inventory" %>
-
-
+<div class="modal fade" id="editEquipmentModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+		</div>
+	</div>
+</div>
 
 
 
@@ -50,5 +60,4 @@
       <li class="bottom-button library-toggle"><a href="/">Library</a></li>
     </ul>
   </div>
-
 </footer>

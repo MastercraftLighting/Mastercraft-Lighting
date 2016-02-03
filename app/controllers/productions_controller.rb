@@ -10,8 +10,6 @@ class ProductionsController < ApplicationController
   end
 
   def create
-    p "*" * 40
-    p params.inspect
     set_productions
     @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
     if @production.save

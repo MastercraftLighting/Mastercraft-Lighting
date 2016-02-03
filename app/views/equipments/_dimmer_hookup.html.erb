@@ -17,11 +17,13 @@
           <th class="Purp-H">Purpose</th>
           <th class="Col-H">Color</th>
           <th class="Ckt-H">Circuit</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <% equipment_groupings.each do |equipment_group| %>
-          <tr><td colspan="10"><h4><%= equipment_group.first.dimmer %></h4></td></tr>
+          <tr><td colspan="11"><h4><%= equipment_group.first.dimmer %></h4></td></tr>
           <div class="dim-groups">
             <% equipment_group.each do |equip| %>
               <tr id="DM-Row<%= equip.id %>">

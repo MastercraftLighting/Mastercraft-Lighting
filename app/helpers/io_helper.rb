@@ -19,6 +19,7 @@ STORED_HEADER_LINE = ["Device Type","Instrument Type","Wattage","Purpose","Posit
           line_params.update(header => line[index].to_s)
       end
       line_params.delete("accessories")
+      line_params = convert_types_of(line_params)
       if line_params["device_type"] == "Light"
         line_params.delete("device_type")
         Equipment.import(line_params)
@@ -43,7 +44,7 @@ STORED_HEADER_LINE = ["Device Type","Instrument Type","Wattage","Purpose","Posit
   def csv_exporter(production_id)
     csv_string = CSV.generate do |csv|
       csv << STORED_HEADER_LINE
-      Production.find(production_id).equipment each do |line|
+      Production.find(production_id).equipments.each do |line|
         csv << (["Light"] + line.attributes.values + [""])
         if line.accessories
           line.accessories.each do |line|
@@ -55,5 +56,18 @@ STORED_HEADER_LINE = ["Device Type","Instrument Type","Wattage","Purpose","Posit
     tsv_string = csv_string.gsub(/,/,"\t")
     File.open("public/tsv/download_#{production_id}.tsv", 'w') {|f| f.write(tsv_string) }
   end
+
+  private
+
+  def convert_types_of(line_params)
+    line_params['wattage'] = line_params['wattage'].to_i
+    line_params['dimmer'] = line_params['dimmer'].to_i
+    line_params['channel'] = line_params['channel'].to_i
+    line_params['address'] = line_params['address'].to_i
+    line_params['circuit_number'] = line_params['circuit_number'].to_i
+    line_params['frame_size'] = line_params['frame_size'].to_f
+    line_params
+  end
+
 
 end

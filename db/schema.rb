@@ -18,18 +18,18 @@ ActiveRecord::Schema.define(version: 20160202033114) do
 
   create_table "accessories", force: :cascade do |t|
     t.text     "instrument_type"
-    t.text     "wattage"
+    t.integer  "wattage"
     t.text     "purpose"
-    t.text     "position"
+    t.text     "position",                        default: "0"
     t.text     "unit_number"
     t.text     "color"
-    t.text     "dimmer"
-    t.text     "channel"
-    t.text     "address"
+    t.integer  "dimmer",                          default: 0
+    t.integer  "channel",                         default: 0
+    t.integer  "address"
     t.text     "universe"
     t.text     "u_address"
-    t.text     "circuit_number"
-    t.text     "circuit_name"
+    t.integer  "circuit_number",                  default: 0
+    t.text     "circuit_name",                    default: "!"
     t.text     "system"
     t.text     "user_field_1"
     t.text     "user_field_2"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "user_field_5"
     t.text     "user_field_6"
     t.text     "num_channels"
-    t.text     "frame_size"
+    t.float    "frame_size"
     t.text     "field_angle"
     t.text     "field_angle_2"
     t.text     "beam_angle"
@@ -78,8 +78,8 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "fixtureid"
     t.text     "__uid"
     t.integer  "equipment_id"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "color_libraries", force: :cascade do |t|
@@ -93,21 +93,20 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.datetime "updated_at",   null: false
   end
 
-  create_table "csv_inputs", force: :cascade do |t|
-    t.text     "device_type"
+  create_table "equipment", force: :cascade do |t|
     t.text     "instrument_type"
-    t.text     "wattage"
+    t.integer  "wattage"
     t.text     "purpose"
-    t.text     "position"
+    t.text     "position",                        default: "0"
     t.text     "unit_number"
     t.text     "color"
-    t.text     "dimmer"
-    t.text     "channel"
-    t.text     "address"
+    t.integer  "dimmer",                          default: 0
+    t.integer  "channel",                         default: 0
+    t.integer  "address"
     t.text     "universe"
     t.text     "u_address"
-    t.text     "circuit_number"
-    t.text     "circuit_name"
+    t.integer  "circuit_number",                  default: 0
+    t.text     "circuit_name",                    default: "!"
     t.text     "system"
     t.text     "user_field_1"
     t.text     "user_field_2"
@@ -116,7 +115,7 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "user_field_5"
     t.text     "user_field_6"
     t.text     "num_channels"
-    t.text     "frame_size"
+    t.float    "frame_size"
     t.text     "field_angle"
     t.text     "field_angle_2"
     t.text     "beam_angle"
@@ -155,35 +154,9 @@ ActiveRecord::Schema.define(version: 20160202033114) do
     t.text     "z_location"
     t.text     "fixtureid"
     t.text     "__uid"
-    t.text     "accessories"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
     t.integer  "production_id"
-  end
-
-  add_index "csv_inputs", ["production_id"], name: "index_csv_inputs_on_production_id", using: :btree
-
-  create_table "equipment", force: :cascade do |t|
-    t.text     "instrument_type"
-    t.integer  "wattage"
-    t.text     "purpose"
-    t.text     "position",        default: "0"
-    t.text     "unit_number"
-    t.text     "color"
-    t.integer  "dimmer",          default: 0
-    t.integer  "channel",         default: 0
-    t.integer  "address"
-    t.text     "universe"
-    t.integer  "circuit_number",  default: 0
-    t.text     "circuit_name",    default: "!"
-    t.float    "frame_size"
-    t.text     "gobo_1"
-    t.text     "gobo_2"
-    t.text     "focus"
-    t.text     "accessories"
-    t.integer  "production_id"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "equipment_notes", force: :cascade do |t|
