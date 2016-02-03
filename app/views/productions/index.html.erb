@@ -1,17 +1,34 @@
-<table class="table">
+<table class="table" id="production-table">
   <% @productions.each do |production| %>
   <tr id="prod<%= production.id %>">
-    <td><%= production.name %></a> </td>
-    <td><%= button_to "View", production_path(production), :method => :get %></td>
-    <td><%= button_to "Remove Production", production, :method => :delete %></td>
+    <td id="tdname<%= production.id %>"><%= production.name %></a> </td>
+    <td><%= button_to "View", production_path(production), :method => :get, class: "btn btn-s" %></td>
+    <td class="delete-button"><%= button_to "Remove Production", production, :method => :delete, data: {confirm: "Delete production?"}, class: "btn btn-s"%></td>
+    <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id), class: "btn btn-s" %></td>
     <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
-      <%= submit_tag "Upload file from Vectorworks", data: { disable_with: "Please wait, this may take a few seconds" } %>
+      <%= submit_tag "Upload file from Vectorworks", class: "btn btn-s", data: { disable_with: "Please wait, this may take a few seconds" } %>
       <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
     <% end %></td>
     <% if production.equipments.count>0 %>
     <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id) %></td>
     <% end %>
     </tr>
+    <td><a id="form<%=production.id%>" class="deep-blue edit-button" href="/productions/<%= production.id%>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit</span></a></td>
+   <tr>
+    <td>
+    <div id="edit-production-form<%=production.id%>" class="edit-production-form">
+        <%=form_for(production, method: :put) do |f|%>
+      <div class="form">
+        <%=f.label :name, "Production Name:"%>
+        <%=f.text_field :name%><br />
+        <%=f.label :date, "Production Date:"%>
+        <%=f.date_field :date%><br />
+        <%=f.submit "Save Edits", class: "btn btn-s", id: "edit_show#{production.id}" %>
+        <%end%>
+      </div>
+    </div>
+  </td>
+  </tr>
   <% end %>
 </table>
 

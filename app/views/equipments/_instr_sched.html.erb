@@ -15,6 +15,7 @@
         <th class="Watt-H">Watt</th>
         <th class="Purp-H">Purpose</th>
         <th class="Col-H">Color</th>
+        <th class="Swa-H">Swatch</th>
         <th class="Gobo-H">Gobo</th>
         <th class="Acc-H">Accessories</th>
       </tr>
@@ -33,6 +34,11 @@
               <td class="e-wat"><%= equip.wattage %></td>
               <td class="e-pur"><%= equip.purpose %></td>
               <td class="e-col"><%= equip.color %></td>
+              <td><%if @colors.find_by_alias1(equip.color)%>
+                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+                <%else%>
+                <div class="color-box" display="inline"></div>
+                <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
               <td class="e-"><%= equip.accessories_list %></td>
               <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
