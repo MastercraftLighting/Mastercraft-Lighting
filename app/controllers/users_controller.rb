@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   def view_only?
     !(current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer")
   end
+
   helper_method :view_only?
 
 end
