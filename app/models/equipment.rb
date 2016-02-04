@@ -4,6 +4,8 @@ class Equipment < ActiveRecord::Base
   has_many :equipment_notes
   has_many :accessories
 
+  INSTRUMENT_TYPE = Equipment.uniq.pluck(:instrument_type)
+
   def self.import(csv)
     Equipment.create(csv)
   end

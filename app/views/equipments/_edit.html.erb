@@ -58,7 +58,21 @@
     <% end %>
 </div>
 
-  <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Changes</button>
-    <button type="submit" class="editChannel btn btn-primary">Save Changes</button>
-  </div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Changes</button>
+  <button type="submit" class="editChannel btn btn-primary">Save Changes</button>
+</div>
+
+<script>
+  console.log("autocomplete enabled");
+  var equipmentOptions = <%= raw Equipment::INSTRUMENT_TYPE %>;
+  $('#equipment_instrument_type').autocomplete({
+    source: equipmentOptions,
+    open: function(){
+          setTimeout(function () {
+              $('.ui-autocomplete').css('z-index', 99999999999999);
+          }, 0);
+      }
+  });
+  // $('#equipment_instrument_type').attr('autocomplete','on');
+</script>
