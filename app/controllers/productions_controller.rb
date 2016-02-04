@@ -14,9 +14,14 @@ include ProductionsHelper
   def create
     set_productions
     if User.find_by_username(params[:production][:master_electrician_id])
-    @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id, master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
+    @production = Production.new(name: params[:production][:name],
+                                 date: params[:production][:date],
+                                 designer_id: current_user.id,
+                                 master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
     else
-      @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
+      @production = Production.new(name: params[:production][:name],
+                                   date: params[:production][:date],
+                                   designer_id: current_user.id)
     end
 
     if @production.save
