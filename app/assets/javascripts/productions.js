@@ -1,23 +1,7 @@
 $(document).ready(function(){
 	toggleMenus();
   bindListeners();
-	// modalPostLoads();
 });
-
-// var modalPostLoads = function(){
-// 	$('#editEquipmentModal').on('shown.bs.modal', function (e) {
-//   editEquipmentAutoComplete();
-// })
-// }
-//
-// var editEquipmentAutoComplete = function(){
-//   console.log("autcomplete enabled");
-//   var equipmentOptions = ["Light1", "Light2", "Light3"];
-//   $('#equipment_instrument_type').autocomplete({
-//     source: equipmentOptions
-//   });
-// };
-
 
 //------------------------------------------------
 // Channel-view slider Functions
@@ -27,10 +11,6 @@ var toggleMenus = function(){
     	e.preventDefault();
       $(".inventory-tab").slideToggle();
     });
- //    $(".print-toggle").click(function(e){
-	//   e.preventDefault();
- //    $(".print-tab").slideToggle();
- //    });
     $(".library-toggle").click(function(e){
     	e.preventDefault();
       $(".library-tab").slideToggle();
@@ -69,14 +49,13 @@ var editButtonListener = function(){
   });
 };
 
-
 var newEquipmentSubmitListener = function(){
 	$('.container').on('click','button.newChannel', function(e){
 		e.preventDefault();
 		var form = $('form#new_equipment');
 		submitNewEquipment(form);
 	})
-}
+};
 
 var editEquipmentSubmitListener = function(){
 	$('.container').on('click','button.editChannel', function(e){
@@ -84,7 +63,7 @@ var editEquipmentSubmitListener = function(){
 		var form = $('form').not('#new_equipment');
 		submitEditEquipment(form);
 	})
-}
+};
 
 var editProductionButtonListener = function(){
   $('.container').on('click', '.edit-button', function(e){
@@ -92,6 +71,7 @@ var editProductionButtonListener = function(){
     insertEditProductionForm(this);
   });
 };
+
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------
@@ -104,7 +84,7 @@ var submitNewEquipment = function(form){
 		$('.container').html(response);
 		$('.modal-backdrop').remove();
 	})
-}
+};
 
 var submitEditEquipment = function(form){
 	$.ajax({
@@ -115,8 +95,7 @@ var submitEditEquipment = function(form){
 		$('.container').html(response);
 		$('.modal-backdrop').remove();
 	})
-}
-
+};
 
 var deleteRow = function(path){
 	var token = $('meta[name=csrf-token]').attr('content');
@@ -145,24 +124,14 @@ var editEquipment = function(path){
   });
 };
 
-
-
 var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
-};
-
-
-var updateRow = function(formData){
-  // $.ajax({
-  //   method: "PATCH",
-  //   url:
-  // })
 };
 
 var insertEditProductionForm = function(prod){
   $("#edit-production-" + prod.id).toggle();
   updateProductions(prod);
-  };
+};
 
 var updateProductions = function(prod) {
   var prodNumber = prod.id.slice(-1);
@@ -174,15 +143,8 @@ var updateProductions = function(prod) {
       type: "PUT",
       data: $(this).closest("form").serialize(),
     }).done(function(response){
-      console.log(response)
       $(".container").html(response);
-
     })
   });
+};
 
-
-}
-
-//-------------------------------------------------
-// Printing
-//-------------------------------------------------
