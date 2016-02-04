@@ -7,20 +7,13 @@
         <th class="Size-H">Size</th>
         <th class="Qty-H">Quantity</th>
       </tr>
+    <hr>
     </thead>
     <tbody>
 
       <% @equipment_sorted_sliced_for_color_view.each do |equipment_group| %>
         <% this_color = equipment_group.first.color %>
-        <tr><td colspan="10"><h4><%= this_color %></h4>
-           <%if @colors%>
-          <%if @colors.find_by_alias1(this_color)%>
-                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(this_color).hex_code%>" display="inline"></div>
-                <%end%>
-                <%else%>
-                <div class="color-box" display="inline" margin-right="10em"></div>
-                <%end%>
-        </td>
+        <tr><td colspan="10"><h4><%= this_color %></h4></td>
         </tr>
 
         <% equipment_sub_groupings = equipment_group.slice_when {|a, b| a.frame_size != b.frame_size}.to_a %>
