@@ -27,8 +27,6 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
-  //editInputButtonListener();
-  //deleteProductionButtonListener();
   editProductionButtonListener();
 	newEquipmentSubmitListener();
 	editEquipmentSubmitListener();
@@ -72,13 +70,6 @@ var editEquipmentSubmitListener = function(){
 	})
 }
 
-
-// var deleteProductionButtonListener = function(){
-//   $('#production-table').on('click', '.delete-button', function(e){
-//     e.preventDefault();
-//     alert("You clicked " + this);
-//   });
-// };
 
 var editProductionButtonListener = function(){
   $('.container').on('click', '.edit-button', function(e){
