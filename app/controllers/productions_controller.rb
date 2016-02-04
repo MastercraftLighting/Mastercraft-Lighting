@@ -5,8 +5,6 @@ class ProductionsController < ApplicationController
 include ProductionsHelper
 
   def index
-    p flash.alert
-    p params
     authenticate_user!
     set_productions
     render :index
