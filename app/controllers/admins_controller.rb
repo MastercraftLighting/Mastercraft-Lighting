@@ -8,11 +8,8 @@ class AdminsController < ApplicationController
 
   def show
     user = User.find(params[:id])
-    puts user.inspect
     @productions = user.designed_productions if user.user_type_id == 1
     @productions = user.lead_productions if user.user_type_id == 4
-    # @productions = user.master_electrician_productions if user.user_type_id == 2
-    # above method not currently working.....
     render "productions/index"
   end
 
