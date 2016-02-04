@@ -44,7 +44,6 @@ include ProductionsHelper
   end
 
   def update
-
     puts "update is running"
     if @production.update_attributes(production_params)
       render "index", layout: false
