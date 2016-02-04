@@ -4,6 +4,20 @@ class Equipment < ActiveRecord::Base
   has_many :equipment_notes
   has_many :accessories
 
+  # the INSTRUMENT_TYPE constant is used to provide a list of options for autocompletion when creating a new or editing a piece of equipment. As currently written it only calculates once when the server is loaded, we should change this to a class variable and write a method for the create & update routes in the Equipment controller that add the field value to the list if it does not already exist.
+
+  # INSTRUMENT_TYPE = Equipment.uniq.pluck(:instrument_type)
+
+  @@instrument_types = Equipment.uniq.pluck(:instrument_type)
+
+  def self.instrument_types
+    @@instrument_types
+  end
+
+  def self.add_instrument_types(instrument)
+    @@instrument_types = @@instrument_types | [instrument]
+  end
+
   def self.import(csv)
     Equipment.create(csv)
   end
