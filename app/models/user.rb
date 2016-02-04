@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
   has_many :master_electrician_productions, foreign_key: :master_electrician_id, class_name: "Production"
   belongs_to :user_type
 
+
 end

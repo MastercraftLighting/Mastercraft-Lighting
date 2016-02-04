@@ -63,3 +63,15 @@
   <button type="button" class="btn btn-default" data-dismiss="modal">Close without Saving</button>
   <button type="submit" class="newChannel btn btn-primary">Create Channel</button>
 </div>
+
+<script>
+  var equipmentOptions = <%= raw Equipment.instrument_types %>;
+  $('#equipment_instrument_type').autocomplete({
+    source: equipmentOptions,
+    open: function(){
+          setTimeout(function () {
+              $('.ui-autocomplete').css('z-index', 99999999999999);
+          }, 0);
+      }
+  });
+</script>
