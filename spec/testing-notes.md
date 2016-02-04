@@ -19,9 +19,17 @@
  feature - users - 55
  similarly, admin cannot delete their account
 
+ controller - production - 6
+ routes may not be meant to pass, double check and fix tests
+
+ feature - user - 19
+ test can't find drop box ... again
+
+
+
 # NOTE OF GENERAL REQUESTS/PROJECTS
 
-dashboard is at users/user_id <  LITERALLY
+dashboard is at users/user_id < LITERALLY
 
 DASHBOARD button text is asymetrical
 
@@ -29,10 +37,16 @@ Implement Edit for Admin/Productions
 side note: maybe take 'fuck you' out of edit production
 
 clean up puts out of controllers
-(controller labels and mil being printed in tests)
+(controller labels and nil being printed in tests)
 
 # NOTES OF TESTS TO COME BACK TO
 
  Model - production
 
+# NOTE OF THINGS SOLIDLY DONE
 
+????
+
+# NOTEY NOTES
+https://github.com/wolfram74/random_acts_of_kindness/blob/master/racts/spec/controllers/tasks_controller_spec.rb
+link to mentor's final project with controller tests

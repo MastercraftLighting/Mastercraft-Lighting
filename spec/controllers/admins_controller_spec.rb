@@ -16,11 +16,11 @@ RSpec.describe AdminsController, :type => :controller do
       get :index
       expect(assigns(:users)).to be_an(ActiveRecord::Relation)
     end
-    # it "the @users instance variable has users in it" do
-    #   get :index
-    #   expect(assigns(:users).class).to eq("User")
-    # end
-    #
+    it "the @users instance variable has users in it" do
+      get :index
+      expect(assigns(:users).first.class).to be User
+    end
+
     # NOTE: above would need to be stubbed to run, and would therefore be a useless test
     # because :users would be, by force, a collection of Users
     # Because on test database not development

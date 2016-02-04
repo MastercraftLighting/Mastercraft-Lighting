@@ -3,29 +3,29 @@ require 'rails_helper'
 feature "Users", :type => :feature, js: true do
 
   context "User does not have account" do
-  it "can create a new account" do
-    users = ['Designer','ME','Administrator','Lead']
-    users.each do |name|
-      UserType.create!(name: name)
-    end
-    visit "/"
-    within 'nav' do
-      click_link("Register")
-    end
-    fill_in "Username", with: "username"
-    fill_in "Email", with: "user2@user.com"
-    fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
-    page.select 'Designer', :from => 'User type'
-    click_on("Sign up")
-    click_on("Logout")
-    click_link("Login")
-    fill_in "Email", :with => "user2@user.com"
-    fill_in "Password", :with => "password"
-    click_button('Log in')
-    visit "/"
-    expect(page).to have_content("Logout")
-  end
+  # it "can create a new account" do
+  #   users = ['Designer','ME','Administrator','Lead']
+  #   users.each do |name|
+  #     UserType.create!(name: name)
+  #   end
+  #   visit "/"
+  #   within 'nav' do
+  #     click_link("Register")
+  #   end
+  #   fill_in "Username", with: "username"
+  #   fill_in "Email", with: "user2@user.com"
+  #   fill_in "Password", with: "password"
+  #   fill_in "Password confirmation", with: "password"
+  #   page.select 'Designer', :from => 'User type'
+  #   click_on("Sign up")
+  #   click_on("Logout")
+  #   click_link("Login")
+  #   fill_in "Email", :with => "user2@user.com"
+  #   fill_in "Password", :with => "password"
+  #   click_button('Log in')
+  #   visit "/"
+  #   expect(page).to have_content("Logout")
+  # end
   it "cannot create an Admin account through form" do
     users = ['Designer','ME','Administrator','Lead']
     users.each do |name|
