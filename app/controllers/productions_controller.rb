@@ -6,8 +6,6 @@ class ProductionsController < ApplicationController
 include ProductionsHelper
 
   def index
-    p flash.alert
-    p params
     authenticate_user!
     set_productions
     render :index
@@ -15,9 +13,6 @@ include ProductionsHelper
 
   def create
     set_productions
-    # if Venue.find(params[:production][:venues])
-    # @venue = Venue.find(params[:production][:venues])
-    # end
     if User.find_by_username(params[:production][:master_electrician_id])
     @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id, master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
     else
@@ -41,7 +36,6 @@ include ProductionsHelper
     @production = Production.find(params[:id])
   end
 
-  # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
     @colors = ColorLibrary.all
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
@@ -91,19 +85,12 @@ include ProductionsHelper
 
 
   def print
-  	#@production = Production.find(params[:id])
     @colors = ColorLibrary.all
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
     @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
     @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
     @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
     @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     render :pdf => "print_views", :template => "print.html.erb"
-    #   end
-    # end
     render :print
   end
 
