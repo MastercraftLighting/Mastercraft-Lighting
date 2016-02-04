@@ -38,9 +38,6 @@ clean up puts out of controllers
 (controller labels and nil being printed in tests)
 
 # NOTES OF TESTS TO DO
-
- Model - production
- Model - equipment
  Controller - production
  Controller - users
  Controller - equipment
@@ -48,13 +45,12 @@ clean up puts out of controllers
  Feature - users
  Feature - equipment
 
-
 # NOTE OF TEST DOING
-
-
+ Model - equipment
 
 # NOTE OF THINGS SOLIDLY DONE
  Model - users
+ Model - production
 
 # NOTEY NOTES
 https://github.com/wolfram74/random_acts_of_kindness/blob/master/racts/spec/controllers/tasks_controller_spec.rb
