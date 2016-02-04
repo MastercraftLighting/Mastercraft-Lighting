@@ -91,20 +91,19 @@ include ProductionsHelper
 
 
   def print
-  	#@production = Production.find(params[:id])
+  	@production = Production.find(params[:id])
     @colors = ColorLibrary.all
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
     @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
     @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
     @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
     @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     render :pdf => "print_views", :template => "print.html.erb"
-    #   end
-    # end
-    render :print
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "print_views", :template => "print.html.erb"
+      end
+    end
   end
 
 
