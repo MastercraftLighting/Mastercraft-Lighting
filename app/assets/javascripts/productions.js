@@ -1,7 +1,23 @@
 $(document).ready(function(){
 	toggleMenus();
-    bindListeners();
+  bindListeners();
+	// modalPostLoads();
 });
+
+// var modalPostLoads = function(){
+// 	$('#editEquipmentModal').on('shown.bs.modal', function (e) {
+//   editEquipmentAutoComplete();
+// })
+// }
+//
+// var editEquipmentAutoComplete = function(){
+//   console.log("autcomplete enabled");
+//   var equipmentOptions = ["Light1", "Light2", "Light3"];
+//   $('#equipment_instrument_type').autocomplete({
+//     source: equipmentOptions
+//   });
+// };
+
 
 //------------------------------------------------
 // Channel-view slider Functions
@@ -27,8 +43,6 @@ var toggleMenus = function(){
 var bindListeners = function(){
   deleteButtonListener();
   editButtonListener();
-  //editInputButtonListener();
-  //deleteProductionButtonListener();
   editProductionButtonListener();
 	newEquipmentSubmitListener();
 	editEquipmentSubmitListener();
@@ -71,14 +85,6 @@ var editEquipmentSubmitListener = function(){
 		submitEditEquipment(form);
 	})
 }
-
-
-// var deleteProductionButtonListener = function(){
-//   $('#production-table').on('click', '.delete-button', function(e){
-//     e.preventDefault();
-//     alert("You clicked " + this);
-//   });
-// };
 
 var editProductionButtonListener = function(){
   $('.container').on('click', '.edit-button', function(e){
@@ -173,7 +179,7 @@ var updateProductions = function(prod) {
 
     })
   });
-  
+
 
 }
 
