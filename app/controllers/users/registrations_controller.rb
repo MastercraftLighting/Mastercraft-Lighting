@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     configure_sign_up_params
+    @usertypes = UserType.where("name != 'Administrator'")
     super
   end
 

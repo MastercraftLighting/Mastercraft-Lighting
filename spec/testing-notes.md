@@ -25,7 +25,8 @@
  feature - user - 19
  test can't find drop box ... again
 
-
+model - user - 25/30
+user can be created without email/password b/c default values
 
 # NOTE OF GENERAL REQUESTS/PROJECTS
 
@@ -33,19 +34,27 @@ dashboard is at users/user_id < LITERALLY
 
 DASHBOARD button text is asymetrical
 
-Implement Edit for Admin/Productions
-side note: maybe take 'fuck you' out of edit production
-
 clean up puts out of controllers
 (controller labels and nil being printed in tests)
 
-# NOTES OF TESTS TO COME BACK TO
+# NOTES OF TESTS TO DO
 
  Model - production
+ Model - equipment
+ Controller - production
+ Controller - users
+ Controller - equipment
+ Feature - production
+ Feature - users
+ Feature - equipment
+
+
+# NOTE OF TEST DOING
+
+
 
 # NOTE OF THINGS SOLIDLY DONE
-
-????
+ Model - users
 
 # NOTEY NOTES
 https://github.com/wolfram74/random_acts_of_kindness/blob/master/racts/spec/controllers/tasks_controller_spec.rb
