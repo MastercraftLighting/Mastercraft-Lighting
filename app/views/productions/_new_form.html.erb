@@ -9,6 +9,9 @@
       <br>
       <%= f.label(:date, "Production Date:") %>
       <%= f.date_field(:date)%>
+
+      <%= f.label(:master_electrician_id, "Give View Access to:") %>
+      <%= f.text_field(:master_electrician_id, :placeholder => "Username")%>
       <button id="create_show" type="submit" class="btn btn-primary">Create Show</button>
     <% end %>
   </div> <!-- Close modal-body -->

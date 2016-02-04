@@ -42,7 +42,9 @@
                 <%end%></td>
                 <td class="e-col"><%= equip.circuit_name %><%= equip.circuit_number %></td>
                 <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+                <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
                 <td><a data-toggle="tooltip" data-placement="top" title="Delete" class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
+                <%end%>
               </tr>
             <% end %>
           </div> <!-- Close pos-groups -->

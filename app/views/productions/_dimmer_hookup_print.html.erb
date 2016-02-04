@@ -1,9 +1,8 @@
-<div id="circuit-hookup" class="tab-pane fade">
-    <h3>Circuit Hookup</h3>
+<div class="dimmer-hookup">
+    <h3>Dimmer Hookup</h3>
     <table class="table instrument-schedule">
       <thead>
         <tr>
-          <th class="Ckt-H">Circuit</th>
           <th class="Dim-H">Dim</th>
           <th class="Chan-H">Channel</th>
           <th class="Pos-H">Position</th>
@@ -14,17 +13,19 @@
           <th class="Purp-H">Purpose</th>
           <th class="Col-H">Color</th>
           <th class="Swa-H">Swatch</th>
+          <th class="Ckt-H">Circuit</th>
+          <th></th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @equipment_sorted_sliced_for_circuit_view.each do |equipment_group| %>
-          <tr><td colspan="11"><h4><%= equipment_group.first.circuit_name %></h4></td></tr>
+        <% @equipment_sorted_sliced_for_dimmer_view.each do |equipment_group| %>
+          <tr><td colspan="11"><h4><%= equipment_group.first.dimmer %></h4></td></tr>
           <div class="dim-groups">
             <% equipment_group.each do |equip| %>
-              <tr id="CK-Row<%= equip.id %>">
-                <td class="e-col"><%= equip.circuit_name %><%= equip.circuit_number %></td>
-                <td class="e-dim"><%= equip.dimmer %></td>
-                <td class="e-ch">(<%= equip.channel %>)</td>
+              <tr id="DM-Row<%= equip.id %>">
+                <td class="e-pos"></td>
+                <td class="e-ch"><%= equip.channel %></td>
                 <td class="e-pos"><%= equip.position %></td>
                 <td class="e-num"><%= equip.unit_number %></td>
                 <td class="e-typ"><%= equip.instrument_type %></td>
@@ -33,25 +34,17 @@
                 <td class="e-pur"><%= equip.purpose %></td>
                 <td class="e-col"><%= equip.color %></td>
                  <%if @colors%>
-                 <td><%if @colors.find_by_alias1(equip.color)%>
+                <td><%if @colors.find_by_alias1(equip.color)%>
                 <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
-                    <%end%>
+                <%end%>
                 <%else%>
                 <div class="color-box" display="inline"></div>
                 <%end%></td>
-                <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
-                <td>
-                  <%= link_to production_equipment_path(@production, equip), :method => :delete, :class => "deep-red delete-button" do %>
-                  <span data-toggle="tooltip" data-placement="top" title="Delete" class="glyphicon glyphicon-remove" aria-hidden="true">
-                </td>
-                <% end  %>
-
-                <%end%>
+                <td class="e-col"><%= equip.circuit_name %><%= equip.circuit_number %></td>
               </tr>
             <% end %>
           </div> <!-- Close pos-groups -->
         <% end %>
       </tbody>
     </table>
-</div> <!-- Close circuit-hookup -->
+  </div> <!-- Close dimmer hook-up -->

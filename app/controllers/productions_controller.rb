@@ -1,6 +1,7 @@
 class ProductionsController < ApplicationController
-  before_action :set_production, only: [:show, :update, :destroy]
+  before_action :set_production, only: [:show, :update, :destroy, :print]
   before_action :set_productions
+  before_action :set_venues
 
 include ProductionsHelper
 
@@ -12,7 +13,15 @@ include ProductionsHelper
 
   def create
     set_productions
-    @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
+    # if Venue.find(params[:production][:venues])
+    # @venue = Venue.find(params[:production][:venues])
+    # end
+    if User.find_by_username(params[:production][:master_electrician_id])
+    @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id, master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
+    else
+      @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
+    end
+
     if @production.save
       render :index
     else
@@ -43,34 +52,66 @@ include ProductionsHelper
 
   def update
 
-    puts "update is running"
-    if @production.update_attributes(production_params)
-      render "index", layout: false
-    end
+    case current_user.user_type.name
+      when "Administrator"
+        if @production.update_attributes(production_params)
+        render "index", layout: false
+        end
+      when "Designer"
+        if @production.update_attributes(production_params)
+        render "index", layout: false
+        end
+      when "ME"
+        render "index", layout: false
+      when "Lead"
+        render "index", layout: false
+      end
   end
 
   def destroy
-    production = Production.find(params[:id])
-    production.destroy
+    case current_user.user_type.name
+      when "Administrator"
+      production = Production.find(params[:id])
+      production.destroy
+      when "Designer"
+      production = Production.find(params[:id])
+      production.destroy
+      when "ME"
+        production = Production.find(params[:id])
+        production.master_electrician_id = nil
+        production.save
+      when "Lead"
+        production = Production.find(params[:id])
+        production.master_electrician_id = nil
+        production.save
+      end
     redirect_to productions_path
   end
 
 
   def print
-    p params
-  	@production = Production.find(params[:id])
-  	@equipment = @production.equipments.sort_by &:channel
+  	#@production = Production.find(params[:id])
     @colors = ColorLibrary.all
-    respond_to do |format|
-      format.html
-      format.pdf do
-        render :pdf => "print_views", :template => "print.html.erb"
-      end
-    end
+    @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
+    @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
+    @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
+    @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
+    @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
+    # respond_to do |format|
+    #   format.html
+    #   format.pdf do
+    #     render :pdf => "print_views", :template => "print.html.erb"
+    #   end
+    # end
+    render :print
   end
 
 
   private
+
+    def set_venues
+      @venues = Venue.all
+    end
 
    def set_production
     if params[:id]
@@ -84,7 +125,7 @@ include ProductionsHelper
       when "Administrator"
         @productions = Production.all
       when "Designer"
-        @productions = current_user.designed_productions
+        @productions = current_user.designed_productions.count > 0 ? current_user.designed_productions : current_user.master_electrician_productions
       when "ME"
         @productions = current_user.master_electrician_productions
       when "Lead"

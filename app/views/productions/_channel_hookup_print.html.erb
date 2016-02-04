@@ -1,7 +1,12 @@
 <span class="production-label">
   <h4><%=@production.name%> <br><%=@production.date%></h4>
+  <%if @production.venues %>
+  <%@production.venues.each do |venue| %>
+  <%=venue.name%>
+  <%end%>
+  <%end%>
 </span>
-<div id="channel-hookup" class="tab-pane fade in active">
+<div class="channel-hookup">
   <h3 class="sheet-name">Channel Hookup</h3>
   <table class="table channel-hook-up">
     <thead>
@@ -40,10 +45,6 @@
                 <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
               <td class="e-acc"><%= equip.accessories_list %></td>
-              <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-              <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
-                <td><a data-toggle="tooltip" data-placement="top" title="Delete" class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
-              <%end%>
             </tr>
           <% end %>
          </div><!-- Close chan-groups -->

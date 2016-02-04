@@ -1,4 +1,4 @@
-<div id="circuit-hookup" class="tab-pane fade">
+<div class="circuit-hookup">
     <h3>Circuit Hookup</h3>
     <table class="table instrument-schedule">
       <thead>
@@ -35,19 +35,11 @@
                  <%if @colors%>
                  <td><%if @colors.find_by_alias1(equip.color)%>
                 <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
-                    <%end%>
+                <%end%>
                 <%else%>
                 <div class="color-box" display="inline"></div>
                 <%end%></td>
-                <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
-                <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
-                <td>
-                  <%= link_to production_equipment_path(@production, equip), :method => :delete, :class => "deep-red delete-button" do %>
-                  <span data-toggle="tooltip" data-placement="top" title="Delete" class="glyphicon glyphicon-remove" aria-hidden="true">
                 </td>
-                <% end  %>
-
-                <%end%>
               </tr>
             <% end %>
           </div> <!-- Close pos-groups -->
