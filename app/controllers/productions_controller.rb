@@ -6,8 +6,6 @@ class ProductionsController < ApplicationController
 include ProductionsHelper
 
   def index
-    p flash.alert
-    p params
     authenticate_user!
     set_productions
     render :index
@@ -15,13 +13,15 @@ include ProductionsHelper
 
   def create
     set_productions
-    # if Venue.find(params[:production][:venues])
-    # @venue = Venue.find(params[:production][:venues])
-    # end
     if User.find_by_username(params[:production][:master_electrician_id])
-    @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id, master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
+    @production = Production.new(name: params[:production][:name],
+                                 date: params[:production][:date],
+                                 designer_id: current_user.id,
+                                 master_electrician_id: User.find_by_username(params[:production][:master_electrician_id]).id)
     else
-      @production = Production.new(name: params[:production][:name], date: params[:production][:date], designer_id: current_user.id)
+      @production = Production.new(name: params[:production][:name],
+                                   date: params[:production][:date],
+                                   designer_id: current_user.id)
     end
 
     if @production.save
@@ -41,7 +41,6 @@ include ProductionsHelper
     @production = Production.find(params[:id])
   end
 
-  # Change the logic here so that if equipment records lack channel info this will still order the data in a sensible way
   def show
     @colors = ColorLibrary.all
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
@@ -113,27 +112,29 @@ include ProductionsHelper
       @venues = Venue.all
     end
 
-   def set_production
+  def set_production
     if params[:id]
       @production = Production.find(params[:id])
   	else
   		@production = Production.find(params[:production_id])
   	end
-   end
-    def set_productions
-      case current_user.user_type.name
-      when "Administrator"
-        @productions = Production.all
-      when "Designer"
-        @productions = current_user.designed_productions.count > 0 ? current_user.designed_productions : current_user.master_electrician_productions
-      when "ME"
-        @productions = current_user.master_electrician_productions
-      when "Lead"
-        @productions = current_user.lead_productions
-    end
-    end
+  end
 
-    def production_params
-      params.require(:production).permit(:name, :date)
-    end
+  def set_productions
+    case current_user.user_type.name
+    when "Administrator"
+      @productions = Production.all
+    when "Designer"
+      @productions = current_user.designed_productions.count > 0 ? current_user.designed_productions : current_user.master_electrician_productions
+    when "ME"
+      @productions = current_user.master_electrician_productions
+    when "Lead"
+      @productions = current_user.lead_productions
+  end
+  end
+
+  def production_params
+    params.require(:production).permit(:name, :date)
+  end
+
 end

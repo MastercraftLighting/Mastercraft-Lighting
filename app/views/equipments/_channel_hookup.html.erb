@@ -1,6 +1,6 @@
 <span class="production-label">
   <h4><%=@production.name%> <br><%=@production.date%></h4><br>
-  
+
 </span>
 <div id="channel-hookup" class="tab-pane fade in active">
   <h3 class="sheet-name">Channel Hookup</h3>
@@ -34,21 +34,21 @@
               <td class="e-col"><%= equip.color %></td>
               <%if @colors%>
                <td><%if @colors.find_by_alias1(equip.color)%>
-                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
-                <%end%>
-                <%else%>
-                <div class="color-box" display="inline"></div>
-                <%end%></td>
+                    <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+                  <%end%>
+                  <%else%>
+                    <div class="color-box" display="inline"></div>
+              <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
               <td class="e-acc"><%= equip.accessories_list %></td>
-              <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+              <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
               <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
-              <td><a class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
+                <td><a data-toggle="tooltip" data-placement="top" title="Delete" class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
               <%end%>
             </tr>
-          <% end %>
-         </div><!-- Close chan-groups -->
-      <% end %>
+          <% end %><!-- End equipment_group -->
+        </div><!-- Close chan-groups -->
+      <% end %><!-- End @equipment_sorted_sliced_for_channel_view -->
     </tbody>
   </table>
 </div> <!-- Close channel-hookup -->

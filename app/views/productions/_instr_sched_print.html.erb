@@ -30,15 +30,15 @@
               <td class="e-wat"><%= equip.wattage %></td>
               <td class="e-pur"><%= equip.purpose %></td>
               <td class="e-col"><%= equip.color %></td>
-               <%if @colors%>
-              <td><%if @colors.find_by_alias1(equip.color)%>
-                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+              <%if @colors%>
+                <td>
+                <%if @colors.find_by_alias1(equip.color)%>
+                  <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
                 <%end%>
-                <%else%>
+              <%else%>
                 <div class="color-box" display="inline"></div>
-                <%end%></td>
+              <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
-
             </tr>
           <% end %>
         </div> <!-- Close pos-groups -->
