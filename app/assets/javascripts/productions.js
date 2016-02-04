@@ -23,18 +23,18 @@ $(document).ready(function(){
 // Channel-view slider Functions
 //------------------------------------------------
 var toggleMenus = function(){
-	$(".inventory-toggle").click(function(e){
+  $(".inventory-toggle").click(function(e){
     	e.preventDefault();
       $(".inventory-tab").slideToggle();
-    });
- //    $(".print-toggle").click(function(e){
-	//   e.preventDefault();
- //    $(".print-tab").slideToggle();
- //    });
-    $(".library-toggle").click(function(e){
-    	e.preventDefault();
-      $(".library-tab").slideToggle();
-    });
+  });
+  //    $(".print-toggle").click(function(e){
+  //   e.preventDefault();
+  //    $(".print-tab").slideToggle();
+  //    });
+  $(".library-toggle").click(function(e){
+  	e.preventDefault();
+    $(".library-tab").slideToggle();
+  });
 };
 
 //-------------------------------------------------
@@ -94,6 +94,7 @@ var editProductionButtonListener = function(){
     insertEditProductionForm(this);
   });
 };
+
 //-------------------------------------------------
 // Functions
 //-------------------------------------------------
@@ -147,12 +148,9 @@ var editEquipment = function(path){
   });
 };
 
-
-
 var getConfirmation = function(){
   return confirm("This will permanently delete this data from your show. Continue?");
 };
-
 
 var updateRow = function(formData){
   // $.ajax({
@@ -164,7 +162,7 @@ var updateRow = function(formData){
 var insertEditProductionForm = function(prod){
   $("#edit-production-" + prod.id).toggle();
   updateProductions(prod);
-  };
+};
 
 var updateProductions = function(prod) {
   var prodNumber = prod.id.slice(-1);
@@ -181,8 +179,6 @@ var updateProductions = function(prod) {
 
     })
   });
-
-
 }
 
 //-------------------------------------------------

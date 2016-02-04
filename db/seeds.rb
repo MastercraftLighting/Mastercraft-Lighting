@@ -8,6 +8,7 @@ users.each do |name|
 end
 
 # Seed User table
+# user_type_id 1 = LD, 2 = ME, 3 = Admin, 4 = Lead
 users = [{username: 'Sparky15', email: "Sparky15@email.com", password: 'lights1234', user_type_id: 1},
          {username: 'FoxyFox', email: "FoxyFox@email.com", password: 'grayfox1234', user_type_id: 2},
          {username: 'Adam', email: "Adam@email.com", password: 'password1234', user_type_id: 3},
