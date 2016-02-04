@@ -11,10 +11,10 @@
         <th class="Watt-H">Watt</th>
         <th class="Purp-H">Purpose</th>
         <th class="Col-H">Color</th>
-        <th class="Swa-H">Swatch</th>
         <th class="Gobo-H">Gobo</th>
         <th class="Acc-H">Accessories</th>
       </tr>
+      <hr>
     </thead>
     <tbody>
       <% @equipment_sorted_sliced_for_instrument_view.each do |equipment_group| %>
@@ -29,15 +29,6 @@
               <td class="e-typ"><%= equip.instrument_type %></td>
               <td class="e-wat"><%= equip.wattage %></td>
               <td class="e-pur"><%= equip.purpose %></td>
-              <td class="e-col"><%= equip.color %></td>
-              <%if @colors%>
-                <td>
-                <%if @colors.find_by_alias1(equip.color)%>
-                  <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
-                <%end%>
-              <%else%>
-                <div class="color-box" display="inline"></div>
-              <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
             </tr>
           <% end %>
