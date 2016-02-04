@@ -45,13 +45,27 @@ include ProductionsHelper
 
 
   def destroy
-    if @equipment.destroy
-      # @equipment = @production.equipments.sort_by &:channel
-      view_sorted_data
-      render "productions/show", layout: false
-    else
-      redirect back
+    case current_user.user_type.name
+      when "Administrator"
+        if @equipment.destroy
+        view_sorted_data
+        render "productions/show", layout: false
+        else
+        redirect back
+        end
+      when "Designer"
+        if @equipment.destroy
+        view_sorted_data
+        render "productions/show", layout: false
+        else
+        redirect back
+        end
+      when "ME"
+        render "productions/show", layout: false
+      when "Lead"
+        render "productions/show", layout: false
     end
+   
   end
 
 
