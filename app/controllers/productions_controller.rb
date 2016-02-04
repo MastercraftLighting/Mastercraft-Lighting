@@ -85,13 +85,19 @@ include ProductionsHelper
 
 
   def print
+  	@production = Production.find(params[:id])
     @colors = ColorLibrary.all
     @equipment_sorted_sliced_for_channel_view = equipment_sorted_sliced_for_channel_view
     @equipment_sorted_sliced_for_circuit_view = equipment_sorted_sliced_for_circuit_view
     @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
     @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
     @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
-    render :print
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "print_views", :template => "print.html.erb"
+      end
+    end
   end
 
 
@@ -101,27 +107,29 @@ include ProductionsHelper
       @venues = Venue.all
     end
 
-   def set_production
+  def set_production
     if params[:id]
       @production = Production.find(params[:id])
   	else
   		@production = Production.find(params[:production_id])
   	end
-   end
-    def set_productions
-      case current_user.user_type.name
-      when "Administrator"
-        @productions = Production.all
-      when "Designer"
-        @productions = current_user.designed_productions.count > 0 ? current_user.designed_productions : current_user.master_electrician_productions
-      when "ME"
-        @productions = current_user.master_electrician_productions
-      when "Lead"
-        @productions = current_user.lead_productions
-    end
-    end
+  end
 
-    def production_params
-      params.require(:production).permit(:name, :date)
-    end
+  def set_productions
+    case current_user.user_type.name
+    when "Administrator"
+      @productions = Production.all
+    when "Designer"
+      @productions = current_user.designed_productions.count > 0 ? current_user.designed_productions : current_user.master_electrician_productions
+    when "ME"
+      @productions = current_user.master_electrician_productions
+    when "Lead"
+      @productions = current_user.lead_productions
+  end
+  end
+
+  def production_params
+    params.require(:production).permit(:name, :date)
+  end
+
 end
