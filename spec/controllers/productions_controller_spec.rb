@@ -4,18 +4,18 @@ RSpec.describe ProductionsController, :type => :controller do
   include Devise::TestHelpers
 
   describe 'get routes' do
-  #   context '#index' do
-  #     login_user
-      # it "responds with a successful 200" do
-      #   get :index
-      #   expect(response).to be_success
-      #   expect(response.status).to eq(200)
-      # end
-      # it "renders the proper view" do
-      #   get :index
-      #   expect(response).to render_template('index')
-      # end
-    # end
+    context '#index' do
+      login_user
+      it "responds with a successful 200" do
+        get :index
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+      it "renders the proper view" do
+        get :index
+        expect(response).to render_template('index')
+      end
+    end
 
     context '#new' do
       login_user
@@ -43,6 +43,30 @@ RSpec.describe ProductionsController, :type => :controller do
         get :show, id: production.id
         expect(response).to render_template('show')
       end
+    end
+
+    context "#edit" do
+      login_user
+      it "responds with a successful 200" do
+        production = FactoryGirl.create(:production)
+        get :edit, id: production.id
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+      it "renders the proper view" do
+        production = FactoryGirl.create(:production)
+        get :edit, id: production.id
+        expect(response).to render_template('update')
+      end
+    end
+  end
+
+  describe "'Post' Routes" do
+    context "#create" do
+    end
+    context "#put" do
+    end
+    context "#destroy" do
     end
   end
 
