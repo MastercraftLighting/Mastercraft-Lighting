@@ -1,9 +1,9 @@
 <span class="production-label">
   <h4><%=@production.name%> <br><%=@production.date%></h4>
   <%if @production.venues %>
-  <%@production.venues.each do |venue| %>
-  <%=venue.name%>
-  <%end%>
+    <%@production.venues.each do |venue| %>
+    <%=venue.name%>
+    <%end%>
   <%end%>
 </span>
 <div class="channel-hookup">
@@ -37,12 +37,13 @@
               <td class="e-pur"><%= equip.purpose %></td>
               <td class="e-col"><%= equip.color %></td>
               <%if @colors%>
-               <td><%if @colors.find_by_alias1(equip.color)%>
-                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+                <td>
+                <%if @colors.find_by_alias1(equip.color)%>
+                  <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
                 <%end%>
-                <%else%>
+              <%else%>
                 <div class="color-box" display="inline"></div>
-                <%end%></td>
+              <%end%></td>
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
               <td class="e-acc"><%= equip.accessories_list %></td>
             </tr>
