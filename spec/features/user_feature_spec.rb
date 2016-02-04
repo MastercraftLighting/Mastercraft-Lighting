@@ -49,7 +49,7 @@ end
       # edit to use path clicking
       login_as_admin
       visit "/admins"
-      expect(page).to have_content("You are logged in as a")
+      expect(page).to have_content("You are logged in as a Administrator")
     end
     # it "can edit their information"
     # it "can delete their account"
