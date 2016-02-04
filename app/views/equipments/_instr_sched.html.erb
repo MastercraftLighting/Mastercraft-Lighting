@@ -40,8 +40,9 @@
               <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
               <td class="e-"><%= equip.accessories_list %></td>
               <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+              <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
               <td><a class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
-
+              <%end%>
             </tr>
           <% end %>
         </div> <!-- Close pos-groups -->
