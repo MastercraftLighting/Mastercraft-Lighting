@@ -99,13 +99,12 @@ include ProductionsHelper
     @equipment_sorted_sliced_for_color_view = equipment_sorted_sliced_for_color_view
     @equipment_sorted_sliced_for_dimmer_view = equipment_sorted_sliced_for_dimmer_view
     @equipment_sorted_sliced_for_instrument_view = equipment_sorted_sliced_for_instrument_view
-    # respond_to do |format|
-    #   format.html
-    #   format.pdf do
-    #     render :pdf => "print_views", :template => "print.html.erb"
-    #   end
-    # end
-    render :print
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "print_views", :template => "print.html.erb"
+      end
+    end
   end
 
 
