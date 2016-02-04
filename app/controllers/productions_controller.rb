@@ -53,7 +53,6 @@ include ProductionsHelper
   end
 
   def update
-
     case current_user.user_type.name
       when "Administrator"
         if @production.update_attributes(production_params)

@@ -6,55 +6,44 @@
 
  feature- production - 28
  admin can create a new page by manually routing to new
-
  feature - production - 33
  admin can view their illicitly created shows by manual routing
 
- feature - production - 69
- productions cannot be edited - not yet implemented
-
  feature - users - 54
  admin cannot edit their information
-
  feature - users - 55
  similarly, admin cannot delete their account
 
- controller - production - 6
- routes may not be meant to pass, double check and fix tests
-
- feature - user - 19
+ feature - user - 19 - DEANNA PROBLEM
  test can't find drop box ... again
-
-model - user - 25/30
-user can be created without email/password b/c default values
 
 # NOTE OF GENERAL REQUESTS/PROJECTS
 
 dashboard is at users/user_id < LITERALLY
 
-DASHBOARD button text is asymetrical
-
 clean up puts out of controllers
 (controller labels and nil being printed in tests)
 
 # NOTES OF TESTS TO DO
-
- Model - production
- Model - equipment
- Controller - production
  Controller - users
  Controller - equipment
+
+ feature - production - 69
+ productions cannot be edited - not yet implemented
+
  Feature - production
  Feature - users
  Feature - equipment
 
-
 # NOTE OF TEST DOING
-
-
+ Controller - production
 
 # NOTE OF THINGS SOLIDLY DONE
  Model - users
+ Model - production
+ Model - equipment
+
+
 
 # NOTEY NOTES
 https://github.com/wolfram74/random_acts_of_kindness/blob/master/racts/spec/controllers/tasks_controller_spec.rb
