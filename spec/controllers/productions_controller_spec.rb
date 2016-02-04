@@ -44,6 +44,30 @@ RSpec.describe ProductionsController, :type => :controller do
         expect(response).to render_template('show')
       end
     end
+
+    context "#edit" do
+      login_user
+      it "responds with a successful 200" do
+        production = FactoryGirl.create(:production)
+        get :edit, id: production.id
+        expect(response).to be_success
+        expect(response.status).to eq(200)
+      end
+      it "renders the proper view" do
+        production = FactoryGirl.create(:production)
+        get :edit, id: production.id
+        expect(response).to render_template('update')
+      end
+    end
+  end
+
+  describe "'Post' Routes" do
+    context "#create" do
+    end
+    context "#put" do
+    end
+    context "#destroy" do
+    end
   end
 
 end
