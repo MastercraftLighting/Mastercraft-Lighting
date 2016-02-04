@@ -14,6 +14,8 @@
       <% @equipment_sorted_sliced_for_color_view.each do |equipment_group| %>
         <% this_color = equipment_group.first.color %>
         <tr><td colspan="10"><h4><%= this_color %></h4></td>
+        <tr><td colspan="10"><h4><%= this_color %></h4>
+          </td>
         </tr>
 
         <% equipment_sub_groupings = equipment_group.slice_when {|a, b| a.frame_size != b.frame_size}.to_a %>

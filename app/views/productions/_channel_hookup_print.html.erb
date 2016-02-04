@@ -1,9 +1,9 @@
 <span class="production-label">
   <h4><%=@production.name%> <br><%=@production.date%></h4>
   <%if @production.venues %>
-  <%@production.venues.each do |venue| %>
-  <%=venue.name%>
-  <%end%>
+    <%@production.venues.each do |venue| %>
+    <%=venue.name%>
+    <%end%>
   <%end%>
 </span>
 <div class="channel-hookup">

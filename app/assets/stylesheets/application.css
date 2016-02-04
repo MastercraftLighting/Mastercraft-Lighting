@@ -14,7 +14,6 @@
  *= require_self
  */
 
-
 h1 {
 	font-family: Quicksand;
 }
@@ -24,10 +23,9 @@ h2{
 
 }
 
- .container {
+.container {
     border-left: 5px double #483D8B;
     border-right: 5px double #483D8B;
-    /*height: 78vh;*/
 }
 
 a {

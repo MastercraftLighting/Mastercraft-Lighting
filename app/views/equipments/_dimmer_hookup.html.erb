@@ -33,17 +33,18 @@
                 <td class="e-"><%= equip.accessories_list %></td>
                 <td class="e-pur"><%= equip.purpose %></td>
                 <td class="e-col"><%= equip.color %></td>
-                 <%if @colors%>
-                <td><%if @colors.find_by_alias1(equip.color)%>
-                <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
-                <%end%>
+                <%if @colors%>
+                  <td>
+                  <%if @colors.find_by_alias1(equip.color)%>
+                    <div class="color-box" style="background-color: #<%=@colors.find_by_alias1(equip.color).hex_code%>" display="inline"></div>
+                  <%end%>
                 <%else%>
-                <div class="color-box" display="inline"></div>
+                  <div class="color-box" display="inline"></div>
                 <%end%></td>
                 <td class="e-col"><%= equip.circuit_name %><%= equip.circuit_number %></td>
-                <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+                <td><a data-toggle="tooltip" data-placement="top" title="Edit" class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
                 <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
-                <td><a class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
+                  <td><a data-toggle="tooltip" data-placement="top" title="Delete" class="deep-red delete-button" href="/productions/<%= equip.production_id %>/equipments/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
                 <%end%>
               </tr>
             <% end %>
