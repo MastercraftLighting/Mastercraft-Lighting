@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	toggleMenus();
   bindListeners();
+  $('[data-toggle="tooltip"]').tooltip();
 });
 
 //------------------------------------------------
