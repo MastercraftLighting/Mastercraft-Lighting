@@ -45,28 +45,28 @@ RSpec.describe ProductionsController, :type => :controller do
       end
     end
 
-    context "#edit" do
-      login_user
-      it "responds with a successful 200" do
-        production = FactoryGirl.create(:production)
-        get :edit, id: production.id
-        expect(response).to be_success
-        expect(response.status).to eq(200)
-      end
-      it "renders the proper view" do
-        production = FactoryGirl.create(:production)
-        get :edit, id: production.id
-        expect(response).to render_template('update')
-      end
-    end
   end
 
   describe "'Post' Routes" do
     context "#create" do
+      it "should be able to create a production" do
+        create_usertypes
+        test_user = FactoryGirl.create(:user, :designer)
+        test_production = FactoryGirl.build(:production)
+
+        allow(controller).to receive(:current_user).and_return(test_user)
+
+        params = {production: {name: test_production.name, date: test_production.date}}
+        expect{post "create", params}.to change{Production.count}
+      end
     end
     context "#put" do
     end
     context "#destroy" do
+      xit "should be able to destroy a production" do
+        production = FactoryGirl.create(:production)
+        expect{delete 'destroy', production.id}.to change{Production.count}
+      end
     end
   end
 

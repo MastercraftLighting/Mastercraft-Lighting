@@ -51,6 +51,7 @@ feature "Productions", :type => :feature, js: true do
         fill_in "Production Date", with: "02/06/2016"
         click_on("Create Show")
       end
+      visit "/productions"
       expect(page).to have_content("ProductionTesting")
     end
     it "can view a list of their productions" do
