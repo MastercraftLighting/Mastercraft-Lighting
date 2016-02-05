@@ -74,15 +74,15 @@ RSpec.describe ProductionsController, :type => :controller do
 
     context "#put" do
 
-      xit "can edit a production" do
-        create_usertypes
-        test_user = FactoryGirl.create(:user, :designer)
-        allow(controller).to receive(:current_user).and_return(test_user)
-        test_production = FactoryGirl.create(:production)
-        params = {id: test_production.id, production: { name: "New Name For Production"}}
-        put 'update', params
-        expect(test_production.name).to eq("New Name For Production")
-      end
+      # xit "can edit a production" do
+      #   create_usertypes
+      #   test_user = FactoryGirl.create(:user, :designer)
+      #   allow(controller).to receive(:current_user).and_return(test_user)
+      #   test_production = FactoryGirl.create(:production)
+      #   params = {id: test_production.id, production: { name: "New Name For Production"}}
+      #   put 'update', params
+      #   expect(test_production.name).to eq("New Name For Production")
+      # end
 
     end # context '#put'
 
