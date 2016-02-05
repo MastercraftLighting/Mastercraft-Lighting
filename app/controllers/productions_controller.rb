@@ -100,7 +100,7 @@ include ProductionsHelper
     respond_to do |format|
       format.html
       format.pdf do
-        render :pdf => "print_views", :template => "print.html.erb"
+        render :pdf => "print_views", :template => "print.html.erb", :header => { :spacing => 10 }
       end
     end
   end
