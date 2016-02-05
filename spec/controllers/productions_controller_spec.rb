@@ -74,7 +74,7 @@ RSpec.describe ProductionsController, :type => :controller do
 
     context "#put" do
 
-      it "can edit a production" do
+      xit "can edit a production" do
         create_usertypes
         test_user = FactoryGirl.create(:user, :designer)
         allow(controller).to receive(:current_user).and_return(test_user)
