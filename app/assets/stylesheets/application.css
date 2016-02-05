@@ -55,6 +55,15 @@ body {
 	font-family: Yanone-Kaffeesatz;
 }
 
+footer {
+
+	
+}
+
+.github-logo {
+	float: right;
+	margin-bottom: 3em;
+}
 .logo {
 	max-width: 5em;
 	max-height: 5em;
