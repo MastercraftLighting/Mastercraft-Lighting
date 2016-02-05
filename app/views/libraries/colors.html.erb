@@ -16,7 +16,7 @@
       <% @colors.each do |color| %>
         <tr>
           <td><%= color.full_name %></td>
-          <td><div class="color-box" style="background-color: #<%=color.hex_code%>"></div></td>
+          <td><div class="color-box" style="background-color: <%=color.hex_code%>"></div></td>
           <td><%= color.alias1 %></td>
           <td><%= color.alias2 %></td>
           <td><%= color.description %></td>
