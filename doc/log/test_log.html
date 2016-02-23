@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>test.log - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../LICENSE.html">LICENSE</a>
+  
+    <li><a href="../Procfile.html">Procfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../README_rdoc.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../app/assets/javascripts/application_js.html">application.js</a>
+  
+    <li><a href="../app/assets/javascripts/equipments_js.html">equipments.js</a>
+  
+    <li><a href="../app/assets/javascripts/productions_js.html">productions.js</a>
+  
+    <li><a href="../app/assets/javascripts/rails_validations_js.html">rails.validations.js</a>
+  
+    <li><a href="../app/assets/javascripts/users_js.html">users.js</a>
+  
+    <li><a href="../app/assets/stylesheets/application_css.html">application.css</a>
+  
+    <li><a href="../app/assets/stylesheets/color_libraries_scss.html">color_libraries.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/equipments_scss.html">equipments.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/libraries_scss.html">libraries.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/productions_scss.html">productions.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/unit_library_scss.html">unit_library.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/users_scss.html">users.scss</a>
+  
+    <li><a href="../app/assets/stylesheets/welcome_scss.html">welcome.scss</a>
+  
+    <li><a href="../config_ru.html">config.ru</a>
+  
+    <li><a href="../config/database_yml_travis.html">database.yml.travis</a>
+  
+    <li><a href="../log/development_log.html">development.log</a>
+  
+    <li><a href="../log/test_log.html">test.log</a>
+  
+    <li><a href="../public/404_html.html">404.html</a>
+  
+    <li><a href="../public/422_html.html">422.html</a>
+  
+    <li><a href="../public/500_html.html">500.html</a>
+  
+    <li><a href="../public/favicon_ico.html">favicon.ico</a>
+  
+    <li><a href="../public/robots_txt.html">robots</a>
+  
+    <li><a href="../spec/testing-notes_md.html">testing-notes</a>
+  
+    <li><a href="../up-and-down_tsv.html">up-and-down.tsv</a>
+  
+    <li><a href="../vendor/assets/javascripts/handlebars_js.html">handlebars.js</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page log/test.log">
+
+<pre>[1m[36m (122.0ms)[0m  [1mDROP DATABASE IF EXISTS &quot;Mastercraft_Lighting_test&quot;[0m
+[1m[35m (324.7ms)[0m  CREATE DATABASE &quot;Mastercraft_Lighting_test&quot; ENCODING = &#39;unicode&#39;
+[1m[36mSQL (0.8ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS &quot;plpgsql&quot;[0m
+[1m[35m (24.0ms)[0m  CREATE TABLE &quot;accessories&quot; (&quot;id&quot; serial primary key, &quot;instrument_type&quot; text, &quot;wattage&quot; integer, &quot;purpose&quot; text, &quot;position&quot; text DEFAULT &#39;0&#39;, &quot;unit_number&quot; text, &quot;color&quot; text, &quot;dimmer&quot; integer DEFAULT 0, &quot;channel&quot; integer DEFAULT 0, &quot;address&quot; integer, &quot;universe&quot; text, &quot;u_address&quot; text, &quot;circuit_number&quot; integer DEFAULT 0, &quot;circuit_name&quot; text DEFAULT &#39;!&#39;, &quot;system&quot; text, &quot;user_field_1&quot; text, &quot;user_field_2&quot; text, &quot;user_field_3&quot; text, &quot;user_field_4&quot; text, &quot;user_field_5&quot; text, &quot;user_field_6&quot; text, &quot;num_channels&quot; text, &quot;frame_size&quot; float, &quot;field_angle&quot; text, &quot;field_angle_2&quot; text, &quot;beam_angle&quot; text, &quot;beam_angle_2&quot; text, &quot;weight&quot; text, &quot;gobo_1&quot; text, &quot;gobo_1_rotation&quot; text, &quot;gobo_2&quot; text, &quot;gobo_2_rotation&quot; text, &quot;gobo_shift&quot; text, &quot;mark&quot; text, &quot;draw_beam&quot; text, &quot;draw_beam_as_3d_solid&quot; text, &quot;use_vertical_beam&quot; text, &quot;show_beam_at&quot; text, &quot;falloff_distance&quot; text, &quot;lamp_rotation_angle&quot; text, &quot;top_shutter_depth&quot; text, &quot;top_shutter_angle&quot; text, &quot;left_shutter_depth&quot; text, &quot;left_shutter_angle&quot; text, &quot;right_shutter_depth&quot; text, &quot;right_shutter_angle&quot; text, &quot;bottom_shutter_depth&quot; text, &quot;bottom_shutter_angle&quot; text, &quot;symbol_name&quot; text, &quot;use_legend&quot; text, &quot;flip_front_and_back_legend_text&quot; text, &quot;flip_left_and_right_legend_text&quot; text, &quot;focus&quot; text, &quot;set_3d_orientation&quot; text, &quot;x_rotation&quot; text, &quot;y_rotation&quot; text, &quot;x_location&quot; text, &quot;y_location&quot; text, &quot;z_location&quot; text, &quot;fixtureid&quot; text, &quot;__uid&quot; text, &quot;equipment_id&quot; integer, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) 
+[1m[36m (2.8ms)[0m  [1mCREATE TABLE &quot;color_libraries&quot; (&quot;id&quot; serial primary key, &quot;full_name&quot; character varying, &quot;alias1&quot; character varying, &quot;alias2&quot; character varying, &quot;description&quot; character varying, &quot;transmission&quot; float, &quot;hex_code&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) [0m
+[1m[35m (12.1ms)[0m  CREATE TABLE &quot;equipment&quot; (&quot;id&quot; serial primary key, &quot;instrument_type&quot; text, &quot;wattage&quot; integer, &quot;purpose&quot; text, &quot;position&quot; text DEFAULT &#39;0&#39;, &quot;unit_number&quot; text, &quot;color&quot; text, &quot;dimmer&quot; integer DEFAULT 0, &quot;channel&quot; integer DEFAULT 0, &quot;address&quot; integer, &quot;universe&quot; text, &quot;u_address&quot; text, &quot;circuit_number&quot; integer DEFAULT 0, &quot;circuit_name&quot; text DEFAULT &#39;!&#39;, &quot;system&quot; text, &quot;user_field_1&quot; text, &quot;user_field_2&quot; text, &quot;user_field_3&quot; text, &quot;user_field_4&quot; text, &quot;user_field_5&quot; text, &quot;user_field_6&quot; text, &quot;num_channels&quot; text, &quot;frame_size&quot; float, &quot;field_angle&quot; text, &quot;field_angle_2&quot; text, &quot;beam_angle&quot; text, &quot;beam_angle_2&quot; text, &quot;weight&quot; text, &quot;gobo_1&quot; text, &quot;gobo_1_rotation&quot; text, &quot;gobo_2&quot; text, &quot;gobo_2_rotation&quot; text, &quot;gobo_shift&quot; text, &quot;mark&quot; text, &quot;draw_beam&quot; text, &quot;draw_beam_as_3d_solid&quot; text, &quot;use_vertical_beam&quot; text, &quot;show_beam_at&quot; text, &quot;falloff_distance&quot; text, &quot;lamp_rotation_angle&quot; text, &quot;top_shutter_depth&quot; text, &quot;top_shutter_angle&quot; text, &quot;left_shutter_depth&quot; text, &quot;left_shutter_angle&quot; text, &quot;right_shutter_depth&quot; text, &quot;right_shutter_angle&quot; text, &quot;bottom_shutter_depth&quot; text, &quot;bottom_shutter_angle&quot; text, &quot;symbol_name&quot; text, &quot;use_legend&quot; text, &quot;flip_front_and_back_legend_text&quot; text, &quot;flip_left_and_right_legend_text&quot; text, &quot;focus&quot; text, &quot;set_3d_orientation&quot; text, &quot;x_rotation&quot; text, &quot;y_rotation&quot; text, &quot;x_location&quot; text, &quot;y_location&quot; text, &quot;z_location&quot; text, &quot;fixtureid&quot; text, &quot;__uid&quot; text, &quot;production_id&quot; integer, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) 
+[1m[36m (3.1ms)[0m  [1mCREATE TABLE &quot;equipment_notes&quot; (&quot;id&quot; serial primary key, &quot;note&quot; text NOT NULL, &quot;equipment_id&quot; integer NOT NULL, &quot;field_type&quot; character varying NOT NULL, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) [0m
+[1m[35m (2.2ms)[0m  CREATE TABLE &quot;equipment_venues&quot; (&quot;id&quot; serial primary key, &quot;equipment_id&quot; integer, &quot;venue_id&quot; integer) 
+[1m[36m (1.9ms)[0m  [1mCREATE TABLE &quot;leads&quot; (&quot;id&quot; serial primary key, &quot;production_id&quot; integer NOT NULL, &quot;user_id&quot; integer NOT NULL, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) [0m
+[1m[35m (2.9ms)[0m  CREATE TABLE &quot;productions&quot; (&quot;id&quot; serial primary key, &quot;name&quot; character varying NOT NULL, &quot;date&quot; date, &quot;designer_id&quot; integer, &quot;master_electrician_id&quot; integer, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) 
+[1m[36m (2.4ms)[0m  [1mCREATE TABLE &quot;productions_venues&quot; (&quot;id&quot; serial primary key, &quot;venue_id&quot; integer, &quot;production_id&quot; integer) [0m
+[1m[35m (2.6ms)[0m  CREATE TABLE &quot;unit_libraries&quot; (&quot;id&quot; serial primary key, &quot;manufacturer&quot; character varying, &quot;unit_type&quot; character varying, &quot;unit_name&quot; character varying, &quot;beam_angle&quot; character varying, &quot;frame_size&quot; float, &quot;c_i&quot; integer, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) 
+[1m[36m (3.1ms)[0m  [1mCREATE TABLE &quot;user_types&quot; (&quot;id&quot; serial primary key, &quot;name&quot; character varying, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) [0m
+[1m[35m (3.3ms)[0m  CREATE TABLE &quot;users&quot; (&quot;id&quot; serial primary key, &quot;user_type_id&quot; integer NOT NULL, &quot;username&quot; character varying NOT NULL, &quot;email&quot; character varying DEFAULT &#39;&#39; NOT NULL, &quot;encrypted_password&quot; character varying DEFAULT &#39;&#39; NOT NULL, &quot;reset_password_token&quot; character varying, &quot;reset_password_sent_at&quot; timestamp, &quot;remember_created_at&quot; timestamp, &quot;sign_in_count&quot; integer DEFAULT 0 NOT NULL, &quot;current_sign_in_at&quot; timestamp, &quot;last_sign_in_at&quot; timestamp, &quot;current_sign_in_ip&quot; inet, &quot;last_sign_in_ip&quot; inet, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) 
+[1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  &quot;index_users_on_email&quot; ON &quot;users&quot; USING btree (&quot;email&quot;)[0m
+[1m[35m (0.9ms)[0m  CREATE UNIQUE INDEX  &quot;index_users_on_reset_password_token&quot; ON &quot;users&quot; USING btree (&quot;reset_password_token&quot;)
+[1m[36m (3.1ms)[0m  [1mCREATE TABLE &quot;venues&quot; (&quot;id&quot; serial primary key, &quot;name&quot; character varying NOT NULL, &quot;address&quot; text, &quot;created_at&quot; timestamp NOT NULL, &quot;updated_at&quot; timestamp NOT NULL) [0m
+[1m[35m (1.4ms)[0m  CREATE TABLE &quot;schema_migrations&quot; (&quot;version&quot; character varying NOT NULL) 
+[1m[36m (1.0ms)[0m  [1mCREATE UNIQUE INDEX  &quot;unique_schema_migrations&quot; ON &quot;schema_migrations&quot;  (&quot;version&quot;)[0m
+[1m[35m (0.3ms)[0m  SELECT version FROM &quot;schema_migrations&quot;
+[1m[36m (0.5ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160202033114&#39;)[0m
+[1m[35m (0.4ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130024658&#39;)
+[1m[36m (0.4ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130024832&#39;)[0m
+[1m[35m (0.3ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130025542&#39;)
+[1m[36m (0.3ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130025638&#39;)[0m
+[1m[35m (0.3ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130025751&#39;)
+[1m[36m (0.3ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130030620&#39;)[0m
+[1m[35m (0.3ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130204641&#39;)
+[1m[36m (0.3ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160130210217&#39;)[0m
+[1m[35m (0.2ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160131005927&#39;)
+[1m[36m (0.3ms)[0m  [1mINSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160131022949&#39;)[0m
+[1m[35m (0.2ms)[0m  INSERT INTO &quot;schema_migrations&quot; (version) VALUES (&#39;20160131193143&#39;)
+[1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT &quot;schema_migrations&quot;.* FROM &quot;schema_migrations&quot;[0m
+[1m[35m (0.6ms)[0m  SELECT DISTINCT &quot;equipment&quot;.&quot;instrument_type&quot; FROM &quot;equipment&quot;
+[1m[36m (25.4ms)[0m  [1mALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (2.7ms)[0m  select table_name from information_schema.views where table_schema = &#39;Mastercraft_Lighting_test&#39;
+[1m[36m (25.2ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.6ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.685775&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.685775&quot;]]
+[1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.697001&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.697001&quot;]]
+[1m[35m (6.1ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.705623&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.705623&quot;]]
+[1m[36m (2.8ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.3ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.712038&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.712038&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$bnkqS1bBXKm2pwVtF.TsW.iKfje/fppN6nWdnptEl6kyunU59YwGS&quot;], [&quot;user_type_id&quot;, 3], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.749547&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.749547&quot;]]
+[1m[35m (6.2ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../AdminsController.html#method-i-index">AdminsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mUser Load (0.2ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered admins/index.html.erb within layouts/application (0.3ms)</pre>
+
+<p>Completed 200 OK in 21ms (Views: 14.1ms | ActiveRecord: 0.2ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (46.0ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.9ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.6ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.838813&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.838813&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.842548&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.842548&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.845483&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.845483&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.848304&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.848304&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$4vZn/9ItIWTwxh22r2yOre3mXedTC9bvysjgSujzH1v7dRKbcXHri&quot;], [&quot;user_type_id&quot;, 3], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.853976&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.853976&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../AdminsController.html#method-i-index">AdminsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mUser Load (0.4ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered admins/index.html.erb within layouts/application (0.2ms)</pre>
+
+<p>Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (90.6ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.7ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.989149&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.989149&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.991982&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.991982&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.994701&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.994701&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:46.997527&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:46.997527&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.2ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.5ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$0uQjCATNQkDMpZCuywGWgeiV/rVmRjx7gu1JYqO8r2lkA8Bc0HYM2&quot;], [&quot;user_type_id&quot;, 3], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.004058&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.004058&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../AdminsController.html#method-i-index">AdminsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mUser Load (0.3ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+Rendered admins/index.html.erb within layouts/application (0.2ms)</pre>
+
+<p>Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.3ms)</p>
+
+<pre>[1m[35mUser Load (0.4ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot;  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1
+[1m[36m (0.2ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (48.5ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (1.0ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.6ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.069779&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.069779&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.073905&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.073905&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.077179&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.077179&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.080530&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.080530&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.5ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$4rfSXyHGIzQPDSKIqU5GDOF/IPx2QFz/kQdI6Swelie7B830aUFEG&quot;], [&quot;user_type_id&quot;, 3], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.088643&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.088643&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../AdminsController.html#method-i-index">AdminsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mUser Load (0.4ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]
+Rendered admins/index.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.4ms)</p>
+
+<pre>[1m[36m (0.4ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (48.4ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (1.2ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.6ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.152406&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.152406&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.156443&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.156443&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.4ms)[0m  BEGIN
+[1m[36mSQL (0.3ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.159816&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.159816&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.2ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.163276&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.163276&quot;]]
+[1m[36m (5.6ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$/tAPgT8Hnq6D9MT97BUrWeZNGAljqi3knkXk2RDfOci15uBATlwFG&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.175045&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.175045&quot;]]
+[1m[36m (5.5ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../AdminsController.html#method-i-index">AdminsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mUser Load (0.5ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]</pre>
+
+<p>Redirected to <a href="http://test.host">test.host</a>/ Filter chain halted
+as :check_admin rendered or redirected Completed 302 Found in 2ms
+(ActiveRecord: 0.5ms)</p>
+
+<pre>[1m[36m (0.3ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (29.2ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.8ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-index">LibrariesController#index</a>
+as HTML</p>
+
+<pre>Rendered libraries/index.html.erb within layouts/application (0.5ms)</pre>
+
+<p>Completed 200 OK in 12ms (Views: 11.6ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.4ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (43.7ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.9ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-index">LibrariesController#index</a>
+as HTML</p>
+
+<pre>Rendered libraries/index.html.erb within layouts/application (0.3ms)</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[36m (0.4ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (30.6ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.9ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-show">LibrariesController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;equipment&quot;}
+Rendered libraries/equipment.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.5ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (48.2ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.6ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-show">LibrariesController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;equipment&quot;}
+Rendered libraries/equipment.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[36m (0.5ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (32.2ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.9ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-show">LibrariesController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;colors&quot;}
+Rendered libraries/colors.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.5ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (48.5ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (1.0ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL</pre>
+
+<p>Processing by <a
+href="../LibrariesController.html#method-i-show">LibrariesController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;colors&quot;}
+Rendered libraries/colors.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[36m (0.5ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (25.8ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.9ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.539512&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.539512&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.5ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.542925&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.542925&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.546423&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.546423&quot;]]
+[1m[35m (0.2ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.1ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.548404&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.548404&quot;]]
+[1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.5ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$i4PkTmaYasP5zP3dhqf9d.C9VjkQptCZQaKidJPYIQ9rGzPwwimMm&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.553516&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.553516&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-index">ProductionsController#index</a>
+as HTML</p>
+
+<pre>[1m[35mUser Load (0.3ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mUserType Load (0.2ms)[0m  [1mSELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1  [[&quot;designer_id&quot;, 1]]
+[1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1[0m  [[&quot;designer_id&quot;, 1]]
+Rendered productions/index.html.erb within layouts/application (0.3ms)</pre>
+
+<p>Completed 200 OK in 45ms (Views: 6.9ms | ActiveRecord: 1.7ms)</p>
+
+<pre>[1m[35m (0.2ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (43.0ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.6ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.651713&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.651713&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.654332&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.654332&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.656631&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.656631&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.658965&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.658965&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$lcbEOz2TSIcYoskHwk/YFu32wIqou//0k6VvAiYrrny55qEqExlJy&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.664771&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.664771&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-index">ProductionsController#index</a>
+as HTML</p>
+
+<pre>[1m[36mUser Load (0.3ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mUserType Load (0.2ms)[0m  SELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1[0m  [[&quot;designer_id&quot;, 1]]
+[1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1  [[&quot;designer_id&quot;, 1]]
+Rendered productions/index.html.erb within layouts/application (0.2ms)</pre>
+
+<p>Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 1.1ms)</p>
+
+<pre>[1m[36m (0.3ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (23.6ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.7ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.703532&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.703532&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.705830&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.705830&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.707998&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.707998&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.2ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.710765&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.710765&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.8ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$CNOpfkfeBwAKudoLbsva8ee2OVCVGAhD1EyTFYnHbnm7tm5gfcB2a&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.718568&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.718568&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-new">ProductionsController#new</a>
+as HTML</p>
+
+<pre>[1m[35mUser Load (0.5ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mUserType Load (0.4ms)[0m  [1mSELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1  [[&quot;designer_id&quot;, 1]]
+Rendered productions/_new_form.html.erb (1.6ms)</pre>
+
+<p>Completed 200 OK in 19ms (Views: 4.2ms | ActiveRecord: 2.3ms)</p>
+
+<pre>[1m[36m (1.0ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (51.3ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.8ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.5ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.803259&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.803259&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.807172&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.807172&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.810514&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.810514&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.813614&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.813614&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.5ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$YuUp9Xe0caywT7oKQgn9LusDHKfu5G61rm7uf3dW09lY1KhkxPP1q&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.821192&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.821192&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-new">ProductionsController#new</a>
+as HTML</p>
+
+<pre>[1m[35mUser Load (0.5ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mUserType Load (0.4ms)[0m  [1mSELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1  [[&quot;designer_id&quot;, 1]]
+Rendered productions/_new_form.html.erb (0.5ms)</pre>
+
+<p>Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 1.3ms)</p>
+
+<pre>[1m[36m (0.5ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (36.5ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.9ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.6ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.879269&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.879269&quot;]]
+[1m[35m (0.5ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.902940&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.902940&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.906227&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.906227&quot;]]
+[1m[35m (0.5ms)[0m  COMMIT
+[1m[36m (0.2ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.909775&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.909775&quot;]]
+[1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.6ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$ZHwEdYT5WvCAWNbpKSN.iOTCx3iwXuYr0we9SSLU57nUwBQwbzv4G&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.918606&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.918606&quot;]]
+[1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.6ms)[0m  [1mINSERT INTO &quot;productions&quot; (&quot;name&quot;, &quot;date&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Production&quot;], [&quot;date&quot;, &quot;2016-06-02&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:47.924764&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:47.924764&quot;]]
+[1m[35m (5.7ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-show">ProductionsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mProduction Load (0.4ms)[0m  [1mSELECT  &quot;productions&quot;.* FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;id&quot; = $1 LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mUser Load (0.4ms)[0m  SELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mUserType Load (0.4ms)[0m  [1mSELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1  [[&quot;designer_id&quot;, 1]]
+[1m[36mEquipment Load (0.5ms)[0m  [1mSELECT &quot;equipment&quot;.* FROM &quot;equipment&quot; WHERE &quot;equipment&quot;.&quot;production_id&quot; = $1[0m  [[&quot;production_id&quot;, 1]]
+Rendered productions/show.html.erb within layouts/application (0.4ms)</pre>
+
+<p>Completed 200 OK in 17ms (Views: 3.2ms | ActiveRecord: 1.9ms)</p>
+
+<pre>[1m[35m (0.5ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL
+[1m[36m (43.5ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.7ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.005130&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.005130&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.007933&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.007933&quot;]]
+[1m[35m (0.4ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.3ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.010674&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.010674&quot;]]
+[1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.014593&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.014593&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.5ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$YM93HJP5nQmtlv.n6KaSA.m1unz9kod0ygxhlYtn2l3Z7T/PC8N2K&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.021065&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.021065&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;productions&quot; (&quot;name&quot;, &quot;date&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Production&quot;], [&quot;date&quot;, &quot;2016-06-02&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.024181&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.024181&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-show">ProductionsController#show</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[35mProduction Load (0.3ms)[0m  SELECT  &quot;productions&quot;.* FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36mUser Load (0.4ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mUserType Load (0.4ms)[0m  SELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1[0m  [[&quot;designer_id&quot;, 1]]
+[1m[35mEquipment Load (0.4ms)[0m  SELECT &quot;equipment&quot;.* FROM &quot;equipment&quot; WHERE &quot;equipment&quot;.&quot;production_id&quot; = $1  [[&quot;production_id&quot;, 1]]
+Rendered productions/show.html.erb within layouts/application (0.2ms)</pre>
+
+<p>Completed 200 OK in 8ms (Views: 0.8ms | ActiveRecord: 1.7ms)</p>
+
+<pre>[1m[36m (0.3ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (24.9ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.6ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.066365&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.066365&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.068722&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.068722&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.070589&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.070589&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.072614&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.072614&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.5ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$RjWe228cMt9H3/Tmrmo4AeRG5qVI2JPar.jdjm61//MwhgG0qG9o6&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.077853&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.077853&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;productions&quot; (&quot;name&quot;, &quot;date&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Production&quot;], [&quot;date&quot;, &quot;2016-06-02&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.081118&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.081118&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-edit">ProductionsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mUser Load (0.3ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mUserType Load (0.4ms)[0m  SELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1[0m  [[&quot;designer_id&quot;, 1]]
+[1m[35mProduction Load (0.3ms)[0m  SELECT  &quot;productions&quot;.* FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]</pre>
+
+<p>Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.2ms)</p>
+
+<pre>[1m[36m (0.3ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (42.7ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.6ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.5ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.142344&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.142344&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.145261&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.145261&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.147237&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.147237&quot;]]
+[1m[35m (0.2ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.149189&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.149189&quot;]]
+[1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$oJ1AXc8lZNfbz87gGOygi.iHzhebFFI2oa5BtjbhuCiBPujTsoOjC&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.154266&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.154266&quot;]]
+[1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;productions&quot; (&quot;name&quot;, &quot;date&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Production&quot;], [&quot;date&quot;, &quot;2016-06-02&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.157503&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.157503&quot;]]
+[1m[35m (0.2ms)[0m  COMMIT</pre>
+
+<p>Processing by <a
+href="../ProductionsController.html#method-i-edit">ProductionsController#edit</a>
+as HTML</p>
+
+<pre>Parameters: {&quot;id&quot;=&gt;&quot;1&quot;}
+[1m[36mUser Load (0.4ms)[0m  [1mSELECT  &quot;users&quot;.* FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;id&quot; = $1  ORDER BY &quot;users&quot;.&quot;id&quot; ASC LIMIT 1[0m  [[&quot;id&quot;, 1]]
+[1m[35mUserType Load (0.3ms)[0m  SELECT  &quot;user_types&quot;.* FROM &quot;user_types&quot; WHERE &quot;user_types&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]
+[1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;designer_id&quot; = $1[0m  [[&quot;designer_id&quot;, 1]]
+[1m[35mProduction Load (0.2ms)[0m  SELECT  &quot;productions&quot;.* FROM &quot;productions&quot; WHERE &quot;productions&quot;.&quot;id&quot; = $1 LIMIT 1  [[&quot;id&quot;, 1]]</pre>
+
+<p>Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.1ms)</p>
+
+<pre>[1m[36m (0.3ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL[0m
+[1m[35m (25.3ms)[0m  TRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;
+[1m[36m (0.5ms)[0m  [1mALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL[0m</pre>
+
+<p>Processing by <a
+href="../WelcomeController.html#method-i-index">WelcomeController#index</a>
+as HTML</p>
+
+<pre>Rendered welcome/index.html.erb within layouts/application (0.3ms)</pre>
+
+<p>Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.0ms)</p>
+
+<pre>[1m[35m (0.3ms)[0m  ALTER TABLE &quot;equipment_notes&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; DISABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; DISABLE TRIGGER ALL
+[1m[36m (55.1ms)[0m  [1mTRUNCATE TABLE &quot;accessories&quot;, &quot;color_libraries&quot;, &quot;equipment&quot;, &quot;equipment_notes&quot;, &quot;equipment_venues&quot;, &quot;leads&quot;, &quot;productions&quot;, &quot;productions_venues&quot;, &quot;unit_libraries&quot;, &quot;user_types&quot;, &quot;users&quot;, &quot;venues&quot; RESTART IDENTITY CASCADE;[0m
+[1m[35m (0.5ms)[0m  ALTER TABLE &quot;equipment_notes&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;schema_migrations&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;unit_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;user_types&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;users&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;accessories&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;color_libraries&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;equipment_venues&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;leads&quot; ENABLE TRIGGER ALL;ALTER TABLE &quot;productions&quot; ENABLE TRIGGER ALL
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.4ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Designer&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.265970&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.265970&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.1ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;ME&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.268427&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.268427&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mSQL (0.2ms)[0m  INSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;  [[&quot;name&quot;, &quot;Administrator&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.270873&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.270873&quot;]]
+[1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+[1m[35m (0.2ms)[0m  BEGIN
+[1m[36mSQL (0.2ms)[0m  [1mINSERT INTO &quot;user_types&quot; (&quot;name&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3) RETURNING &quot;id&quot;[0m  [[&quot;name&quot;, &quot;Lead&quot;], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.273289&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.273289&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT
+[1m[36m (0.1ms)[0m  [1mBEGIN[0m
+[1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM &quot;users&quot; WHERE &quot;users&quot;.&quot;email&quot; = &#39;user@user.com&#39; LIMIT 1
+[1m[36mSQL (0.4ms)[0m  [1mINSERT INTO &quot;users&quot; (&quot;email&quot;, &quot;username&quot;, &quot;encrypted_password&quot;, &quot;user_type_id&quot;, &quot;created_at&quot;, &quot;updated_at&quot;) VALUES ($1, $2, $3, $4, $5, $6) RETURNING &quot;id&quot;[0m  [[&quot;email&quot;, &quot;user@user.com&quot;], [&quot;username&quot;, &quot;username&quot;], [&quot;encrypted_password&quot;, &quot;$2a$04$rkbkMmgwp6KAypHk72m.tuFUJnL74th1TvUcILBPpvl3iMjbitdgG&quot;], [&quot;user_type_id&quot;, 1], [&quot;created_at&quot;, &quot;2016-02-05 00:47:48.279722&quot;], [&quot;updated_at&quot;, &quot;2016-02-05 00:47:48.279722&quot;]]
+[1m[35m (0.3ms)[0m  COMMIT</pre>
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
