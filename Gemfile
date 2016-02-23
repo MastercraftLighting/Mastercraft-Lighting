@@ -3,46 +3,55 @@ source 'https://rubygems.org'
 gem 'omniauth'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+gem 'rails', '4.2.5'
+gem 'pg', '~> 0.15'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'client_side_validations'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-installer'
+gem 'wkhtmltopdf-heroku', '~> 2.12.2.1'
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+
   gem 'pry-byebug'
-  gem 'pry'
+    #RSpec gems
+  gem 'rspec-rails', "~> 3.1.0"
+  gem "factory_girl_rails", "~> 4.4.1"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
+  gem 'pry'
 end
 
-gem 'devise'
-gem 'rails_12factor', group: :production
-ruby "2.3.0"
+  gem 'turbolinks'
+  gem 'devise'
+  gem 'smarter_csv'
+  gem 'rails_12factor', group: :production
 
+group :test do
+  #Rspec gems
+  gem 'capybara', "~> 2.4.3"
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'launchy', '~> 2.4.2'
+  gem 'selenium-webdriver', '~> 2.43.0'
+  gem 'simplecov', :require => false
+  gem 'shoulda'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+end
+
+ruby "2.2.2"

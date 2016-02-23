@@ -1,0 +1,39 @@
+<div id="channel-hookup" class="tab-pane fade in active">
+  <h3 class="sheet-name">Channel Hookup</h3>
+  <table class="table channel-hookup">
+    <thead>
+      <tr>
+      <th class="Chan-H">Channel</th>
+      <th class="Dim-H">Dim</th>
+      <th class="Pos-H">Position</th>
+      <th class="Unit-H">Unit#</th>
+      <th class="Inst-H">Instrument Type</th>
+      <th class="Purp-H">Purpose</th>
+      <th class="Col-H">Color</th>
+      <th class="Gobo-H">Gobo</th>
+      <th class="Acc-H">Accessories</th>
+    </tr>
+    </thead>
+    <tbody>
+      <% @equipment_sorted_sliced_for_channel_view.each do |equipment_group| %>
+        <tr><td colspan="10"><h4><%= equipment_group.first.channel %></h4></td></tr>
+        <div class="chan-groups">
+          <% equipment_group.each do |equip| %>
+            <tr id="CH-Row<%= equip.id %>">
+              <td class="e-ch"></td>
+              <td class="e-dim"><%= equip.dimmer %></td>
+              <td class="e-pos"><%= equip.position %></td>
+              <td class="e-num"><%= equip.unit_number %></td>
+              <td class="e-typ"><%= equip.instrument_type %></td>
+              <td class="e-pur"><%= equip.purpose %></td>
+              <td class="e-col"><%= equip.color %></td>
+              <td class="e-gob"><%= equip.gobo_1 %> <%= equip.gobo_2 %></td>
+              <td class="e-"><%= equip.accessories_list %></td>
+              <td><a class="deep-blue edit-button" href="/productions/<%= equip.production_id %>/channels/<%= equip.id %>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></a></td>
+              <td><a class="deep-red delete-button" href="/productions/<%= equip.production_id %>/channels/<%= equip.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></a></td>
+            </tr>
+          <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div> <!-- Close channel-hookup -->

@@ -1,0 +1,30 @@
+<h2> Equipment Library </h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th> Manufacturer </th>
+      <th> Unit Type </th>
+      <th> Unit Name </th>
+      <th> Beam Angle </th>
+      <th> Frame Size </th>
+      <th> Category </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @units.each do |unit| %>
+        <tr>
+          <td><%= unit.manufacturer  %></td>
+          <td><%= unit.unit_type %></td>
+          <td><%= unit.unit_name %></td>
+          <td><%= unit.beam_angle %></td>
+          <td><%= unit.frame_size %></td>
+          <td><%= unit.c_i == 0 ? "Conventional" : "Intelligent" %></td>
+        </tr>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+
+
+

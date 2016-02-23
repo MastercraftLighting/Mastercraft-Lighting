@@ -1,0 +1,115 @@
+// Place all the styles related to the shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.box-bar {
+
+	.channel-box {
+	}
+
+	.nav-tabs {
+
+		a {
+		color: black;
+		}
+
+	}
+}
+
+.table-headers {
+	position: fixed;
+	float: top;
+	max-width: 80%;
+	.Chan-H {
+	padding-right: 4em;
+	}
+
+	.Dim-H {
+	padding-right: 4em;
+	}
+
+	.Pos-H {
+	padding-right: 4em;
+	}
+
+	.Unit-H {
+	padding-right: 4em;
+	}
+
+	.Inst-H {
+	padding-right: 4em;
+	}
+
+	.Purp-H {
+	padding-right: 4em;
+	}
+
+	.Col-H {
+	padding-right: 4em;
+	}
+
+	.Swa-H {
+	padding-right: 4em;
+	}
+
+	.Gobo-H {
+	padding-right: 4em;
+	}
+
+	.Acc-H {
+	padding-right: 4em;
+	}
+}
+
+.productions-list {
+	a {
+	color: black;
+	}
+}
+
+.channel-maker {
+	background-color: black;
+	color: white;
+	padding: 2em;
+	max-width: 50%;
+}
+
+.btn {
+	background-color: black;
+}
+
+.tab-content {
+	padding-top: 3em;
+}
+
+.navbar-bottom {
+	margin-left: 1%;
+	margin-right: 1%;
+}
+
+.tab-content {
+	max-height: 100%;
+}
+
+.tab-pane {
+	height: 70vh;
+	overflow-y: scroll;
+	width: 100%;
+}
+
+.toggle-tab {
+	display: none;
+}
+
+.edit-production-form {
+	display: none;
+}
+
+.form {
+
+}
+
+.btn-s{
+	color: white;
+	margin-bottom: 1em;
+}

@@ -1,0 +1,40 @@
+<table class="table" id="production-table">
+  <% @productions.each do |production| %>
+  <tr id="prod<%= production.id %>">
+    <td id="tdname<%= production.id %>"><%= production.name %></a> </td>
+    <td><%= button_to "View", production_path(production), :method => :get, class: "btn btn-s" %></td>
+    <td><%= button_to "Remove Production", { action: "destroy", id: production.id}, method: :delete, data: {confirm:
+    "Delete production?" }, class: "btn btn-s"%></td>
+    <td><%= form_tag(uploads_create_path(id: production.id), multipart: true) do %>
+      <%= submit_tag "Upload file from Vectorworks", class: "btn btn-s", data: { disable_with: "Please wait, this may take a few seconds" } %>
+      <%= file_field_tag 'vectorworks_file', :accept => '*.tsv' %>
+    <% end %></td>
+    <% if production.equipments.count>0 %>
+    <td><%= button_to "Download Production into .tsv format", uploads_download_path(id: production.id), class: "btn btn-s" %></td>
+    <% end %>
+    <%if current_user.user_type.name == "Administrator" || current_user.user_type.name == "Designer"%>
+      </tr>
+      <td><a id="form<%=production.id%>" class="deep-blue edit-button" href="/productions/<%= production.id%>/edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"> Edit</span></a></td>
+      <tr>
+      <td>
+    <%end%>
+    <div id="edit-production-form<%=production.id%>" class="edit-production-form">
+      <div class="form">
+        <%=form_for(production, method: :put) do |f|%>
+          <%=f.label :name, "Production Name:"%>
+          <%=f.text_field :name%><br />
+          <%=f.label :date, "Production Date:"%>
+          <%=f.date_field :date%><br />
+          <%=f.submit "Save Edits", class: "btn btn-s", id: "edit_show#{production.id}" %>
+        <%end%>
+      </div><!-- close form -->
+    </div><!-- close edit-production-form -->
+  </td>
+  </tr>
+  <% end %>
+</table>
+
+<% if flash.alert %>
+  <script>alert("<%= flash.alert %>")</script>
+<% end %>
+
